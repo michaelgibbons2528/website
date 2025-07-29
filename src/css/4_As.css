@@ -186,6 +186,183 @@ img {
 .learn-more.blue { background-color: rgba(0, 81, 255, 0.1); }  /* Light orange background */
 .learn-more.purple { background-color: rgba(201, 24, 255, 0.25); }  /* Light purple background */
 
+/* Mobile Responsive Design */
+@media (max-width: 1024px) {
+  .section-heading {
+    font-size: 2.4rem;
+    margin-bottom: 120px;
+  }
+  
+  .section-subtext {
+    font-size: 1.1rem;
+    margin: 80px auto;
+    padding: 20px;
+  }
+  
+  .panel-section {
+    padding: 30px 15px;
+    gap: 30px;
+  }
+  
+  .panel-1, .panel-2, .panel-3, .panel-4 {
+    width: 200px;
+    padding: 14px;
+  }
+  
+  .panel {
+    width: 200px;
+    height: 420px;
+  }
+  
+  h3 {
+    font-size: 16px;
+  }
+  
+  p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .values-intro {
+    padding: 40px 15px 10px;
+  }
+  
+  .section-heading {
+    font-size: 2rem;
+    margin-bottom: 80px;
+  }
+  
+  .section-subtext {
+    font-size: 1rem;
+    margin: 60px auto;
+    padding: 15px;
+  }
+  
+  .panel-section {
+    padding: 25px 10px;
+    gap: 20px;
+  }
+  
+  .panel-1, .panel-2, .panel-3, .panel-4 {
+    width: 180px;
+    padding: 12px;
+  }
+  
+  .panel {
+    width: 180px;
+    height: 400px;
+  }
+  
+  h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+  
+  p {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  
+  .learn-more {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section-heading {
+    font-size: 1.8rem;
+    margin-bottom: 60px;
+  }
+  
+  .section-subtext {
+    font-size: 0.95rem;
+    margin: 50px auto;
+    padding: 12px;
+  }
+  
+  .panel-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+    gap: 15px;
+  }
+  
+  .panel-1, .panel-2, .panel-3, .panel-4 {
+    width: 280px;
+    padding: 15px;
+  }
+  
+  .panel {
+    width: 280px;
+    height: auto;
+    min-height: 350px;
+  }
+  
+  h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .learn-more {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .values-intro {
+    padding: 30px 10px 10px;
+  }
+  
+  .section-heading {
+    font-size: 1.6rem;
+    margin-bottom: 50px;
+  }
+  
+  .section-subtext {
+    font-size: 0.9rem;
+    margin: 40px auto;
+    padding: 10px;
+  }
+  
+  .panel-section {
+    padding: 15px 5px;
+    gap: 12px;
+  }
+  
+  .panel-1, .panel-2, .panel-3, .panel-4 {
+    width: 260px;
+    padding: 12px;
+  }
+  
+  .panel {
+    width: 260px;
+    min-height: 320px;
+  }
+  
+  h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+  
+  p {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  
+  .learn-more {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
 /* Responsive design: if screen width < 1100px, adjust panel width */
 @media (max-width: 1100px) {
   .panel {

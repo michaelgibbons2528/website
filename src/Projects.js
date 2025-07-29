@@ -49,7 +49,14 @@ export default function Projects() {
   return (
     <div className="projects-container">
       {/* Hero Section */}
-      <div className="projects-hero">
+      <div 
+        className="projects-hero"
+        style={{
+          backgroundImage: "linear-gradient(rgba(163, 0, 0, 0.1), rgba(221, 39, 1, 0.1)), url('/images/4-3_Playing_Game.JPG')",
+          backgroundSize: "cover",
+          backgroundPosition: "center"
+        }}
+      >
         <div className="hero-content">
           <h1 className="hero-title">Our Projects</h1>
           <p className="hero-subtitle">

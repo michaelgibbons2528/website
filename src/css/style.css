@@ -3,28 +3,55 @@ body {
   margin: 0;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 header {
   background: transparent;
-  
 }
 
 .main-container {
   max-width: 2000px; /* You can adjust this size */
   margin: 0 auto;     /* Centers the container */
   padding: 0 0px;    /* Optional: adds some space on the sides */
-  
 }
 
+/* Global Mobile Responsive Styles */
+* {
+  box-sizing: border-box;
+}
 
+/* Touch-friendly interactions */
+button, a, .clickable {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
 
+/* Prevent horizontal scrolling on mobile */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
 
-
-
-
-
-
+/* Improve text readability on mobile */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px; /* Prevents zoom on iOS */
+    line-height: 1.5;
+  }
+  
+  /* Ensure minimum touch target size */
+  button, a, input, select, textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Improve form elements on mobile */
+  input, select, textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
 
 /* Footer */
 footer {
@@ -42,6 +69,25 @@ footer .btn {
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 1024px) {
+  .main-container {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    padding: 0 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-container {
+    padding: 0 2px;
+  }
 }
 
 

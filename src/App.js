@@ -309,6 +309,16 @@ function App() {
             <NavLink to="/" end>
               <img id="nav-logo" className="hidden" src="/images/Narrow_Logo.png" alt="A4A Narrow Logo" />
             </NavLink>
+            <button className="mobile-menu-toggle" onClick={() => {
+              const navLinks = document.querySelector('.nav-links');
+              const toggle = document.querySelector('.mobile-menu-toggle');
+              navLinks.classList.toggle('active');
+              toggle.classList.toggle('active');
+            }}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
             <ul className="nav-links">
               <li className="dropdown">
                 <NavLink to="/who-are-we" className={({ isActive }) => isActive ? "active" : undefined}>Who Are We?</NavLink>
