@@ -1,0 +1,47 @@
+/* Reset and Base Styles */
+body {
+  margin: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+}
+
+header {
+  background: transparent;
+  
+}
+
+.main-container {
+  max-width: 2000px; /* You can adjust this size */
+  margin: 0 auto;     /* Centers the container */
+  padding: 0 0px;    /* Optional: adds some space on the sides */
+  
+}
+
+
+
+
+
+
+
+
+
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+footer .btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: white;
+  color: #c8102e;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+

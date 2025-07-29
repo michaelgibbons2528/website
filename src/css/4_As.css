@@ -1,0 +1,201 @@
+.values-intro {
+  padding: 60px 20px 10px;
+  text-align: center;
+  /* background-image removed, now set inline in App.js */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  position: relative;
+}
+
+
+/* Optional: dark overlay for better readability */
+.values-intro::before {
+  content: "";
+  position: absolute;
+  top: 0px; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);   /* semi-transparent black overlay */
+  z-index: 0;
+}
+
+.section-heading,
+.section-subtext {
+  position: relative;  /* brings text above the overlay */
+  z-index: 1;
+}
+
+.section-heading {
+  font-size: 2.8rem;
+  margin-bottom: 150px;
+}
+
+.section-subtext {
+  font-size: 1.2rem;
+  max-width: 1200px;
+  margin: 100px auto;
+  line-height: 1.6;
+  background:rgba(0, 0, 0, 0.5); 
+  border-radius: 8px; 
+}
+
+
+
+
+
+/* 4 A's Representation */
+
+
+.panel-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+  background-color: rgb(255, 255, 255);
+  max-width: 1200px;
+  margin: auto;
+  overflow-x: auto;   /* optional: scrolls if the screen is too narrow */
+  gap: 40px;
+}
+
+.panel-1 {
+  background-color: rgba(255, 0, 0, 0.1);
+  width: 220px;
+  border: 1px solid #ddd;             /* Light gray border */
+  padding: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.panel-2 {
+  background-color: rgba(255, 30, 173, 0.1);
+  width: 220px;
+  border: 1px solid #ddd;             /* Light gray border */
+  padding: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.panel-3 {
+  background-color: rgba(0, 81, 255, 0.1);
+  width: 220px;
+  border: 1px solid #ddd;             /* Light gray border */
+  padding: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.panel-4 {
+  background-color: rgba(201, 24, 255, 0.1);           /* Light gray background color for the panel */
+  width: 220px;                        /* Fixed width of each panel */
+  border: 1px solid #ddd;             /* Light gray border */
+  padding: 16px;                      /* Space inside the panel around the content */
+  text-align: center;                 /* Center-align text inside the panel */
+  display: flex;                      /* Makes the panel a flex container */
+  flex-direction: column;            /* Stack children vertically */
+  align-items: center;               /* Center children horizontally */
+  border-radius: 10px;
+}
+
+h3 {
+  color: #000000;                     /* Dark purple text color for heading */
+  font-size: 18px;                    /* Set heading font size */
+  margin-bottom: 10px;               /* Space below heading */
+}
+
+p {
+  font-size: 18px;                    /* Set paragraph text size */
+  margin-bottom: 16px;               /* Space below paragraph */
+}
+
+img {
+  width: 100%;                        /* Image stretches to full panel width */
+  height: auto;                       /* Maintain aspect ratio */
+  margin-bottom: 10px;               /* Space below image */
+}
+
+
+/* Shared panel styles */
+.panel {
+  background-color: rgba(0,0,0,0.05); /* fallback */
+  width: 220px;
+  border: 1px solid #ddd;
+  padding: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pushes button to bottom */
+  align-items: center;
+  border-radius: 10px;
+  height: 450px; /* fixed height for all */
+}
+
+/* Specific background colors */
+.panel-1 {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+.panel-2 {
+  background-color: rgba(255, 30, 173, 0.1);
+}
+
+.panel-3 {
+  background-color: rgba(0, 81, 255, 0.1);
+}
+
+.panel-4 {
+  background-color: rgba(201, 24, 255, 0.1);
+}
+
+/* Content grows to fill space */
+.panel-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Learn more button at bottom */
+.learn-more {
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 16px; /* space above button */
+}
+
+
+
+/* Color variations for different "LEARN MORE" buttons */
+.learn-more.red { background-color: rgba(255, 0, 0, 0.25); }  /* Yellow background */
+.learn-more.pink   { background-color: rgba(255, 30, 173, 0.25); }  /* Mint green background */
+.learn-more.blue { background-color: rgba(0, 81, 255, 0.1); }  /* Light orange background */
+.learn-more.purple { background-color: rgba(201, 24, 255, 0.25); }  /* Light purple background */
+
+/* Responsive design: if screen width < 1100px, adjust panel width */
+@media (max-width: 1100px) {
+  .panel {
+    width: 45%;                      /* Panels take up 45% of container (2 per row) */
+  }
+}
+
+/* If screen width < 700px, make each panel full width */
+@media (max-width: 700px) {
+  .panel {
+    width: 100%;                     /* One panel per row on small screens */
+  }
+}
