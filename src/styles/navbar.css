@@ -267,7 +267,8 @@ nav li.active a {
   margin-bottom: 8px;
 }
 
-.mobile-nav-links a {
+.mobile-nav-links a,
+.mobile-nav-links button {
   color: white;
   text-decoration: none;
   font-size: 16px;
@@ -275,10 +276,18 @@ nav li.active a {
   display: block;
   border-radius: 8px;
   transition: background-color 0.3s ease;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .mobile-nav-links a:hover,
-.mobile-nav-links a.active {
+.mobile-nav-links a.active,
+.mobile-nav-links button:hover,
+.mobile-nav-links button.active {
   background: rgba(240, 162, 46, 0.3);
 }
 

@@ -66,56 +66,56 @@ const MobileNavigation = ({ isOpen, onClose }) => {
         <div className="mobile-nav-section">
           <h3>Who Are We?</h3>
           <ul className="mobile-nav-links">
-            <li><a onClick={() => handleNavClick('/our-mission')} className={location.pathname === '/our-mission' ? 'active' : ''}>Our Mission</a></li>
-            <li><a onClick={() => handleNavClick('/our-stories')} className={location.pathname === '/our-stories' ? 'active' : ''}>Our Stories</a></li>
-            <li><a onClick={() => handleNavClick('/media')} className={location.pathname === '/media' ? 'active' : ''}>Media & News</a></li>
-            <li><a onClick={() => handleNavClick('/faq')} className={location.pathname === '/faq' ? 'active' : ''}>FAQs</a></li>
+            <li><button onClick={() => handleNavClick('/our-mission')} className={location.pathname === '/our-mission' ? 'active' : ''}>Our Mission</button></li>
+            <li><button onClick={() => handleNavClick('/our-stories')} className={location.pathname === '/our-stories' ? 'active' : ''}>Our Stories</button></li>
+            <li><button onClick={() => handleNavClick('/media')} className={location.pathname === '/media' ? 'active' : ''}>Media & News</button></li>
+            <li><button onClick={() => handleNavClick('/faq')} className={location.pathname === '/faq' ? 'active' : ''}>FAQs</button></li>
           </ul>
         </div>
 
         <div className="mobile-nav-section">
           <h3>Our Projects</h3>
           <ul className="mobile-nav-links">
-            <li><a onClick={() => handleNavClick('/cars')} className={location.pathname === '/cars' ? 'active' : ''}>Ride-On Cars</a></li>
-            <li><a onClick={() => handleNavClick('/montessori-board')} className={location.pathname === '/montessori-board' ? 'active' : ''}>Giant Montessori Board</a></li>
-            <li><a onClick={() => handleNavClick('/bath-seat')} className={location.pathname === '/bath-seat' ? 'active' : ''}>Bath Seat Project</a></li>
-            <li><a onClick={() => handleNavClick('/dog-treat')} className={location.pathname === '/dog-treat' ? 'active' : ''}>Dog Treat Project</a></li>
-            <li><a onClick={() => handleNavClick('/goodie-bag')} className={location.pathname === '/goodie-bag' ? 'active' : ''}>Goodie Bag Project</a></li>
+            <li><button onClick={() => handleNavClick('/cars')} className={location.pathname === '/cars' ? 'active' : ''}>Ride-On Cars</button></li>
+            <li><button onClick={() => handleNavClick('/montessori-board')} className={location.pathname === '/montessori-board' ? 'active' : ''}>Giant Montessori Board</button></li>
+            <li><button onClick={() => handleNavClick('/bath-seat')} className={location.pathname === '/bath-seat' ? 'active' : ''}>Bath Seat Project</button></li>
+            <li><button onClick={() => handleNavClick('/dog-treat')} className={location.pathname === '/dog-treat' ? 'active' : ''}>Dog Treat Project</button></li>
+            <li><button onClick={() => handleNavClick('/goodie-bag')} className={location.pathname === '/goodie-bag' ? 'active' : ''}>Goodie Bag Project</button></li>
           </ul>
         </div>
 
         <div className="mobile-nav-section">
           <h3>Parents & Families</h3>
           <ul className="mobile-nav-links">
-            <li><a onClick={() => handleNavClick('/locations')} className={location.pathname === '/locations' ? 'active' : ''}>Find Us</a></li>
-            <li><a onClick={() => handleNavClick('/toys-devices')} className={location.pathname === '/toys-devices' ? 'active' : ''}>Toys & Devices</a></li>
+            <li><button onClick={() => handleNavClick('/locations')} className={location.pathname === '/locations' ? 'active' : ''}>Find Us</button></li>
+            <li><button onClick={() => handleNavClick('/toys-devices')} className={location.pathname === '/toys-devices' ? 'active' : ''}>Toys & Devices</button></li>
           </ul>
         </div>
 
         <div className="mobile-nav-section">
           <h3>Students</h3>
           <ul className="mobile-nav-links">
-            <li><a onClick={() => handleNavClick('/students')} className={location.pathname === '/students' ? 'active' : ''}>Students</a></li>
-            <li><a onClick={() => handleNavClick('/volunteer-opportunities')} className={location.pathname === '/volunteer-opportunities' ? 'active' : ''}>Volunteer Opportunities</a></li>
-            <li><a onClick={() => handleNavClick('/safety-guidelines')} className={location.pathname === '/safety-guidelines' ? 'active' : ''}>Safety Guidelines</a></li>
-            <li><a onClick={() => handleNavClick('/resources-tutorials')} className={location.pathname === '/resources-tutorials' ? 'active' : ''}>Training: Resources & Tutorials</a></li>
+            <li><button onClick={() => handleNavClick('/students')} className={location.pathname === '/students' ? 'active' : ''}>Students</button></li>
+            <li><button onClick={() => handleNavClick('/volunteer-opportunities')} className={location.pathname === '/volunteer-opportunities' ? 'active' : ''}>Volunteer Opportunities</button></li>
+            <li><button onClick={() => handleNavClick('/safety-guidelines')} className={location.pathname === '/safety-guidelines' ? 'active' : ''}>Safety Guidelines</button></li>
+            <li><button onClick={() => handleNavClick('/resources-tutorials')} className={location.pathname === '/resources-tutorials' ? 'active' : ''}>Training: Resources & Tutorials</button></li>
           </ul>
         </div>
 
         <div className="mobile-nav-section">
           <h3>Partners & Supporters</h3>
           <ul className="mobile-nav-links">
-            <li><a onClick={() => handleNavClick('/partners-supporters')} className={location.pathname === '/partners-supporters' ? 'active' : ''}>Partners & Supporters</a></li>
-            <li><a onClick={() => handleNavClick('/schools-educational-programs')} className={location.pathname === '/schools-educational-programs' ? 'active' : ''}>Schools & Educational Programs</a></li>
-            <li><a onClick={() => handleNavClick('/hospitals-healthcare-providers')} className={location.pathname === '/hospitals-healthcare-providers' ? 'active' : ''}>Hospitals & Healthcare Providers</a></li>
+            <li><button onClick={() => handleNavClick('/partners-supporters')} className={location.pathname === '/partners-supporters' ? 'active' : ''}>Partners & Supporters</button></li>
+            <li><button onClick={() => handleNavClick('/schools-educational-programs')} className={location.pathname === '/schools-educational-programs' ? 'active' : ''}>Schools & Educational Programs</button></li>
+            <li><button onClick={() => handleNavClick('/hospitals-healthcare-providers')} className={location.pathname === '/hospitals-healthcare-providers' ? 'active' : ''}>Hospitals & Healthcare Providers</button></li>
           </ul>
         </div>
 
         <div className="mobile-nav-section">
           <h3>Get Involved</h3>
           <ul className="mobile-nav-links">
-            <li><a onClick={() => handleNavClick('/donate')} className={location.pathname === '/donate' ? 'active' : ''}>Donate</a></li>
-            <li><a onClick={() => handleNavClick('/get-involved')} className={location.pathname === '/get-involved' ? 'active' : ''}>Get Involved</a></li>
+            <li><button onClick={() => handleNavClick('/donate')} className={location.pathname === '/donate' ? 'active' : ''}>Donate</button></li>
+            <li><button onClick={() => handleNavClick('/get-involved')} className={location.pathname === '/get-involved' ? 'active' : ''}>Get Involved</button></li>
           </ul>
         </div>
       </div>
@@ -253,8 +253,8 @@ const HomePage = () => {
             </div>
           ))}
           {/* Arrows */}
-          <a className="prev" onClick={() => changeSlide(-1)} style={{ cursor: 'pointer' }}>❮</a>
-          <a className="next" onClick={() => changeSlide(1)} style={{ cursor: 'pointer' }}>❯</a>
+          <button className="prev" onClick={() => changeSlide(-1)} style={{ cursor: 'pointer' }}>❮</button>
+          <button className="next" onClick={() => changeSlide(1)} style={{ cursor: 'pointer' }}>❯</button>
         </div>
       </div>
 
@@ -367,7 +367,7 @@ function App() {
   // Close mobile menu when route changes
   useEffect(() => {
     setIsMobileMenuOpen(false);
-  }, [window.location.pathname]);
+  }, []);
 
   return (
     <BrowserRouter>
@@ -545,7 +545,7 @@ function App() {
         </footer>
         <div className="footer-bottom-bar">
           <div className="footer-bottom-left">
-            <a href="#" className="footer-legal-link">Privacy & Accessibility Statement</a>
+            <button className="footer-legal-link">Privacy & Accessibility Statement</button>
           </div>
           <div className="footer-bottom-right">
             ©2025 Accessible 4 All — A 501(c)(3) Organization

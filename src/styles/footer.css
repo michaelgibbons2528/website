@@ -71,13 +71,19 @@
   flex-wrap: wrap;
 }
 
-.footer-bottom-bar a.footer-legal-link {
+.footer-bottom-bar a.footer-legal-link,
+.footer-bottom-bar button.footer-legal-link {
   color: white;
   text-decoration: none;
   font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
 }
 
-.footer-bottom-bar a.footer-legal-link:hover {
+.footer-bottom-bar a.footer-legal-link:hover,
+.footer-bottom-bar button.footer-legal-link:hover {
   text-decoration: underline;
 }
 
