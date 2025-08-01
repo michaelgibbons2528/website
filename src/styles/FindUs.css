@@ -1,0 +1,480 @@
+/* Find Us Page Styles */
+
+.find-us-page {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #a30000 0%, #c8102e 50%, #dd2601 100%);
+  color: white;
+  padding: 120px 0 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(163, 0, 0, 0.1) 0%, rgba(200, 16, 46, 0.1) 50%, rgba(221, 38, 1, 0.1) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+  opacity: 0.95;
+}
+
+/* Main Content */
+.main-content {
+  padding: 60px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Location Section */
+.location-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.location-section h2 {
+  font-size: 2.5rem;
+  color: #953734;
+  text-align: center;
+  margin-bottom: 60px;
+  font-weight: bold;
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.location-card {
+  background: #f8f9fa;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.location-card h3 {
+  font-size: 1.8rem;
+  color: #953734;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.address {
+  margin-bottom: 30px;
+}
+
+.address p {
+  margin: 5px 0;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #666;
+}
+
+.map-container {
+  background: #f8f9fa;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.map-placeholder {
+  height: 400px;
+  background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.map-content {
+  text-align: center;
+  color: #666;
+}
+
+.map-content h3 {
+  font-size: 1.5rem;
+  color: #953734;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.map-content p {
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.map-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: #c8102e;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #a30000;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #953734;
+  border: 2px solid #953734;
+}
+
+.btn-secondary:hover {
+  background: #953734;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Accessibility Section */
+.accessibility-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.accessibility-section h2 {
+  font-size: 2.5rem;
+  color: #953734;
+  text-align: center;
+  margin-bottom: 60px;
+  font-weight: bold;
+}
+
+.accessibility-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.accessibility-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.accessibility-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.accessibility-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.accessibility-card h3 {
+  font-size: 1.3rem;
+  color: #953734;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.accessibility-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Directions Section */
+.directions-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.directions-section h2 {
+  font-size: 2.5rem;
+  color: #953734;
+  text-align: center;
+  margin-bottom: 60px;
+  font-weight: bold;
+}
+
+.directions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.direction-card {
+  background: #f8f9fa;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.direction-card h3 {
+  font-size: 1.5rem;
+  color: #953734;
+  margin-bottom: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.direction-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #a30000, #c8102e);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.step p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Visit Information Section */
+.visit-info-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.visit-info-section h2 {
+  font-size: 2.5rem;
+  color: #953734;
+  text-align: center;
+  margin-bottom: 60px;
+  font-weight: bold;
+}
+
+.visit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.visit-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.visit-card h3 {
+  font-size: 1.3rem;
+  color: #953734;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.visit-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.visit-card li {
+  padding: 8px 0;
+  color: #666;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 25px;
+}
+
+.visit-card li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #c8102e;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #953734 0%, #a30000 100%);
+  color: white;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.contact-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-tertiary {
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-tertiary:hover {
+  background: white;
+  color: #953734;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+  
+  .location-section h2,
+  .accessibility-section h2,
+  .directions-section h2,
+  .visit-info-section h2,
+  .contact-section h2 {
+    font-size: 2rem;
+  }
+  
+  .location-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .accessibility-grid,
+  .visit-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .directions-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-primary, .btn-secondary, .btn-tertiary {
+    width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 100px 0 60px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .main-content {
+    padding: 40px 0;
+  }
+  
+  .location-section,
+  .accessibility-section,
+  .directions-section,
+  .visit-info-section,
+  .contact-section {
+    padding: 60px 0;
+  }
+  
+  .location-card,
+  .direction-card {
+    padding: 30px 20px;
+  }
+} 

@@ -1,0 +1,89 @@
+/* Reset and Base Styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Ensure sticky positioning works */
+  overflow-x: hidden;
+  min-height: 100vh;
+  /* Mobile-friendly touch interactions */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+header {
+  background: transparent;
+}
+
+.main-container {
+  max-width: 2000px; /* You can adjust this size */
+  margin: 0 auto;     /* Centers the container */
+  padding: 0 0px;    /* Optional: adds some space on the sides */
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+footer .btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: white;
+  color: #c8102e;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* Mobile-friendly button and link styles */
+button, a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  touch-action: manipulation;
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+  
+  /* Ensure proper spacing on mobile */
+  .main-container {
+    padding: 0 15px;
+  }
+  
+  /* Improve touch targets */
+  button, a, input, select, textarea {
+    min-height: 44px; /* Apple's recommended minimum touch target size */
+  }
+}
+
+/* Prevent horizontal scroll on mobile */
+* {
+  box-sizing: border-box;
+}
+
+/* Improve focus visibility for accessibility */
+button:focus,
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #f0a22e;
+  outline-offset: 2px;
+}
+
+
