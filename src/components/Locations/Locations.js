@@ -15,9 +15,6 @@ export default function Locations() {
       >
         <div className="hero-content">
           <h1 className="hero-title">Our Locations</h1>
-          <p className="hero-subtitle">
-            Find the A4A chapter nearest to you and discover how we're making a difference in communities across the region
-          </p>
         </div>
       </div>
 

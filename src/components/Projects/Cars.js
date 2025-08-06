@@ -325,11 +325,6 @@ export default function Cars() {
         <div className="hero-overlay">
           <div className="hero-content">
             <h1>Ride-On Cars</h1>
-            <p className="hero-subtitle">
-              Our signature project involves modifying battery-powered ride-on cars to make them 
-              accessible for children with mobility challenges. Each car is uniquely designed 
-              to meet the specific needs of the child who will use it.
-            </p>
           </div>
         </div>
       </div>

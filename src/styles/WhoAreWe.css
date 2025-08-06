@@ -13,6 +13,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  margin-top: 0; /* Ensure no top margin on desktop */
 }
 
 .hero-overlay {
@@ -271,6 +272,7 @@
 @media (max-width: 768px) {
   .mission-hero {
     padding: 60px 20px;
+    margin-top: 0; /* Remove any top margin */
   }
   
   .hero-content h1 {
@@ -316,5 +318,9 @@
   
   .image-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .mission-hero {
+    margin-top: 0; /* Ensure no top margin */
   }
 } 

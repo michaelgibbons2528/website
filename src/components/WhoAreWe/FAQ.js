@@ -70,10 +70,6 @@ export default function FAQ() {
         <div className="hero-overlay">
           <div className="hero-content">
             <h1>Frequently Asked Questions</h1>
-            <p className="hero-subtitle">
-              Find answers to common questions about Accessible 4 All, our services, 
-              and how we can help children with disabilities and their families.
-            </p>
           </div>
         </div>
       </div>

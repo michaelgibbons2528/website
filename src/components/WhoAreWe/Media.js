@@ -13,10 +13,6 @@ export default function Media() {
         <div className="hero-overlay">
           <div className="hero-content">
             <h1>Media & News</h1>
-            <p className="hero-subtitle">
-              Stay updated with the latest news, events, and stories from Accessible 4 All. 
-              Follow our journey as we continue to make a difference in children's lives.
-            </p>
           </div>
         </div>
       </div>

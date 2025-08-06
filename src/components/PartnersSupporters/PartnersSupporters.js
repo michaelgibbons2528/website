@@ -70,10 +70,6 @@ export default function PartnersSupporters() {
         <div className="hero-overlay">
           <div className="hero-content">
             <h1>Partners & Supporters</h1>
-            <p className="hero-subtitle">
-              We work with a diverse network of partners and supporters who share our vision 
-              of making the world more accessible for children with disabilities.
-            </p>
           </div>
         </div>
       </div>

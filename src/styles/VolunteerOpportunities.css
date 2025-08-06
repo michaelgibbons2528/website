@@ -74,7 +74,7 @@
 
 /* Why Volunteer Section */
 .why-volunteer-section {
-  padding: 5rem 0;
+  padding: 80px 0;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
@@ -126,7 +126,7 @@
 
 /* Roles Section */
 .roles-section {
-  padding: 5rem 0;
+  padding: 80px 0;
   background: white;
 }
 
@@ -291,7 +291,7 @@
 
 /* Current Volunteers Section */
 .current-volunteers-section {
-  padding: 5rem 0;
+  padding: 80px 0;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
@@ -372,7 +372,7 @@
 
 /* Application Process Section */
 .application-section {
-  padding: 5rem 0;
+  padding: 80px 0;
   background: white;
 }
 
@@ -424,7 +424,7 @@
 
 /* Requirements Section */
 .requirements-section {
-  padding: 5rem 0;
+  padding: 80px 0;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
@@ -475,7 +475,7 @@
 
 /* Contact Section */
 .contact-section {
-  padding: 5rem 0;
+  padding: 80px 0;
   background: white;
 }
 
@@ -553,7 +553,7 @@
 
 /* Call to Action Section */
 .cta-section {
-  padding: 5rem 0;
+  padding: 80px 0;
   background: linear-gradient(135deg, #a30000 0%, #dd2701 100%);
   color: white;
   text-align: center;

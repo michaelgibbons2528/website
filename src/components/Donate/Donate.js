@@ -15,9 +15,6 @@ export default function Donate() {
       >
         <div className="hero-content">
           <h1 className="hero-title">Make a Difference Today</h1>
-          <p className="hero-subtitle">
-            Your donation helps us create accessible toys and devices that transform children's lives
-          </p>
         </div>
       </div>
 

@@ -20,6 +20,7 @@ import Students from './components/Students/Students';
 import VolunteerOpportunities from './components/VolunteerOpportunities/VolunteerOpportunities';
 import PartnersSupporters from './components/PartnersSupporters/PartnersSupporters';
 import SchoolsEducational from './components/SchoolsEducational/SchoolsEducational';
+import Training from './components/Training/Training';
 import './styles/style.css';
 import './styles/navbar.css';
 import './styles/slideshow.css';
@@ -28,6 +29,7 @@ import './styles/involved.css';
 import './styles/footer.css';
 import './styles/SchoolsEducational.css';
 import './styles/Students.css';
+import './styles/Training.css';
 
 // ScrollToTop component to scroll to top on route change
 const ScrollToTop = () => {
@@ -48,6 +50,12 @@ const MobileNavigation = ({ isOpen, onClose }) => {
   const handleNavClick = (path) => {
     navigate(path);
     onClose();
+  };
+
+  // Function to check if a main tab should be highlighted based on subtab activity
+  const isMainTabActive = (mainTabPath, subtabPaths) => {
+    const currentPath = location.pathname;
+    return currentPath === mainTabPath || subtabPaths.some(path => currentPath === path);
   };
 
   if (!isOpen) return null;
@@ -97,6 +105,7 @@ const MobileNavigation = ({ isOpen, onClose }) => {
           <ul className="mobile-nav-links">
             <li><button onClick={() => handleNavClick('/students')} className={location.pathname === '/students' ? 'active' : ''}>Students</button></li>
             <li><button onClick={() => handleNavClick('/volunteer-opportunities')} className={location.pathname === '/volunteer-opportunities' ? 'active' : ''}>Volunteer Opportunities</button></li>
+            <li><button onClick={() => handleNavClick('/training')} className={location.pathname === '/training' ? 'active' : ''}>General 1 Training</button></li>
             <li><button onClick={() => handleNavClick('/safety-guidelines')} className={location.pathname === '/safety-guidelines' ? 'active' : ''}>Safety Guidelines</button></li>
             <li><button onClick={() => handleNavClick('/resources-tutorials')} className={location.pathname === '/resources-tutorials' ? 'active' : ''}>Training: Resources & Tutorials</button></li>
           </ul>
@@ -174,34 +183,34 @@ const HomePage = () => {
     {
       childName: 'Wilhelm',
       img: '/images/4-3_Wilhelm_and_Group.JPG',
-      alt: 'Meet Wilhelm',
-      h2: 'Meet Wilhelm',
+      alt: 'Meet Wilhelm!',
+      h2: 'WIL at the HELM!',
       h1: 'Rutgers A4A',
-      p: 'WIL at the HELM',
+      p: 'Wilhelm is a 2-year-old boy who\'s got a lot of energy! With the additions of bright, contrasting colored lights, custom buttons, and a comfortable seat for him, he can now RIDE IN STYLE!',
     },
     {
       childName: 'Zora',
       img: '/images/4-3_Zora_and_Group.JPG',
       alt: 'Meet Zora',
-      h2: 'Meet Zora',
+      h2: 'Zoomin\' Zora!',
       h1: 'Rutgers A4A',
-      p: 'Zoomin\' Zora!',
+      p: 'Zora is a 2-year-old girl who loves to get out there and PLAY! With the additions of her own custom seat with a five-point harness & headrest, Zora now OWNS THE ROAD!',
     },
     {
       childName: 'Isaiah',
       img: '/images/4-3_Isaiah_and_Everyone.JPG',
       alt: 'Isaiah and Everyone',
-      h2: 'Meet Isaiah',
+      h2: 'The QUACKMOBILE!',
       h1: 'Rutgers A4A',
-      p: 'Isaiah now drives his custom car with a huge smile!',
+      p: 'Isaiah is a 4 year-old boy who\'s now driving his AWESOME NEW CAR! With the additions of back and head supports, on top of his custom seat cushions, he\'s now the COOLEST KID ON THE BLOCK!',
     },
     {
       childName: 'Luca',
       img: '/images/4-3_Luca_and_Group.JPG',
       alt: 'Luca and Everyone',
-      h2: 'Meet Luca',
+      h2: 'Luca ',
       h1: 'Rutgers A4A',
-      p: 'Luca is goated.',
+      p: 'Luca is a 3 year-old boy who loves sports and the outdoors! With the additions of a five point harness, custom accerlation button, and HIS VERY OWN BASKETBALL HOOP on the back, Luca will be the MVP of his neighborhood!',
     },
   ];
 
@@ -268,7 +277,6 @@ const HomePage = () => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <h2 className="section-heading">Our 4 A's</h2>
         <p className="section-subtext">
           Accessible 4 All (A4A) is dedicated to modifying toys and mobility devices to meet 
           the needs of children with physical and devleopmental disabilities. 
@@ -277,6 +285,7 @@ const HomePage = () => {
           engaging way to participate in play while supporting their 
           mobility needs.
         </p>
+        <h2 className="section-heading">Our 4 A's:</h2>
       </section>
 
       <section className="panel-section">
@@ -321,23 +330,139 @@ const HomePage = () => {
       <section className="get-involved-section-wrapper">
         <h2 className="get-involved-title">4 Ways to Get Invovled!</h2>
         <div className="get-involved-section">
-          <div className="involvement-option" style={{backgroundImage: "url('/images/1-1_Engineer_Kickoff.jpg')"}}>
+          <Link to="/volunteer-opportunities" className="involvement-option" style={{backgroundImage: "url('/images/1-1_Engineer_Kickoff.jpg')"}}>
             Start a Chapter at your School!
-          </div>
-          <div className="involvement-option" style={{backgroundImage: "url('/images/1-1_Project_Robert.jpg')"}}>
-            Volunteer your Time!
-          </div>
-          <div className="involvement-option" style={{backgroundImage: "url('/images/1-1_Dean_Cadena_and_Membs.JPG')"}}>
+          </Link>
+          <Link to="/parents-families" className="involvement-option" style={{backgroundImage: "url('/images/1-1_Project_Robert.jpg')"}}>
+            Enroll your Child in our Program!
+          </Link>
+          <Link to="/partners-supporters" className="involvement-option" style={{backgroundImage: "url('/images/1-1_Dean_Cadena_and_Membs.JPG')"}}>
             Help US Help YOU!
-          </div>
-          <div className="involvement-option" style={{backgroundImage: "url('/images/1-1_Donations.jpg')"}}>
+          </Link>
+          <Link to="/donate" className="involvement-option" style={{backgroundImage: "url('/images/1-1_Donations.jpg')"}}>
             Donate Today!
-          </div>
+          </Link>
         </div>
       </section>
     </>
   );
 }
+
+// Navigation component that can use useLocation
+const Navigation = () => {
+  const location = useLocation();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
+
+  // Function to check if a main tab should be highlighted based on subtab activity
+  const isMainTabActive = (mainTabPath, subtabPaths) => {
+    const currentPath = location.pathname;
+    return currentPath === mainTabPath || subtabPaths.some(path => currentPath === path);
+  };
+
+  return (
+    <>
+      {/* FLOATING BIG LOGO OVER BOTH NAVS */}
+      <div className="floating-logo-container">
+        <a href="/">
+          <img id="floating-logo" src="/images/4-3_Temp_Logo.png" alt="A4A Full Logo" />
+        </a>
+      </div>
+      {/* TOP NAVBAR (scrolls away) */}
+      <div className="top-navbar">
+        <ul className="top-links">
+          <li className="top-dropdown">
+            <NavLink to="/parents-families">
+              Parents & Families
+            </NavLink>
+            <ul className="top-dropdown-content">
+              <li><NavLink to="/locations" className={({ isActive }) => isActive ? "active" : ""}>Find Us</NavLink></li>
+              <li><NavLink to="/toys-devices" className={({ isActive }) => isActive ? "active" : ""}>Toys & Devices</NavLink></li>
+            </ul>
+          </li>
+          <li className="top-dropdown">
+            <NavLink to="/students">
+              Students
+            </NavLink>
+            <ul className="top-dropdown-content">
+              <li><NavLink to="/volunteer-opportunities" className={({ isActive }) => isActive ? "active" : ""}>Volunteer Opportunities</NavLink></li>
+              <li><NavLink to="/training" className={({ isActive }) => isActive ? "active" : ""}>General 1 Training</NavLink></li>
+              <li><NavLink to="/safety-guidelines" className={({ isActive }) => isActive ? "active" : ""}>Safety Guidelines</NavLink></li>
+              <li><NavLink to="/resources-tutorials" className={({ isActive }) => isActive ? "active" : ""}>Training: Resources & Tutorials</NavLink></li>
+            </ul>
+          </li>
+          <li className="top-dropdown">
+            <NavLink to="/partners-supporters">
+              Partners & Supporters
+            </NavLink>
+            <ul className="top-dropdown-content">
+              <li><NavLink to="/schools-educational-programs" className={({ isActive }) => isActive ? "active" : ""}>Schools & Educational Programs</NavLink></li>
+              <li><NavLink to="/partners-supporters" className={({ isActive }) => isActive ? "active" : ""}>Hospitals & Healthcare Providers</NavLink></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      {/* STICKY MAIN NAVBAR */}
+      <div className="dropdown-container">
+        <nav className="navbar">
+          <Link to="/">
+            <img id="nav-logo" className="hidden" src="/images/Narrow_Logo.png" alt="A4A Narrow Logo" />
+          </Link>
+          <ul className="nav-links">
+            <li className="dropdown">
+              <NavLink to="/who-are-we">
+                Who Are We?
+              </NavLink>
+              <ul className="dropdown-content">
+                <li><NavLink to="/our-mission" className={({ isActive }) => isActive ? "active" : ""}>Our Mission</NavLink></li>
+                <li><NavLink to="/our-stories" className={({ isActive }) => isActive ? "active" : ""}>Our Stories</NavLink></li>
+                <li><NavLink to="/media" className={({ isActive }) => isActive ? "active" : ""}>Media & News</NavLink></li>
+                <li><NavLink to="/faq" className={({ isActive }) => isActive ? "active" : ""}>FAQs</NavLink></li>
+              </ul>
+            </li>
+            <li className="dropdown">
+              <NavLink to="/projects">
+                Our Projects
+              </NavLink>
+              <ul className="dropdown-content">
+                <li><NavLink to="/cars" className={({ isActive }) => isActive ? "active" : ""}>Ride-On Cars</NavLink></li>
+                <li><NavLink to="/montessori-board" className={({ isActive }) => isActive ? "active" : ""}>Giant Montessori Board</NavLink></li>
+                <li><NavLink to="/bath-seat" className={({ isActive }) => isActive ? "active" : ""}>Bath Seat Project</NavLink></li>
+                <li><NavLink to="/dog-treat" className={({ isActive }) => isActive ? "active" : ""}>Dog Treat Project</NavLink></li>
+                <li><NavLink to="/goodie-bag" className={({ isActive }) => isActive ? "active" : ""}>Goodie Bag Project</NavLink></li>
+              </ul>
+            </li>
+            <li className="dropdown">
+              <NavLink to="/locations">
+                Locations
+              </NavLink>
+              <ul className="dropdown-content">
+                <li><NavLink to="/locations" className={({ isActive }) => isActive ? "active" : ""}>Rutgers University</NavLink></li>
+              </ul>
+            </li>
+            <li><NavLink to="/donate" className={({ isActive }) => isActive ? "active" : ""}>Donate</NavLink></li>
+          </ul>
+          {/* Mobile Menu Button */}
+          <button 
+            className={`mobile-menu-btn ${isMobileMenuOpen ? 'active' : ''}`}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle mobile menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </nav>
+      </div>
+      <MobileNavigation isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
+    </>
+  );
+};
 
 function App() {
   // Scroll logo logic - moved from HomePage to work on all pages
@@ -361,98 +486,10 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Mobile menu state
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  // Close mobile menu when route changes
-  useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, []);
-
   return (
     <BrowserRouter>
       <ScrollToTop />
-      {/* FLOATING BIG LOGO OVER BOTH NAVS */}
-      <div class="floating-logo-container">
-        <a href="/">
-          <img id="floating-logo" src="/images/4-3_Temp_Logo.png" alt="A4A Full Logo" />
-        </a>
-      </div>
-      {/* TOP NAVBAR (scrolls away) */}
-      <div class="top-navbar">
-  <ul class="top-links">
-    <li class="top-dropdown">
-      <NavLink to="/parents-families">Parents & Families</NavLink>
-      <ul class="top-dropdown-content">
-        <li><NavLink to="/locations">Find Us</NavLink></li>
-        <li><NavLink to="/toys-devices">Toys & Devices</NavLink></li>
-      </ul>
-    </li>
-    <li class="top-dropdown">
-      <NavLink to="/students">Students</NavLink>
-      <ul class="top-dropdown-content">
-        <li><NavLink to="/volunteer-opportunities">Volunteer Opportunities</NavLink></li>
-        <li><NavLink to="/safety-guidelines">Safety Guidelines</NavLink></li>
-        <li><NavLink to="/resources-tutorials">Training: Resources & Tutorials</NavLink></li>
-      </ul>
-    </li>
-    <li class="top-dropdown">
-      <NavLink to="/partners-supporters">Partners & Supporters</NavLink>
-      <ul class="top-dropdown-content">
-        <li><NavLink to="/schools-educational-programs">Schools & Educational Programs</NavLink></li>
-        <li><NavLink to="/partners-supporters">Hospitals & Healthcare Providers</NavLink></li>
-      </ul>
-    </li>
-  </ul>
-</div>
-
-
-      {/* STICKY MAIN NAVBAR */}
-      <div className="dropdown-container">
-        <nav className="navbar">
-          <Link to="/">
-            <img id="nav-logo" className="hidden" src="/images/Narrow_Logo.png" alt="A4A Narrow Logo" />
-          </Link>
-          <ul className="nav-links">
-            <li className="dropdown">
-              <NavLink to="/who-are-we" className={({ isActive }) => isActive ? "active" : undefined}>Who Are We?</NavLink>
-              <ul className="dropdown-content">
-                <li><NavLink to="/our-mission" className={({ isActive }) => isActive ? "active" : ""}>Our Mission</NavLink></li>
-                <li><NavLink to="/our-stories" className={({ isActive }) => isActive ? "active" : ""}>Our Stories</NavLink></li>
-                <li><NavLink to="/media" className={({ isActive }) => isActive ? "active" : ""}>Media & News</NavLink></li>
-                <li><NavLink to="/faq" className={({ isActive }) => isActive ? "active" : ""}>FAQs</NavLink></li>
-              </ul>
-            </li>
-            <li className="dropdown">
-              <NavLink to="/projects" className={({ isActive }) => isActive ? "active" : undefined}>Our Projects</NavLink>
-              <ul className="dropdown-content">
-                <li><NavLink to="/cars" className={({ isActive }) => isActive ? "active" : ""}>Ride-On Cars</NavLink></li>
-                <li><NavLink to="/montessori-board" className={({ isActive }) => isActive ? "active" : ""}>Giant Montessori Board</NavLink></li>
-                <li><NavLink to="/bath-seat" className={({ isActive }) => isActive ? "active" : ""}>Bath Seat Project</NavLink></li>
-                <li><NavLink to="/dog-treat" className={({ isActive }) => isActive ? "active" : ""}>Dog Treat Project</NavLink></li>
-                <li><NavLink to="/goodie-bag" className={({ isActive }) => isActive ? "active" : ""}>Goodie Bag Project</NavLink></li>
-              </ul>
-            </li>
-            <li className="dropdown">
-              <NavLink to="/locations" className={({ isActive }) => isActive ? "active" : undefined}>Locations</NavLink>
-              <ul className="dropdown-content">
-                <li><NavLink to="/locations" className={({ isActive }) => isActive ? "active" : ""}>Rutgers University</NavLink></li>
-              </ul>
-            </li>
-            <li><NavLink to="/donate" className={({ isActive }) => isActive ? "active" : undefined}>Donate</NavLink></li>
-          </ul>
-          {/* Mobile Menu Button */}
-          <button 
-            className={`mobile-menu-btn ${isMobileMenuOpen ? 'active' : ''}`}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle mobile menu"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </nav>
-      </div>
+      <Navigation />
       {/* ROUTES */}
       <Routes>
         <Route path="/who-are-we" element={<WhoAreWe />} />
@@ -475,29 +512,31 @@ function App() {
         <Route path="/volunteer-opportunities" element={<VolunteerOpportunities />} />
         <Route path="/partners-supporters" element={<PartnersSupporters />} />
         <Route path="/schools-educational-programs" element={<SchoolsEducational />} />
+        <Route path="/training" element={<Training />} />
         <Route path="/" element={<HomePage />} />
       </Routes>
       {/* Footer is now outside <Routes> so it appears on all pages */}
       <footer className="site-footer">
           <div className="footer-columns">
             <div className="footer-col">
-              <h4>Parents & Families</h4>
+              <h4><NavLink to="/parents-families">Parents & Families</NavLink></h4>
               <ul>
                 <li><NavLink to="/locations">Find Us</NavLink></li>
                 <li><NavLink to="/toys-devices">Toys & Devices</NavLink></li>
               </ul>
             </div>
             <div className="footer-col">
-              <h4>Students</h4>
+              <h4><NavLink to="/students">Students</NavLink></h4>
               <ul>
                 <li><NavLink to="/students">Students</NavLink></li>
                 <li><NavLink to="/volunteer-opportunities">Volunteer Opportunities</NavLink></li>
+                <li><NavLink to="/training">General 1 Training</NavLink></li>
                 <li><NavLink to="/safety-guidelines">Safety Guidelines</NavLink></li>
                 <li><NavLink to="/resources-tutorials">Training: Resources & Tutorials</NavLink></li>
               </ul>
             </div>
             <div className="footer-col">
-              <h4>Partners & Supporters</h4>
+              <h4><NavLink to="/partners-supporters">Partners & Supporters</NavLink></h4>
               <ul>
                 <li><NavLink to="/partners-supporters">Partners & Supporters</NavLink></li>
                 <li><NavLink to="/schools-educational-programs">Schools & Educational Programs</NavLink></li>
@@ -505,7 +544,7 @@ function App() {
               </ul>
             </div>
             <div className="footer-col">
-              <h4>Who Are We?</h4>
+              <h4><NavLink to="/who-are-we">Who Are We?</NavLink></h4>
               <ul>
                 <li><NavLink to="/our-mission">Our Mission</NavLink></li>
                 <li><NavLink to="/our-stories">Our Stories</NavLink></li>
@@ -514,7 +553,7 @@ function App() {
               </ul>
             </div>
             <div className="footer-col">
-              <h4>Our Projects</h4>
+              <h4><NavLink to="/projects">Our Projects</NavLink></h4>
               <ul>
                 <li><NavLink to="/cars">Ride-On Cars</NavLink></li>
                 <li><NavLink to="/montessori-board">Giant Montessori Board</NavLink></li>
@@ -524,13 +563,13 @@ function App() {
               </ul>
             </div>
             <div className="footer-col">
-              <h4>Locations</h4>
+              <h4><NavLink to="/locations">Locations</NavLink></h4>
               <ul>
                 <li><NavLink to="/locations">Rutgers University</NavLink></li>
               </ul>
             </div>
             <div className="footer-col">
-              <h4>Donate</h4>
+              <h4><NavLink to="/donate">Donate</NavLink></h4>
               <ul>
                 <li><NavLink to="/donate">Donate</NavLink></li>
               </ul>
@@ -551,8 +590,6 @@ function App() {
             ©2025 Accessible 4 All — A 501(c)(3) Organization
           </div>
         </div>
-        {/* Mobile Navigation Overlay */}
-        <MobileNavigation isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
     </BrowserRouter>
   );
 }

@@ -109,10 +109,6 @@ export default function SchoolsEducational() {
         <div className="hero-overlay">
           <div className="hero-content">
             <h1>Schools & Educational Programs</h1>
-            <p className="hero-subtitle">
-              Empowering students and educators through hands-on learning experiences 
-              in assistive technology and inclusive design.
-            </p>
           </div>
         </div>
       </div>

@@ -255,6 +255,15 @@ nav li.active a {
   margin-bottom: 15px;
   border-bottom: 2px solid #f0a22e;
   padding-bottom: 5px;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-section h3.active-section {
+  color: #ffffff;
+  background: rgba(240, 162, 46, 0.3);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: -8px -12px 15px -12px;
 }
 
 .mobile-nav-links {
@@ -338,7 +347,9 @@ nav li.active a {
   
   nav {
     padding: 0 20px;
-    height: 60px;
+    height: 90px; /* Increased height to accommodate logo */
+    align-items: flex-end; /* Align items to bottom */
+    padding-bottom: 10px; /* Add bottom padding */
   }
   
   nav img {
@@ -347,7 +358,8 @@ nav li.active a {
   
   .floating-logo-container {
     left: 20px;
-    top: 5px;
+    top: 10px; /* Increased top spacing */
+    z-index: 1100;
   }
   
   .floating-logo-container img {
@@ -362,12 +374,40 @@ nav li.active a {
     object-fit: contain;
     max-width: 100%;
   }
+  
+  /* Add top margin to main content to prevent navbar overlap */
+  .who-are-we-container {
+    margin-top: 90px; /* Match navbar height */
+  }
+  
+  /* General rule for all pages with hero sections */
+  .students-container,
+  .volunteer-container,
+  .toys-devices-container,
+  .schools-container,
+  .projects-container,
+  .partners-container,
+  .parents-families-container,
+  .stories-container,
+  .mission-container,
+  .montessori-container,
+  .cars-container,
+  .bath-seat-container,
+  .dog-treat-container,
+  .goodie-bag-container,
+  .donate-container,
+  .get-involved-container,
+  .locations-container {
+    margin-top: 90px; /* Match navbar height */
+  }
 }
 
 @media (max-width: 480px) {
   nav {
     padding: 0 15px;
-    height: 55px;
+    height: 85px; /* Increased height to accommodate logo */
+    align-items: flex-end; /* Align items to bottom */
+    padding-bottom: 10px; /* Add bottom padding */
   }
   
   nav img {
@@ -376,7 +416,8 @@ nav li.active a {
   
   .floating-logo-container {
     left: 15px;
-    top: 3px;
+    top: 8px; /* Increased top spacing */
+    z-index: 1100;
   }
   
   .floating-logo-container img {
@@ -391,6 +432,32 @@ nav li.active a {
   .mobile-nav-links a {
     font-size: 15px;
     padding: 10px 12px;
+  }
+  
+  /* Add top margin to main content to prevent navbar overlap */
+  .who-are-we-container {
+    margin-top: 85px; /* Match navbar height */
+  }
+  
+  /* General rule for all pages with hero sections */
+  .students-container,
+  .volunteer-container,
+  .toys-devices-container,
+  .schools-container,
+  .projects-container,
+  .partners-container,
+  .parents-families-container,
+  .stories-container,
+  .mission-container,
+  .montessori-container,
+  .cars-container,
+  .bath-seat-container,
+  .dog-treat-container,
+  .goodie-bag-container,
+  .donate-container,
+  .get-involved-container,
+  .locations-container {
+    margin-top: 85px; /* Match navbar height */
   }
 }
 

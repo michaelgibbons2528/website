@@ -66,10 +66,6 @@ export default function DogTreat() {
       >
         <div className="hero-content">
           <h1 className="hero-title">Dog Treat Project</h1>
-          <p className="hero-subtitle">
-            Accessible tools for making dog treats help children develop motor skills and coordination 
-            while building confidence through meaningful activities with pets.
-          </p>
         </div>
       </div>
 

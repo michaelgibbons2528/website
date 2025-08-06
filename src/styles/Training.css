@@ -1,0 +1,503 @@
+/* Training Page Styles */
+
+.training-container {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+/* Hero Section */
+.training-hero {
+  height: 60vh;
+  min-height: 400px;
+  color: white;
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  opacity: 0.95;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Tool Navigation */
+.tool-navigation {
+  padding: 3rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.tool-navigation h2 {
+  color: #a30000;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.tool-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tool-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem 1rem;
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tool-tab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  border-color: #a30000;
+}
+
+.tool-tab.active {
+  background: #a30000;
+  color: white;
+  border-color: #a30000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(163, 0, 0, 0.3);
+}
+
+.tool-icon {
+  font-size: 2rem;
+}
+
+.tool-name {
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Tool Training Content */
+.tool-training {
+  padding: 4rem 0;
+  background: white;
+}
+
+.tool-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tool-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 15px;
+}
+
+.tool-info h2 {
+  color: #a30000;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.tool-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+.tool-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Training Sections */
+.training-sections {
+  display: grid;
+  gap: 2rem;
+}
+
+.training-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #a30000;
+}
+
+.training-section h3 {
+  color: #a30000;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Safety Guidelines */
+.safety-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.safety-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: #fff5f5;
+  border-radius: 10px;
+  border-left: 3px solid #ff6b6b;
+}
+
+.safety-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* Step-by-Step Instructions */
+.steps-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.step-item:hover {
+  transform: translateX(5px);
+}
+
+.step-number {
+  background: #a30000;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.step-content {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Pro Tips */
+.tips-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.tip-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f0f8ff;
+  border-radius: 10px;
+  border-left: 3px solid #4a90e2;
+}
+
+.tip-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* Training Resources */
+.training-resources {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.training-resources h2 {
+  color: #a30000;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.resource-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+}
+
+.resource-card h3 {
+  color: #a30000;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.resource-card p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.resource-btn {
+  background: #a30000;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.resource-btn:hover {
+  background: #8a0000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(163, 0, 0, 0.3);
+}
+
+/* Certification Section */
+.certification-section {
+  padding: 4rem 0;
+  background: white;
+}
+
+.certification-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.certification-content h2 {
+  color: #a30000;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.certification-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.certification-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.certification-btn {
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 1rem;
+}
+
+.certification-btn.primary {
+  background: #a30000;
+  color: white;
+}
+
+.certification-btn.secondary {
+  background: transparent;
+  color: #a30000;
+  border: 2px solid #a30000;
+}
+
+.certification-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #a30000 0%, #d13901 100%);
+  color: white;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.contact-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.contact-icon {
+  font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .tool-header {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .tool-tabs {
+    gap: 0.5rem;
+  }
+  
+  .tool-tab {
+    min-width: 100px;
+    padding: 1rem 0.5rem;
+  }
+  
+  .certification-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .training-section {
+    padding: 1.5rem;
+  }
+  
+  .resource-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .tool-tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .tool-tab {
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  .training-section h3 {
+    font-size: 1.3rem;
+  }
+  
+  .step-item,
+  .safety-item,
+  .tip-item {
+    padding: 0.8rem;
+  }
+} 

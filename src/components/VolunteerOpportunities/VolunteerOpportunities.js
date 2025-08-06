@@ -113,10 +113,6 @@ export default function VolunteerOpportunities() {
       >
         <div className="hero-content">
           <h1 className="hero-title">Volunteer Opportunities</h1>
-          <p className="hero-subtitle">
-            Join our mission to create accessible technology for children with disabilities. 
-            Make a real difference in families' lives through hands-on engineering and community service.
-          </p>
           <div className="hero-stats">
             <div className="stat-item">
               <span className="stat-number">50+</span>

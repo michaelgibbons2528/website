@@ -15,9 +15,6 @@ export default function GetInvolved() {
       >
         <div className="hero-content">
           <h1 className="hero-title">Join Our Mission</h1>
-          <p className="hero-subtitle">
-            Be part of something bigger. Help us create accessible toys and devices that transform children's lives
-          </p>
         </div>
       </div>
 

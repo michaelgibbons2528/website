@@ -99,10 +99,6 @@ export default function Students() {
       >
         <div className="hero-content">
           <h1 className="hero-title">Students</h1>
-          <p className="hero-subtitle">
-            Join our mission to create accessible technology for children with disabilities. 
-            Gain hands-on engineering experience while making a real difference in families' lives.
-          </p>
         </div>
       </div>
 

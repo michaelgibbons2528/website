@@ -24,6 +24,16 @@
   color: #953734;
 }
 
+.footer-col h4 a {
+  color: #953734;
+  text-decoration: none;
+}
+
+.footer-col h4 a:hover {
+  text-decoration: underline;
+  color: #953734;
+}
+
 .footer-col ul {
   list-style: none;
   padding: 0;

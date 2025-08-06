@@ -54,7 +54,7 @@
 
 /* Impact Section */
 .impact-section {
-  padding: 4rem 0;
+  padding: 80px 0;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
@@ -104,7 +104,7 @@
 
 /* Donation Options Section */
 .donation-options-section {
-  padding: 4rem 0;
+  padding: 80px 0;
   background: white;
 }
 
@@ -231,7 +231,7 @@
 
 /* Stories Section */
 .stories-section {
-  padding: 4rem 0;
+  padding: 80px 0;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
@@ -310,7 +310,7 @@
 
 /* Needs Section */
 .needs-section {
-  padding: 4rem 0;
+  padding: 80px 0;
   background: white;
 }
 
@@ -360,7 +360,7 @@
 
 /* Support Section */
 .support-section {
-  padding: 4rem 0;
+  padding: 80px 0;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
@@ -422,7 +422,7 @@
 
 /* Contact Section */
 .contact-section {
-  padding: 4rem 0;
+  padding: 80px 0;
   background: white;
 }
 
@@ -498,7 +498,7 @@
 
 /* Thank You Section */
 .thank-you-section {
-  padding: 4rem 0;
+  padding: 80px 0;
   background: linear-gradient(135deg, #a30000 0%, #dd2701 100%);
   color: white;
   text-align: center;

@@ -609,6 +609,7 @@
     width: 100%;
     max-width: 300px;
   }
+  
 }
 
 @media (max-width: 480px) {
@@ -633,4 +634,5 @@
   .get-started-button {
     padding: 0.8rem 1.5rem;
   }
+  
 } 

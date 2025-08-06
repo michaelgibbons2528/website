@@ -79,11 +79,6 @@ export default function Projects() {
       >
         <div className="hero-content">
           <h1 className="hero-title">Our Projects</h1>
-          <p className="hero-subtitle">
-            We create accessible and adaptive equipment for children with disabilities. 
-            Each project is customized to meet the specific needs of the child, 
-            ensuring every child can participate, learn, and grow.
-          </p>
         </div>
       </div>
 

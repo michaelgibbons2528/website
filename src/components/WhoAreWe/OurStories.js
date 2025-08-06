@@ -13,10 +13,6 @@ export default function OurStories() {
         <div className="hero-overlay">
           <div className="hero-content">
             <h1>Our Stories</h1>
-            <p className="hero-subtitle">
-              Every child we serve has a unique story. These are the stories of transformation, 
-              independence, and joy that drive our mission forward.
-            </p>
           </div>
         </div>
       </div>

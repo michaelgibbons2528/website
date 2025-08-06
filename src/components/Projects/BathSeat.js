@@ -66,10 +66,6 @@ export default function BathSeat() {
       >
         <div className="hero-content">
           <h1 className="hero-title">Bath Seat Project</h1>
-          <p className="hero-subtitle">
-            Custom-designed bath seats that provide safe, comfortable, and accessible bathing experiences 
-            for children with mobility challenges, promoting independence and confidence.
-          </p>
         </div>
       </div>
 

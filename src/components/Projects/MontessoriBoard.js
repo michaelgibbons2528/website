@@ -57,10 +57,6 @@ export default function MontessoriBoard() {
       >
         <div className="hero-content">
           <h1 className="hero-title">Giant Montessori Board</h1>
-          <p className="hero-subtitle">
-            Large-scale, accessible learning boards that empower children with disabilities 
-            to develop essential skills through hands-on, engaging activities.
-          </p>
         </div>
       </div>
 

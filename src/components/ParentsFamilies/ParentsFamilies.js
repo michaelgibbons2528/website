@@ -15,7 +15,6 @@ const ParentsFamilies = () => {
       >
         <div className="hero-content">
           <h1>Parents & Families</h1>
-          <p>Supporting families with children who have physical and developmental disabilities</p>
         </div>
       </div>
 

@@ -15,9 +15,6 @@ export default function GoodieBag() {
       >
         <div className="hero-content">
           <h1 className="hero-title">Goodie Bag Project</h1>
-          <p className="hero-subtitle">
-            Empowering children to create, organize, and share through accessible packaging and assembly tools
-          </p>
         </div>
       </div>
 

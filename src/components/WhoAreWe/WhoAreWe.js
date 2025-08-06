@@ -13,9 +13,6 @@ const WhoAreWe = () => {
         <div className="hero-overlay">
           <div className="hero-content">
             <h1>Who Are We?</h1>
-            <p className="hero-subtitle">
-              Empowering children with disabilities through innovative engineering solutions and inclusive experiences
-            </p>
           </div>
         </div>
       </div>
@@ -50,10 +47,10 @@ const WhoAreWe = () => {
             <h2>Our Programs</h2>
             <p>
               Our organization offers a comprehensive range of programs that combine engineering innovation 
-              with compassionate service. From custom ride-on cars to educational Montessori boards, we 
-              create solutions that address real needs. Our programs not only benefit children with 
-              disabilities but also provide valuable learning experiences for student engineers, fostering 
-              a community of empathy, innovation, and inclusion.
+              with compassionate service. We create solutions that address real needs. Our programs not 
+              only benefit children with disabilities but also provide valuable learning experiences for 
+              students passionate about engineering and helping others, fostering a community of empathy, 
+              innovation, and inclusion.
             </p>
           </div>
         </div>
@@ -61,27 +58,25 @@ const WhoAreWe = () => {
         {/* Right Column - Visual Elements */}
         <div className="content-right">
           <div className="mission-pillars">
-            <h2>The A4A Core Four</h2>
+            <h2>Our Four A's</h2>
             <div className="pillars-container">
               <div className="pillar">
                 <div className="pillar-bar pillar-1"></div>
-                <h3>Accessible</h3>
-                <p></p>
+                <h3>Accessible 4 All Abilities</h3>
               </div>
               <div className="pillar">
                 <div className="pillar-bar pillar-2"></div>
-                <h3>Accommodating</h3>
-                <p>Accessible for all abilities</p>
+                <h3>Accommodating 4 All Families</h3>
+
               </div>
               <div className="pillar">
                 <div className="pillar-bar pillar-3"></div>
-                <h3>Adaptive</h3>
-                <p>Students will learn to adapt to the needs of the child</p>
+                <h3>Adaptive 4 All Kids</h3>
+
               </div>
               <div className="pillar">
                 <div className="pillar-bar pillar-4"></div>
-                <h3>Adventurous</h3>
-                <p>Allow children to experience the freedom to be independent</p>
+                <h3>Adventurous 4 All Students</h3>
               </div>
               
             </div>

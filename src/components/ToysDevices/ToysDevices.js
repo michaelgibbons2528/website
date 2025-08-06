@@ -57,10 +57,6 @@ const ToysDevices = () => {
       >
         <div className="hero-content">
           <h1 className="hero-title">Toys & Devices</h1>
-          <p className="hero-subtitle">
-            Help us create the perfect accessible toys and devices for your child. 
-            Share your ideas and recommendations to make play accessible for all children.
-          </p>
         </div>
       </div>
 
