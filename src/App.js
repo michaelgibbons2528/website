@@ -52,12 +52,6 @@ const MobileNavigation = ({ isOpen, onClose }) => {
     onClose();
   };
 
-  // Function to check if a main tab should be highlighted based on subtab activity
-  const isMainTabActive = (mainTabPath, subtabPaths) => {
-    const currentPath = location.pathname;
-    return currentPath === mainTabPath || subtabPaths.some(path => currentPath === path);
-  };
-
   if (!isOpen) return null;
 
   return (
@@ -357,12 +351,6 @@ const Navigation = () => {
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
-
-  // Function to check if a main tab should be highlighted based on subtab activity
-  const isMainTabActive = (mainTabPath, subtabPaths) => {
-    const currentPath = location.pathname;
-    return currentPath === mainTabPath || subtabPaths.some(path => currentPath === path);
-  };
 
   return (
     <>
