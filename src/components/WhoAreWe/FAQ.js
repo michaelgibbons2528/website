@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import '../../styles/FAQ.css';
 
 export default function FAQ() {
@@ -12,7 +11,7 @@ export default function FAQ() {
   const faqData = [
     {
       question: "How can my child receive help from A4A?",
-      answer: "We work directly with families to assess each child's specific needs and create personalized solutions. The process typically involves an initial consultation, needs assessment, design phase, and delivery. Please fill out the form <Link to='/parents-families'>here</Link> to get started."
+      answer: "We work directly with families to assess each child's specific needs and create personalized solutions. The process typically involves an initial consultation, needs assessment, design phase, and delivery. Please fill out the form on our Parents & Families page to get started."
     },
     {
       question: "How much do your services cost?",
