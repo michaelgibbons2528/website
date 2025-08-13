@@ -10,56 +10,49 @@ export default function SchoolsEducational() {
         {
           name: "Rutgers University",
           type: "Primary Academic Partner",
-          description: "Our flagship partnership providing engineering students with real-world assistive technology projects and research opportunities.",
+          description: "Our flagship partnership providing engineering students with real-world assistive technology projects and research opportunities. Students work on semester-long projects designing and building custom adaptive devices for children with disabilities.",
           logo: "/images/4-3_Temp_Logo.png",
-          features: ["Student volunteer programs", "Research collaborations", "Workshop facilities", "Faculty expertise"]
-        },
-        {
-          name: "Engineering Capstone Projects",
-          type: "Academic Program",
-          description: "Senior engineering students work on semester-long projects to design and build custom assistive devices.",
-          logo: "/images/4-3_Temp_Logo.png",
-          features: ["Custom device design", "Prototype development", "User testing", "Documentation"]
+          features: ["Student volunteer programs", "Research collaborations", "Workshop facilities", "Faculty expertise", "Capstone projects", "Hands-on engineering experience"]
         }
       ]
     },
     {
-      category: "K-12 Educational Programs",
-      description: "Programs designed to introduce students to assistive technology, engineering, and inclusive design principles.",
+      category: "K-12 School Partnerships",
+      description: "Working with local schools to provide educational resources, family connections, and support for inclusive education initiatives.",
       programs: [
         {
-          name: "STEM Outreach Programs",
-          type: "Educational Initiative",
-          description: "Interactive workshops and presentations for K-12 students to learn about assistive technology and engineering.",
-          logo: "/images/4-3_Temp_Logo.png",
-          features: ["Hands-on workshops", "Career exploration", "Inclusive design principles", "Technology demonstrations"]
+          name: "River Dell High School",
+          type: "High School Partner",
+          description: "Collaborating with River Dell High School to provide STEM education opportunities and connect families with our adaptive technology services. Students participate in workshops and learn about inclusive design principles.",
+          logo: "/images/River_Dell.png",
+          features: ["STEM workshops", "Family referrals", "Student presentations", "Educational resources", "Inclusive design education", "Community outreach"]
         },
         {
-          name: "School District Collaborations",
-          type: "Partnership Program",
-          description: "Working with local school districts to identify families in need and provide educational resources.",
+          name: "Lake Hiawatha School",
+          type: "Elementary School Partner",
+          description: "Partnering with Lake Hiawatha School to support inclusive education and provide families with access to adaptive technology resources. We work closely with teachers and staff to identify students who could benefit from our services.",
           logo: "/images/4-3_Temp_Logo.png",
-          features: ["Family referrals", "Resource sharing", "Educational materials", "Support services"]
+          features: ["Family support services", "Teacher collaboration", "Resource sharing", "Student assessments", "Inclusive education support", "Parent workshops"]
+        },
+        {
+          name: "Bright Beginnings Learning Center (BBLC)",
+          type: "Early Childhood Partner",
+          description: "Working with BBLC to provide early intervention support and adaptive technology solutions for young children with disabilities. Our partnership focuses on creating inclusive learning environments from the earliest stages of development.",
+          logo: "/images/4-3_Temp_Logo.png",
+          features: ["Early intervention support", "Adaptive technology solutions", "Staff training", "Family consultations", "Inclusive learning environments", "Development assessments"]
         }
       ]
     },
     {
-      category: "Professional Development",
-      description: "Training and development opportunities for educators, therapists, and healthcare professionals.",
+      category: "Hospitals & Healthcare Providers",
+      description: "Collaborating with healthcare institutions to provide adaptive technology solutions and support for children with disabilities and their families.",
       programs: [
         {
-          name: "Educator Workshops",
-          type: "Professional Training",
-          description: "Training sessions for teachers and school staff on inclusive design and assistive technology integration.",
+          name: "RWJ Children's Specialized Hospital",
+          type: "Healthcare Partner",
+          description: "Partnering with RWJ Children's Specialized Hospital to provide adaptive technology solutions and support for children with disabilities. We work closely with healthcare professionals to identify children who could benefit from our custom adaptive devices and provide ongoing support.",
           logo: "/images/4-3_Temp_Logo.png",
-          features: ["Inclusive design principles", "Technology integration", "Best practices", "Resource sharing"]
-        },
-        {
-          name: "Healthcare Professional Training",
-          type: "Clinical Education",
-          description: "Specialized training for therapists and healthcare providers on assistive device specifications and applications.",
-          logo: "/images/4-3_Temp_Logo.png",
-          features: ["Device specifications", "Clinical applications", "Assessment protocols", "Follow-up care"]
+          features: ["Patient referrals", "Healthcare professional collaboration", "Adaptive technology solutions", "Family support services", "Clinical assessments", "Ongoing care coordination"]
         }
       ]
     }
@@ -141,8 +134,30 @@ export default function SchoolsEducational() {
                     <div className="program-logo">
                       <img src={program.logo} alt={`${program.name} logo`} />
                     </div>
-                    <div className="program-info">
-                      <h4>{program.name}</h4>
+                                         <div className="program-info">
+                       <h4>
+                         {program.name === "Rutgers University" ? (
+                           <a 
+                             href="https://sites.rutgers.edu/a4a/" 
+                             target="_blank" 
+                             rel="noopener noreferrer"
+                             style={{ color: 'inherit', textDecoration: 'none' }}
+                           >
+                             {program.name}
+                           </a>
+                         ) : program.name === "River Dell High School" ? (
+                           <a 
+                             href="https://rdhs.riverdell.org/o/rdhs" 
+                             target="_blank" 
+                             rel="noopener noreferrer"
+                             style={{ color: 'inherit', textDecoration: 'none' }}
+                           >
+                             {program.name}
+                           </a>
+                         ) : (
+                           program.name
+                         )}
+                       </h4>
                       <span className="program-type">{program.type}</span>
                       <p>{program.description}</p>
                       <div className="program-features">
@@ -181,62 +196,67 @@ export default function SchoolsEducational() {
         </div>
       </div>
 
-      {/* Get Involved Section */}
-      <div className="get-involved-section">
-        <div className="container">
-          <h2>Get Your Institution Involved</h2>
-          <p>
-            Ready to bring our educational programs to your school or university? 
-            We offer flexible partnership options tailored to your institution's needs.
-          </p>
-          
-          <div className="partnership-options">
-            <div className="partnership-option">
-              <h3>For Universities</h3>
-              <ul>
-                <li>Host student volunteer programs</li>
-                <li>Integrate projects into curriculum</li>
-                <li>Collaborate on research initiatives</li>
-                <li>Provide workshop and lab spaces</li>
-                <li>Support faculty development</li>
-              </ul>
-            </div>
-            
-            <div className="partnership-option">
-              <h3>For K-12 Schools</h3>
-              <ul>
-                <li>Host STEM workshops and presentations</li>
-                <li>Provide educational resources</li>
-                <li>Connect families with our services</li>
-                <li>Support inclusive education initiatives</li>
-                <li>Offer professional development for staff</li>
-              </ul>
-            </div>
-            
-            <div className="partnership-option">
-              <h3>For Professional Organizations</h3>
-              <ul>
-                <li>Provide continuing education credits</li>
-                <li>Host training workshops</li>
-                <li>Share best practices and resources</li>
-                <li>Support certification programs</li>
-                <li>Facilitate networking opportunities</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="contact-section">
-            <h3>Start the Conversation</h3>
-            <p>
-              Interested in bringing our educational programs to your institution? 
-              Contact us to discuss partnership opportunities and program customization.
-            </p>
-            <a href="mailto:education@accessible4all.org" className="contact-button">
-              Contact Us About Educational Programs
-            </a>
-          </div>
-        </div>
-      </div>
+             {/* Get Involved Section */}
+       <div className="get-involved-section">
+         <div className="container">
+           <h2>Interested in Working With Us?</h2>
+           <p>
+             We're always looking to expand our network of educational partners. 
+             Whether you're a university, school district, or educational organization, 
+             we'd love to discuss how we can work together to make technology accessible for all children.
+           </p>
+           
+           <div className="partnership-options">
+             <div className="partnership-option">
+               <h3>For Universities</h3>
+               <ul>
+                 <li>Host student volunteer programs</li>
+                 <li>Integrate projects into curriculum</li>
+                 <li>Collaborate on research initiatives</li>
+                 <li>Provide workshop and lab spaces</li>
+                 <li>Support faculty development</li>
+               </ul>
+             </div>
+             
+             <div className="partnership-option">
+               <h3>For K-12 Schools</h3>
+               <ul>
+                 <li>Host STEM workshops and presentations</li>
+                 <li>Provide educational resources</li>
+                 <li>Connect families with our services</li>
+                 <li>Support inclusive education initiatives</li>
+                 <li>Offer professional development for staff</li>
+               </ul>
+             </div>
+             
+             <div className="partnership-option">
+               <h3>For Educational Organizations</h3>
+               <ul>
+                 <li>Provide continuing education credits</li>
+                 <li>Host training workshops</li>
+                 <li>Share best practices and resources</li>
+                 <li>Support certification programs</li>
+                 <li>Facilitate networking opportunities</li>
+               </ul>
+             </div>
+           </div>
+           
+           <div className="contact-section">
+             <h3>Contact Us to Get Started</h3>
+             <p>
+               Ready to bring our educational programs to your institution? 
+               Contact us to discuss partnership opportunities and how we can customize 
+               our programs to meet your institution's specific needs and goals.
+             </p>
+             <a href="mailto:info@a4all.org?subject=Educational Partnership Inquiry" className="contact-button">
+               Contact Us About Partnership Opportunities
+             </a>
+             <p className="contact-note">
+               We'll respond within 2-3 business days to discuss how we can work together.
+             </p>
+           </div>
+         </div>
+       </div>
 
       {/* Impact Section */}
       <div className="impact-section">

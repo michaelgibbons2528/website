@@ -698,6 +698,9 @@ function App() {
           <div className="footer-bottom-left">
             <button className="footer-legal-link">Privacy & Accessibility Statement</button>
           </div>
+                      <div className="footer-bottom-center">
+              <p className="photo-credits">Photo Credits: <a href="https://www.instagram.com/guipotography/" target="_blank" rel="noopener noreferrer">Matthew Andrei Guipo</a></p>
+            </div>
           <div className="footer-bottom-right">
             ©2025 Accessible 4 All — A 501(c)(3) Organization
           </div>

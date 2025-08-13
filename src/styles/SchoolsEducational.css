@@ -130,6 +130,17 @@
   text-align: center;
 }
 
+.program-info h4 a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.program-info h4 a:hover {
+  color: #a30000;
+  text-decoration: underline;
+}
+
 .program-type {
   display: block;
   text-align: center;

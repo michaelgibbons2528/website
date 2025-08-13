@@ -13,26 +13,6 @@ export default function Students() {
       link: '/volunteer-opportunities',
       color: '#5a3696',
       features: ['Hands-on Engineering', 'Family Interaction', 'Project Management', 'Skill Development']
-    },
-    {
-      id: 'safety',
-      title: 'Safety Guidelines',
-      subtitle: 'Learn Best Practices',
-      description: 'Essential safety protocols and guidelines for working with children and families. Ensure all projects meet the highest standards of safety and quality.',
-      image: '/images/1-1_Robert_Seat_Wood.jpg',
-      link: '/safety-guidelines',
-      color: '#1565c0',
-      features: ['Safety Protocols', 'Quality Standards', 'Child Protection', 'Best Practices']
-    },
-    {
-      id: 'training',
-      title: 'Training & Resources',
-      subtitle: 'Build Your Skills',
-      description: 'Comprehensive training materials, tutorials, and resources to help you develop the skills needed for adaptive device design and family collaboration.',
-      image: '/images/4-3_Engineer_Kickoff.jpg',
-      link: '/resources-tutorials',
-      color: '#2196f3',
-      features: ['Technical Training', 'Design Resources', 'Tutorial Videos', 'Mentorship']
     }
   ];
 
@@ -61,28 +41,28 @@ export default function Students() {
 
   const currentStudents = [
     {
-      name: 'Sarah Chen',
-      role: 'Project Team Lead',
-      image: '/images/4-3_Ciaran_and_Group.JPG',
-      quote: '"A4A has given me the most rewarding engineering experience of my college career. Seeing the impact on families is incredible."',
-      year: 'Senior',
+      name: 'Kavya Patel',
+      role: 'Social Chair of Rutgers A4A',
+      image: '/images/4-3_Kavya_Story.jpg',
+      quote: '"To me, A4A represents the connection between engineering and applying it to make a real world impact."',
+      year: '2027',
+      major: 'Biochemical Engineering'
+    },
+    {
+      name: 'Jason Ho',
+      role: 'Vice President of Rutgers A4A',
+      image: '/images/4-3_Jason_Story.jpg',
+      quote: '"I joined A4A because it allowed me to use my engineering skill for a tangible, positive impact on people\'s lives."',
+      year: '2027',
       major: 'Mechanical Engineering'
     },
     {
-      name: 'Mike Rodriguez',
-      role: 'Chapter President',
-      image: '/images/4-3_Luca_and_Group.JPG',
-      quote: '"I started as a volunteer and now I\'m helping lead our chapter. The hands-on experience has been life-changing."',
-      year: 'Junior',
-      major: 'Electrical Engineering'
-    },
-    {
-      name: 'Emily Johnson',
-      role: 'Safety Coordinator',
-      image: '/images/4-3_Rutgers_Spring_2025_Everyone.JPG',
-      quote: '"Working with families and ensuring safety has taught me so much about responsible engineering."',
-      year: 'Senior',
-      major: 'Biomedical Engineering'
+      name: 'Aaron Clarion',
+      role: 'Former Vice President of Rutgers A4A',
+      image: '/images/4-3_Aaron_Story.jpg',
+      quote: '"I always liked being able to give back and to use what I know to do something beneficial."',
+      year: '2025',
+      major: 'Computer Engineering'
     }
   ];
 

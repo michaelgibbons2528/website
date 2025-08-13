@@ -98,8 +98,30 @@
 }
 
 .footer-bottom-left,
+.footer-bottom-center,
 .footer-bottom-right {
   margin: 5px 0;
+}
+
+.footer-bottom-center {
+  text-align: center;
+}
+
+.photo-credits {
+  margin: 0;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.photo-credits a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.photo-credits a:hover {
+  text-decoration: underline;
+  opacity: 1;
 }
 
 /* Mobile Responsive Design */
@@ -149,6 +171,7 @@
   }
   
   .footer-bottom-left,
+  .footer-bottom-center,
   .footer-bottom-right {
     margin: 5px 0;
     font-size: 13px;
@@ -187,6 +210,7 @@
   }
   
   .footer-bottom-left,
+  .footer-bottom-center,
   .footer-bottom-right {
     font-size: 12px;
   }
