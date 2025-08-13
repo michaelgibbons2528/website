@@ -24,7 +24,7 @@ export default function SchoolsEducational() {
           name: "River Dell High School",
           type: "High School Partner",
           description: "Collaborating with River Dell High School to provide STEM education opportunities and connect families with our adaptive technology services. Students participate in workshops and learn about inclusive design principles.",
-          logo: "/images/River_Dell.png",
+          logo: "/images/4-3_Temp_Logo.png",
           features: ["STEM workshops", "Family referrals", "Student presentations", "Educational resources", "Inclusive design education", "Community outreach"]
         },
         {

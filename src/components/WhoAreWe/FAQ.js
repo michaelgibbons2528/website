@@ -130,11 +130,7 @@ export default function FAQ() {
                   Follow on Instagram
                 </a>
               </div>
-              <div className="contact-option">
-                <h4>🎓 Student Volunteers</h4>
-                <p>Interested in joining our team? Learn about volunteer opportunities.</p>
-                <button className="contact-button">Get Involved</button>
-              </div>
+
             </div>
           </div>
         </div>
