@@ -24,7 +24,7 @@ export default function OurStories() {
             <h2>Student Stories</h2>
             <p>
               Our student engineers share their experiences of learning, growth, and the profound impact 
-              of applying their skills to help children with disabilities. These stories showcase the 
+              of applying their skills for A4A. These stories showcase the 
               transformative power of compassionate engineering.
             </p>
           </div>

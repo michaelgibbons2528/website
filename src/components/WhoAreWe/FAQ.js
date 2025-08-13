@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../../styles/FAQ.css';
 
 export default function FAQ() {
@@ -10,20 +11,20 @@ export default function FAQ() {
 
   const faqData = [
     {
-      question: "What is Accessible 4 All (A4A)?",
-      answer: "Accessible 4 All is a student-led organization at Rutgers University dedicated to creating innovative engineering solutions for children with disabilities. We design and build custom adaptive equipment, including ride-on cars, educational tools, and mobility devices to help children play, learn, and explore independently."
-    },
-    {
       question: "How can my child receive help from A4A?",
-      answer: "We work directly with families to assess each child's specific needs and create personalized solutions. The process typically involves an initial consultation, needs assessment, design phase, and delivery. Contact us through our website or social media to start the process."
-    },
-    {
-      question: "What types of equipment do you provide?",
-      answer: "We specialize in custom ride-on cars, adaptive educational tools, mobility devices, and other assistive technology. Each project is tailored to the individual child's needs, abilities, and interests. Our most popular items include modified ride-on cars, giant Montessori boards, and interactive learning devices."
+      answer: "We work directly with families to assess each child's specific needs and create personalized solutions. The process typically involves an initial consultation, needs assessment, design phase, and delivery. Please fill out the form <Link to='/parents-families'>here</Link> to get started."
     },
     {
       question: "How much do your services cost?",
       answer: "All of our services are provided completely free of charge to families. We believe that every child deserves access to adaptive equipment regardless of financial circumstances. Our work is supported through donations, grants, and the dedication of our student volunteers."
+    },
+    {
+      question: "Do you provide ongoing support after delivery?",
+      answer: "Yes, we provide follow-up support to ensure the equipment continues to meet the child's needs as they grow and develop. We offer maintenance, adjustments, and modifications as needed. We also stay in touch with families to learn about the impact of our work."
+    },
+    {
+      question: "What types of equipment do you provide?",
+      answer: "We specialize in custom ride-on cars, adaptive educational tools, mobility devices, and other assistive technology. Each project is tailored to the individual child's needs, abilities, and interests. Our most popular items include modified ride-on cars, giant Montessori boards, and interactive learning devices."
     },
     {
       question: "Who can volunteer with A4A?",
@@ -42,17 +43,10 @@ export default function FAQ() {
       answer: "Yes! We collaborate with physical therapists, occupational therapists, and other healthcare providers to ensure our solutions meet each child's therapeutic and developmental needs. We value their expertise and often incorporate their recommendations into our designs."
     },
     {
-      question: "Can you help children with any type of disability?",
-      answer: "We work with children who have various physical and developmental disabilities, including cerebral palsy, autism, Down syndrome, mobility challenges, and other conditions. Each child's needs are unique, and we design solutions accordingly."
-    },
-    {
       question: "How can I donate to support A4A?",
       answer: "We accept monetary donations to help cover materials, tools, and operational costs. You can also donate materials, tools, or your time as a volunteer. Contact us to learn about current donation needs and how your contribution can make a difference."
     },
-    {
-      question: "Do you provide ongoing support after delivery?",
-      answer: "Yes, we provide follow-up support to ensure the equipment continues to meet the child's needs as they grow and develop. We offer maintenance, adjustments, and modifications as needed. We also stay in touch with families to learn about the impact of our work."
-    },
+    
     {
       question: "How can I spread the word about A4A?",
       answer: "You can help by sharing our social media posts, telling families who might benefit from our services, connecting us with healthcare providers, or inviting us to speak at community events. Word-of-mouth referrals are one of our most valuable ways of reaching families in need."
@@ -98,7 +92,15 @@ export default function FAQ() {
                   </span>
                 </div>
                 <div className="faq-answer">
-                  <p>{faq.answer}</p>
+                  <p>
+                    {index === 0 ? (
+                      <>
+                        We work directly with families to assess each child's specific needs and create personalized solutions. The process typically involves an initial consultation, needs assessment, design phase, and delivery. Please fill out this form to get started.
+                      </>
+                    ) : (
+                      faq.answer
+                    )}
+                  </p>
                 </div>
               </div>
             ))}

@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../styles/OurMission.css';
+import '../../styles/4_As.css';
 
 export default function OurMission() {
   return (
@@ -35,12 +36,45 @@ export default function OurMission() {
         </div>
       </div>
 
-
-
-
-
-
-
+      {/* 4 A's Section */}
+      <section className="panel-section">
+        <div className="panel-1">
+          <div className="panel-content">
+            <h3>Accessible</h3>
+            <img src="/images/1-1_Wilhelm_and_Family.JPG" alt="Project-Ciaran" />
+            <p>We provide children with non-discriminatory access to toys and devices they were 
+              previously unable to use!</p>
+          </div>
+          <a href="/projects" className="learn-more red">LEARN MORE: PROJECTS</a>
+        </div>
+        <div className="panel-2">
+          <div className="panel-content">
+            <h3>Accommodating</h3>
+            <img src="/images/1-1_Giuseppe_meets_Fiona_Family.JPG" alt="Fiona and Family" />
+            <p>We work alongside loving families, creating and delivering toys and devices 
+              that are customized specifically for their own kid!</p>
+          </div>
+          <a href="/parents-families" className="learn-more pink">LEARN MORE: PARENTS & FAMILIES</a>
+        </div>
+        <div className="panel-3">
+          <div className="panel-content">
+            <h3>Adaptive</h3>
+            <img src="/images/1-1_Ciaran_Car_and_Group.JPG" alt="Ciaran Car and Group" />
+            <p>We create custom adaptive toys and devices that make play accessible to every child, 
+              encouraging creativity and hands-on learning not often found in classrooms!</p>
+          </div>
+          <a href="/students" className="learn-more blue">LEARN MORE: STUDENTS</a>
+        </div>
+        <div className="panel-4">
+          <div className="panel-content">
+            <h3>Adventurous</h3>
+            <img src="/images/1-1_Robert_and_Group.JPG" alt="Robert and Group" />
+            <p>We inspire children to explore their world with confidence, fostering 
+              independence, exploration, and limitless possibility!</p>
+          </div>
+          <a href="/locations" className="learn-more purple">LEARN MORE: LOCATIONS</a>
+        </div>
+      </section>
 
     </div>
   );

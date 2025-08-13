@@ -52,6 +52,29 @@
   background: rgba(240, 162, 46, 0.9);
 }
 
+/* Top navbar section highlighting - underline for main section */
+.top-links li.active-section a.section-active {
+  text-decoration: underline;
+  text-decoration-color: white;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* Top navbar page highlighting - background color between yellow and orange */
+.top-dropdown-content li a.active-page {
+  background: #e08a0771 !important;
+  color: #333 !important;
+}
+
+/* Top navbar section active state */
+.top-links li.active-section {
+  position: relative;
+}
+
+.top-links li.active-section a.section-active {
+  font-weight: 700;
+}
+
 /* TOP DROPDOWN MENU */
 .top-dropdown {
   position: relative;
@@ -139,10 +162,33 @@ nav li a {
   font-weight: bold; 
 }
 
-nav li a:hover,
-nav li.active a {
+nav li a:hover {
   background: #dd260171;
   border-radius: 6px;
+}
+
+/* Section highlighting - underline for main section */
+nav li.active-section a.section-active {
+  text-decoration: underline;
+  text-decoration-color: #a30000;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* Page highlighting - background color between yellow and orange */
+nav li a.active-page {
+  background: #e08a0771;
+  border-radius: 6px;
+  color: #333 !important;
+}
+
+/* Section active state */
+nav li.active-section {
+  position: relative;
+}
+
+nav li.active-section a.section-active {
+  font-weight: 700;
 }
 
 /* Sticky Dropdown */
@@ -266,6 +312,30 @@ nav li.active a {
   margin: -8px -12px 15px -12px;
 }
 
+.mobile-nav-section-header {
+  color: #f0a22e !important;
+  font-size: 18px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #f0a22e;
+  padding-bottom: 5px;
+  transition: all 0.3s ease;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+}
+
+.mobile-nav-section-header:hover {
+  color: #ffffff !important;
+  background: rgba(240, 162, 46, 0.3);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: -8px -12px 15px -12px;
+}
+
 .mobile-nav-links {
   list-style: none;
   padding: 0;
@@ -294,10 +364,28 @@ nav li.active a {
 }
 
 .mobile-nav-links a:hover,
-.mobile-nav-links a.active,
-.mobile-nav-links button:hover,
-.mobile-nav-links button.active {
+.mobile-nav-links button:hover {
+  background: rgba(100, 100, 100, 0.3);
+}
+
+/* Mobile navigation active page highlighting */
+.mobile-nav-links a.active-page,
+.mobile-nav-links button.active-page {
+  background: #e08a0771;
+  color: #333 !important;
+}
+
+/* Mobile navigation active section highlighting */
+.mobile-nav-section-header.active-section {
+  color: #ffffff !important;
   background: rgba(240, 162, 46, 0.3);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: -8px -12px 15px -12px;
+  text-decoration: underline;
+  text-decoration-color: #a30000;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 
 .mobile-nav-close {

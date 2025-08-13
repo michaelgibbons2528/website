@@ -339,6 +339,20 @@ export default function Cars() {
             safety harnesses, and other modifications that allow children with various abilities 
             to operate the vehicle safely and independently.
           </p>
+          <div className="intro-features">
+            <div className="feature">
+              <h3>🎯 Personalized Design</h3>
+              <p>Each car is uniquely modified to meet the specific needs and abilities of the child.</p>
+            </div>
+            <div className="feature">
+              <h3>🛡️ Safety First</h3>
+              <p>All modifications prioritize safety while maximizing independence and fun.</p>
+            </div>
+            <div className="feature">
+              <h3>🌟 Independence & Joy</h3>
+              <p>Children gain mobility and confidence while experiencing the joy of independent movement.</p>
+            </div>
+          </div>
         </div>
       </div>
 

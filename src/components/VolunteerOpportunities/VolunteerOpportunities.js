@@ -113,20 +113,6 @@ export default function VolunteerOpportunities() {
       >
         <div className="hero-content">
           <h1 className="hero-title">Volunteer Opportunities</h1>
-          <div className="hero-stats">
-            <div className="stat-item">
-              <span className="stat-number">50+</span>
-              <span className="stat-label">Active Volunteers</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-number">100+</span>
-              <span className="stat-label">Projects Completed</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-number">25+</span>
-              <span className="stat-label">Families Helped</span>
-            </div>
-          </div>
         </div>
       </div>
 

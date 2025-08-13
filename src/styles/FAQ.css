@@ -106,7 +106,7 @@
 }
 
 .faq-item.active .faq-question {
-  background: linear-gradient(135deg, #a30000 0%, #dd2701 100%);
+  background: linear-gradient(135deg, #f0a22e 0%, #ffd700 100%);
   color: white;
 }
 

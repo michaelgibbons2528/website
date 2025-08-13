@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import '../../styles/Students.css';
 
 export default function Students() {
@@ -281,6 +281,45 @@ export default function Students() {
               <div className="requirement-icon">🎓</div>
               <h3>Learning Mindset</h3>
               <p>Eagerness to learn new skills and take on challenges. We provide training and mentorship.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Student Login Section */}
+      <section className="student-login-section">
+        <div className="container">
+          <div className="login-content">
+            <div className="login-text">
+              <h2>Student Portal</h2>
+              <p>
+                Already a student volunteer? Access your training materials, track your progress, 
+                and manage your projects through our secure student portal.
+              </p>
+              <div className="login-features">
+                <div className="login-feature">
+                  <span className="feature-icon">📚</span>
+                  <span>Training Materials</span>
+                </div>
+                <div className="login-feature">
+                  <span className="feature-icon">📊</span>
+                  <span>Progress Tracking</span>
+                </div>
+                <div className="login-feature">
+                  <span className="feature-icon">🔧</span>
+                  <span>Project Management</span>
+                </div>
+                <div className="login-feature">
+                  <span className="feature-icon">📋</span>
+                  <span>Resource Library</span>
+                </div>
+              </div>
+            </div>
+            <div className="login-action">
+              <Link to="/login" className="login-button">
+                Access Student Portal
+              </Link>
+              <p className="login-note">Contact your administrator for login credentials</p>
             </div>
           </div>
         </div>

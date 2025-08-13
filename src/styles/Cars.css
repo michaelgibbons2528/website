@@ -52,8 +52,8 @@
 }
 
 /* Container */
-.container {
-  max-width: 1200px;
+.cars-container .container {
+  max-width: 98vw !important;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -77,7 +77,41 @@
   line-height: 1.7;
   color: #666;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto 40px;
+}
+
+.intro-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.feature {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+}
+
+.feature h3 {
+  color: #a30000;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.feature p {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* Profiles Section */
@@ -93,12 +127,14 @@
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   margin-bottom: 40px;
-  min-height: 350px;
+  min-height: 400px;
   border-left: 4px solid var(--car-color);
+  width: 100% !important;
+  max-width: none !important;
 }
 
 .profile-image {
-  flex: 0 0 45%;
+  flex: 0 0 35%;
   position: relative;
   overflow: hidden;
   background: var(--car-color-light);
@@ -118,10 +154,11 @@
 
 .profile-content {
   flex: 1;
-  padding: 35px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  min-width: 0;
 }
 
 .profile-header {
@@ -163,21 +200,26 @@
 
 .modifications-section {
   background: var(--car-color-light);
-  padding: 20px;
-  border-radius: 10px;
-  border-left: 3px solid var(--car-color);
-  margin-top: 15px;
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 4px solid var(--car-color);
+  margin-top: 20px;
+  flex-grow: 1;
 }
 
 .modifications-section h3 {
   color: var(--car-color);
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .modification-item {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  border-left: 3px solid #a30000;
 }
 
 .modification-item:last-child {
@@ -323,6 +365,15 @@
   
   .cars-intro h2 {
     font-size: 2rem;
+  }
+  
+  .intro-features {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .feature {
+    padding: 20px;
   }
   
   .profile-card {

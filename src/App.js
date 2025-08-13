@@ -21,6 +21,8 @@ import VolunteerOpportunities from './components/VolunteerOpportunities/Voluntee
 import PartnersSupporters from './components/PartnersSupporters/PartnersSupporters';
 import SchoolsEducational from './components/SchoolsEducational/SchoolsEducational';
 import Training from './components/Training/Training';
+import Login from './components/Login/Login';
+import StudentDashboard from './components/StudentDashboard/StudentDashboard';
 import './styles/style.css';
 import './styles/navbar.css';
 import './styles/slideshow.css';
@@ -30,22 +32,57 @@ import './styles/footer.css';
 import './styles/SchoolsEducational.css';
 import './styles/Students.css';
 import './styles/Training.css';
+import './styles/Login.css';
+import './styles/StudentDashboard.css';
 
-// ScrollToTop component to scroll to top on route change
+// ScrollToTop component to scroll to top and update title on route change
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Dynamic page titles based on current route
+    const getPageTitle = (path) => {
+      const titles = {
+        '/': 'Accessible 4 All - Empowering Children with Disabilities',
+        '/who-are-we': 'Who Are We? - Accessible 4 All',
+        '/our-mission': 'Our Mission - Accessible 4 All',
+        '/our-stories': 'Our Stories - Accessible 4 All',
+        '/media': 'Media & News - Accessible 4 All',
+        '/faq': 'FAQs - Accessible 4 All',
+        '/get-involved': 'Get Involved - Accessible 4 All',
+        '/projects': 'Our Projects - Accessible 4 All',
+        '/cars': 'Ride-On Cars - Accessible 4 All',
+        '/montessori-board': 'Giant Montessori Board - Accessible 4 All',
+        '/bath-seat': 'Bath Seat Project - Accessible 4 All',
+        '/dog-treat': 'Dog Treat Project - Accessible 4 All',
+        '/goodie-bag': 'Goodie Bag Project - Accessible 4 All',
+        '/locations': 'Find Us - Accessible 4 All',
+        '/donate': 'Donate - Accessible 4 All',
+        '/toys-devices': 'Toys & Devices - Accessible 4 All',
+        '/parents-families': 'Parents & Families - Accessible 4 All',
+        '/students': 'Students - Accessible 4 All',
+        '/volunteer-opportunities': 'Volunteer Opportunities - Accessible 4 All',
+        '/partners-supporters': 'Partners & Supporters - Accessible 4 All',
+        '/schools-educational-programs': 'Schools & Educational Programs - Accessible 4 All',
+        '/training': 'Training - Accessible 4 All',
+        '/login': 'Student Login - Accessible 4 All',
+        '/student-dashboard': 'Student Dashboard - Accessible 4 All'
+      };
+      
+      return titles[path] || 'Accessible 4 All';
+    };
+    
+    document.title = getPageTitle(pathname);
   }, [pathname]);
 
   return null;
 };
 
 // Mobile Navigation Component
-const MobileNavigation = ({ isOpen, onClose }) => {
+const MobileNavigation = ({ isOpen, onClose, currentSection, currentPage }) => {
   const navigate = useNavigate();
-  const location = useLocation();
 
   const handleNavClick = (path) => {
     navigate(path);
@@ -66,59 +103,89 @@ const MobileNavigation = ({ isOpen, onClose }) => {
         </div>
         
         <div className="mobile-nav-section">
-          <h3>Who Are We?</h3>
+          <button 
+            className={`mobile-nav-section-header ${currentSection === 'who-are-we' ? 'active-section' : ''}`}
+            onClick={() => handleNavClick('/who-are-we')}
+          >
+            Who Are We?
+          </button>
           <ul className="mobile-nav-links">
-            <li><button onClick={() => handleNavClick('/our-mission')} className={location.pathname === '/our-mission' ? 'active' : ''}>Our Mission</button></li>
-            <li><button onClick={() => handleNavClick('/our-stories')} className={location.pathname === '/our-stories' ? 'active' : ''}>Our Stories</button></li>
-            <li><button onClick={() => handleNavClick('/media')} className={location.pathname === '/media' ? 'active' : ''}>Media & News</button></li>
-            <li><button onClick={() => handleNavClick('/faq')} className={location.pathname === '/faq' ? 'active' : ''}>FAQs</button></li>
+            <li><button onClick={() => handleNavClick('/our-mission')} className={currentPage === '/our-mission' ? 'active-page' : ''}>Our Mission</button></li>
+            <li><button onClick={() => handleNavClick('/our-stories')} className={currentPage === '/our-stories' ? 'active-page' : ''}>Our Stories</button></li>
+            <li><button onClick={() => handleNavClick('/media')} className={currentPage === '/media' ? 'active-page' : ''}>Media & News</button></li>
+            <li><button onClick={() => handleNavClick('/faq')} className={currentPage === '/faq' ? 'active-page' : ''}>FAQs</button></li>
           </ul>
         </div>
 
         <div className="mobile-nav-section">
-          <h3>Our Projects</h3>
+          <button 
+            className={`mobile-nav-section-header ${currentSection === 'projects' ? 'active-section' : ''}`}
+            onClick={() => handleNavClick('/projects')}
+          >
+            Our Projects
+          </button>
           <ul className="mobile-nav-links">
-            <li><button onClick={() => handleNavClick('/cars')} className={location.pathname === '/cars' ? 'active' : ''}>Ride-On Cars</button></li>
-            <li><button onClick={() => handleNavClick('/montessori-board')} className={location.pathname === '/montessori-board' ? 'active' : ''}>Giant Montessori Board</button></li>
-            <li><button onClick={() => handleNavClick('/bath-seat')} className={location.pathname === '/bath-seat' ? 'active' : ''}>Bath Seat Project</button></li>
-            <li><button onClick={() => handleNavClick('/dog-treat')} className={location.pathname === '/dog-treat' ? 'active' : ''}>Dog Treat Project</button></li>
-            <li><button onClick={() => handleNavClick('/goodie-bag')} className={location.pathname === '/goodie-bag' ? 'active' : ''}>Goodie Bag Project</button></li>
+            <li><button onClick={() => handleNavClick('/cars')} className={currentPage === '/cars' ? 'active-page' : ''}>Ride-On Cars</button></li>
+            <li><button onClick={() => handleNavClick('/montessori-board')} className={currentPage === '/montessori-board' ? 'active-page' : ''}>Giant Montessori Board</button></li>
+            <li><button onClick={() => handleNavClick('/bath-seat')} className={currentPage === '/bath-seat' ? 'active-page' : ''}>Bath Seat Project</button></li>
+            <li><button onClick={() => handleNavClick('/dog-treat')} className={currentPage === '/dog-treat' ? 'active-page' : ''}>Dog Treat Project</button></li>
+            <li><button onClick={() => handleNavClick('/goodie-bag')} className={currentPage === '/goodie-bag' ? 'active-page' : ''}>Goodie Bag Project</button></li>
           </ul>
         </div>
 
         <div className="mobile-nav-section">
-          <h3>Parents & Families</h3>
+          <button 
+            className={`mobile-nav-section-header ${currentSection === 'parents-families' ? 'active-section' : ''}`}
+            onClick={() => handleNavClick('/parents-families')}
+          >
+            Parents & Families
+          </button>
           <ul className="mobile-nav-links">
-            <li><button onClick={() => handleNavClick('/locations')} className={location.pathname === '/locations' ? 'active' : ''}>Find Us</button></li>
-            <li><button onClick={() => handleNavClick('/toys-devices')} className={location.pathname === '/toys-devices' ? 'active' : ''}>Toys & Devices</button></li>
+            <li><button onClick={() => handleNavClick('/locations')} className={currentPage === '/locations' ? 'active-page' : ''}>Find Us</button></li>
+            <li><button onClick={() => handleNavClick('/toys-devices')} className={currentPage === '/toys-devices' ? 'active-page' : ''}>Toys & Devices</button></li>
           </ul>
         </div>
 
         <div className="mobile-nav-section">
-          <h3>Students</h3>
+          <button 
+            className={`mobile-nav-section-header ${currentSection === 'students' ? 'active-section' : ''}`}
+            onClick={() => handleNavClick('/students')}
+          >
+            Students
+          </button>
           <ul className="mobile-nav-links">
-            <li><button onClick={() => handleNavClick('/students')} className={location.pathname === '/students' ? 'active' : ''}>Students</button></li>
-            <li><button onClick={() => handleNavClick('/volunteer-opportunities')} className={location.pathname === '/volunteer-opportunities' ? 'active' : ''}>Volunteer Opportunities</button></li>
-            <li><button onClick={() => handleNavClick('/training')} className={location.pathname === '/training' ? 'active' : ''}>General 1 Training</button></li>
-            <li><button onClick={() => handleNavClick('/safety-guidelines')} className={location.pathname === '/safety-guidelines' ? 'active' : ''}>Safety Guidelines</button></li>
-            <li><button onClick={() => handleNavClick('/resources-tutorials')} className={location.pathname === '/resources-tutorials' ? 'active' : ''}>Training: Resources & Tutorials</button></li>
+            <li><button onClick={() => handleNavClick('/students')} className={currentPage === '/students' ? 'active-page' : ''}>Students</button></li>
+            <li><button onClick={() => handleNavClick('/volunteer-opportunities')} className={currentPage === '/volunteer-opportunities' ? 'active-page' : ''}>Volunteer Opportunities</button></li>
+            <li><button onClick={() => handleNavClick('/training')} className={currentPage === '/training' ? 'active-page' : ''}>General 1 Training</button></li>
+            <li><button onClick={() => handleNavClick('/safety-guidelines')} className={currentPage === '/safety-guidelines' ? 'active-page' : ''}>Safety Guidelines</button></li>
+            <li><button onClick={() => handleNavClick('/resources-tutorials')} className={currentPage === '/resources-tutorials' ? 'active-page' : ''}>Training: Resources & Tutorials</button></li>
           </ul>
         </div>
 
         <div className="mobile-nav-section">
-          <h3>Partners & Supporters</h3>
+          <button 
+            className={`mobile-nav-section-header ${currentSection === 'partners-supporters' ? 'active-section' : ''}`}
+            onClick={() => handleNavClick('/partners-supporters')}
+          >
+            Partners & Supporters
+          </button>
           <ul className="mobile-nav-links">
-            <li><button onClick={() => handleNavClick('/partners-supporters')} className={location.pathname === '/partners-supporters' ? 'active' : ''}>Partners & Supporters</button></li>
-            <li><button onClick={() => handleNavClick('/schools-educational-programs')} className={location.pathname === '/schools-educational-programs' ? 'active' : ''}>Schools & Educational Programs</button></li>
-            <li><button onClick={() => handleNavClick('/hospitals-healthcare-providers')} className={location.pathname === '/hospitals-healthcare-providers' ? 'active' : ''}>Hospitals & Healthcare Providers</button></li>
+            <li><button onClick={() => handleNavClick('/partners-supporters')} className={currentPage === '/partners-supporters' ? 'active-page' : ''}>Partners & Supporters</button></li>
+            <li><button onClick={() => handleNavClick('/schools-educational-programs')} className={currentPage === '/schools-educational-programs' ? 'active-page' : ''}>Schools & Educational Programs</button></li>
+            <li><button onClick={() => handleNavClick('/hospitals-healthcare-providers')} className={currentPage === '/hospitals-healthcare-providers' ? 'active-page' : ''}>Hospitals & Healthcare Providers</button></li>
           </ul>
         </div>
 
         <div className="mobile-nav-section">
-          <h3>Get Involved</h3>
+          <button 
+            className={`mobile-nav-section-header ${currentSection === 'donate' ? 'active-section' : ''}`}
+            onClick={() => handleNavClick('/donate')}
+          >
+            Donate
+          </button>
           <ul className="mobile-nav-links">
-            <li><button onClick={() => handleNavClick('/donate')} className={location.pathname === '/donate' ? 'active' : ''}>Donate</button></li>
-            <li><button onClick={() => handleNavClick('/get-involved')} className={location.pathname === '/get-involved' ? 'active' : ''}>Get Involved</button></li>
+            <li><button onClick={() => handleNavClick('/donate')} className={currentPage === '/donate' ? 'active-page' : ''}>Donate</button></li>
+            <li><button onClick={() => handleNavClick('/get-involved')} className={currentPage === '/get-involved' ? 'active-page' : ''}>Get Involved</button></li>
           </ul>
         </div>
       </div>
@@ -290,7 +357,7 @@ const HomePage = () => {
             <p>We provide children with non-discriminatory access to toys and devices they were 
               previously unable to use!</p>
           </div>
-          <NavLink to="/projects" className="learn-more red">LEARN MORE</NavLink>
+          <NavLink to="/projects" className="learn-more red">LEARN MORE: PROJECTS</NavLink>
         </div>
         <div className="panel-2">
           <div className="panel-content">
@@ -299,7 +366,7 @@ const HomePage = () => {
             <p>We work alongside loving families, creating and delivering toys and devices 
               that are customized specifically for their own kid!</p>
           </div>
-          <a href="/parents-families" className="learn-more pink">LEARN MORE</a>
+          <a href="/parents-families" className="learn-more pink">LEARN MORE: PARENTS & FAMILIES</a>
         </div>
         <div className="panel-3">
           <div className="panel-content">
@@ -308,7 +375,7 @@ const HomePage = () => {
             <p>We teach engineering basics—from tools to the design process—while 
               encouraging creativity and hands-on learning not often found in classrooms!</p>
           </div>
-          <a href="students" className="learn-more blue">LEARN MORE</a>
+          <a href="students" className="learn-more blue">LEARN MORE: STUDENTS</a>
         </div>
         <div className="panel-4">
           <div className="panel-content">
@@ -317,7 +384,7 @@ const HomePage = () => {
             <p>We design these toys and devices to launch children into a world of 
               independence, exploration, and limitless possibility!</p>
           </div>
-          <a href="/locations" className="learn-more purple">LEARN MORE</a>
+          <a href="/locations" className="learn-more purple">LEARN MORE: LOCATIONS</a>
         </div>
       </section>
 
@@ -342,10 +409,58 @@ const HomePage = () => {
   );
 }
 
+// Helper function to determine current section and page
+const getNavigationState = (pathname) => {
+  const sections = {
+    'who-are-we': {
+      name: 'Who Are We?',
+      pages: ['/who-are-we', '/our-mission', '/our-stories', '/media', '/faq']
+    },
+    'projects': {
+      name: 'Our Projects',
+      pages: ['/projects', '/cars', '/montessori-board', '/bath-seat', '/dog-treat', '/goodie-bag']
+    },
+    'parents-families': {
+      name: 'Parents & Families',
+      pages: ['/parents-families', '/locations', '/toys-devices']
+    },
+    'students': {
+      name: 'Students',
+      pages: ['/students', '/volunteer-opportunities', '/training', '/safety-guidelines', '/resources-tutorials']
+    },
+    'partners-supporters': {
+      name: 'Partners & Supporters',
+      pages: ['/partners-supporters', '/schools-educational-programs', '/hospitals-healthcare-providers']
+    },
+    'locations': {
+      name: 'Locations',
+      pages: ['/locations']
+    },
+    'donate': {
+      name: 'Donate',
+      pages: ['/donate']
+    }
+  };
+
+  // Find current section
+  let currentSection = null;
+  let currentPage = pathname;
+
+  for (const [sectionKey, section] of Object.entries(sections)) {
+    if (section.pages.includes(pathname)) {
+      currentSection = sectionKey;
+      break;
+    }
+  }
+
+  return { currentSection, currentPage };
+};
+
 // Navigation component that can use useLocation
 const Navigation = () => {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { currentSection, currentPage } = getNavigationState(location.pathname);
 
   // Close mobile menu when route changes
   useEffect(() => {
@@ -363,33 +478,33 @@ const Navigation = () => {
       {/* TOP NAVBAR (scrolls away) */}
       <div className="top-navbar">
         <ul className="top-links">
-          <li className="top-dropdown">
-            <NavLink to="/parents-families">
+          <li className={`top-dropdown ${currentSection === 'parents-families' ? 'active-section' : ''}`}>
+            <NavLink to="/parents-families" className={currentSection === 'parents-families' ? 'section-active' : ''}>
               Parents & Families
             </NavLink>
             <ul className="top-dropdown-content">
-              <li><NavLink to="/locations" className={({ isActive }) => isActive ? "active" : ""}>Find Us</NavLink></li>
-              <li><NavLink to="/toys-devices" className={({ isActive }) => isActive ? "active" : ""}>Toys & Devices</NavLink></li>
+              <li><NavLink to="/locations" className={currentPage === '/locations' ? "active-page" : ""}>Find Us</NavLink></li>
+              <li><NavLink to="/toys-devices" className={currentPage === '/toys-devices' ? "active-page" : ""}>Toys & Devices</NavLink></li>
             </ul>
           </li>
-          <li className="top-dropdown">
-            <NavLink to="/students">
+          <li className={`top-dropdown ${currentSection === 'students' ? 'active-section' : ''}`}>
+            <NavLink to="/students" className={currentSection === 'students' ? 'section-active' : ''}>
               Students
             </NavLink>
             <ul className="top-dropdown-content">
-              <li><NavLink to="/volunteer-opportunities" className={({ isActive }) => isActive ? "active" : ""}>Volunteer Opportunities</NavLink></li>
-              <li><NavLink to="/training" className={({ isActive }) => isActive ? "active" : ""}>General 1 Training</NavLink></li>
-              <li><NavLink to="/safety-guidelines" className={({ isActive }) => isActive ? "active" : ""}>Safety Guidelines</NavLink></li>
-              <li><NavLink to="/resources-tutorials" className={({ isActive }) => isActive ? "active" : ""}>Training: Resources & Tutorials</NavLink></li>
+              <li><NavLink to="/volunteer-opportunities" className={currentPage === '/volunteer-opportunities' ? "active-page" : ""}>Volunteer Opportunities</NavLink></li>
+              <li><NavLink to="/training" className={currentPage === '/training' ? "active-page" : ""}>General 1 Training</NavLink></li>
+              <li><NavLink to="/safety-guidelines" className={currentPage === '/safety-guidelines' ? "active-page" : ""}>Safety Guidelines</NavLink></li>
+              <li><NavLink to="/resources-tutorials" className={currentPage === '/resources-tutorials' ? "active-page" : ""}>Training: Resources & Tutorials</NavLink></li>
             </ul>
           </li>
-          <li className="top-dropdown">
-            <NavLink to="/partners-supporters">
+          <li className={`top-dropdown ${currentSection === 'partners-supporters' ? 'active-section' : ''}`}>
+            <NavLink to="/partners-supporters" className={currentSection === 'partners-supporters' ? 'section-active' : ''}>
               Partners & Supporters
             </NavLink>
             <ul className="top-dropdown-content">
-              <li><NavLink to="/schools-educational-programs" className={({ isActive }) => isActive ? "active" : ""}>Schools & Educational Programs</NavLink></li>
-              <li><NavLink to="/partners-supporters" className={({ isActive }) => isActive ? "active" : ""}>Hospitals & Healthcare Providers</NavLink></li>
+              <li><NavLink to="/schools-educational-programs" className={currentPage === '/schools-educational-programs' ? "active-page" : ""}>Schools & Educational Programs</NavLink></li>
+              <li><NavLink to="/partners-supporters" className={currentPage === '/partners-supporters' ? "active-page" : ""}>Hospitals & Healthcare Providers</NavLink></li>
             </ul>
           </li>
         </ul>
@@ -402,38 +517,40 @@ const Navigation = () => {
             <img id="nav-logo" className="hidden" src="/images/Narrow_Logo.png" alt="A4A Narrow Logo" />
           </Link>
           <ul className="nav-links">
-            <li className="dropdown">
-              <NavLink to="/who-are-we">
+            <li className={`dropdown ${currentSection === 'who-are-we' ? 'active-section' : ''}`}>
+              <NavLink to="/who-are-we" className={currentSection === 'who-are-we' ? 'section-active' : ''}>
                 Who Are We?
               </NavLink>
               <ul className="dropdown-content">
-                <li><NavLink to="/our-mission" className={({ isActive }) => isActive ? "active" : ""}>Our Mission</NavLink></li>
-                <li><NavLink to="/our-stories" className={({ isActive }) => isActive ? "active" : ""}>Our Stories</NavLink></li>
-                <li><NavLink to="/media" className={({ isActive }) => isActive ? "active" : ""}>Media & News</NavLink></li>
-                <li><NavLink to="/faq" className={({ isActive }) => isActive ? "active" : ""}>FAQs</NavLink></li>
+                <li><NavLink to="/our-mission" className={currentPage === '/our-mission' ? "active-page" : ""}>Our Mission</NavLink></li>
+                <li><NavLink to="/our-stories" className={currentPage === '/our-stories' ? "active-page" : ""}>Our Stories</NavLink></li>
+                <li><NavLink to="/media" className={currentPage === '/media' ? "active-page" : ""}>Media & News</NavLink></li>
+                <li><NavLink to="/faq" className={currentPage === '/faq' ? "active-page" : ""}>FAQs</NavLink></li>
               </ul>
             </li>
-            <li className="dropdown">
-              <NavLink to="/projects">
+            <li className={`dropdown ${currentSection === 'projects' ? 'active-section' : ''}`}>
+              <NavLink to="/projects" className={currentSection === 'projects' ? 'section-active' : ''}>
                 Our Projects
               </NavLink>
               <ul className="dropdown-content">
-                <li><NavLink to="/cars" className={({ isActive }) => isActive ? "active" : ""}>Ride-On Cars</NavLink></li>
-                <li><NavLink to="/montessori-board" className={({ isActive }) => isActive ? "active" : ""}>Giant Montessori Board</NavLink></li>
-                <li><NavLink to="/bath-seat" className={({ isActive }) => isActive ? "active" : ""}>Bath Seat Project</NavLink></li>
-                <li><NavLink to="/dog-treat" className={({ isActive }) => isActive ? "active" : ""}>Dog Treat Project</NavLink></li>
-                <li><NavLink to="/goodie-bag" className={({ isActive }) => isActive ? "active" : ""}>Goodie Bag Project</NavLink></li>
+                <li><NavLink to="/cars" className={currentPage === '/cars' ? "active-page" : ""}>Ride-On Cars</NavLink></li>
+                <li><NavLink to="/montessori-board" className={currentPage === '/montessori-board' ? "active-page" : ""}>Giant Montessori Board</NavLink></li>
+                <li><NavLink to="/bath-seat" className={currentPage === '/bath-seat' ? "active-page" : ""}>Bath Seat Project</NavLink></li>
+                <li><NavLink to="/dog-treat" className={currentPage === '/dog-treat' ? "active-page" : ""}>Dog Treat Project</NavLink></li>
+                <li><NavLink to="/goodie-bag" className={currentPage === '/goodie-bag' ? "active-page" : ""}>Goodie Bag Project</NavLink></li>
               </ul>
             </li>
-            <li className="dropdown">
-              <NavLink to="/locations">
+            <li className={`dropdown ${currentSection === 'locations' ? 'active-section' : ''}`}>
+              <NavLink to="/locations" className={currentSection === 'locations' ? 'section-active' : ''}>
                 Locations
               </NavLink>
               <ul className="dropdown-content">
-                <li><NavLink to="/locations" className={({ isActive }) => isActive ? "active" : ""}>Rutgers University</NavLink></li>
+                <li><NavLink to="/locations" className={currentPage === '/locations' ? "active-page" : ""}>Rutgers University</NavLink></li>
               </ul>
             </li>
-            <li><NavLink to="/donate" className={({ isActive }) => isActive ? "active" : ""}>Donate</NavLink></li>
+            <li className={currentSection === 'donate' ? 'active-section' : ''}>
+              <NavLink to="/donate" className={currentSection === 'donate' ? 'section-active' : ''}>Donate</NavLink>
+            </li>
           </ul>
           {/* Mobile Menu Button */}
           <button 
@@ -447,7 +564,12 @@ const Navigation = () => {
           </button>
         </nav>
       </div>
-      <MobileNavigation isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
+      <MobileNavigation 
+        isOpen={isMobileMenuOpen} 
+        onClose={() => setIsMobileMenuOpen(false)}
+        currentSection={currentSection}
+        currentPage={currentPage}
+      />
     </>
   );
 };
@@ -501,6 +623,8 @@ function App() {
         <Route path="/partners-supporters" element={<PartnersSupporters />} />
         <Route path="/schools-educational-programs" element={<SchoolsEducational />} />
         <Route path="/training" element={<Training />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/student-dashboard" element={<StudentDashboard />} />
         <Route path="/" element={<HomePage />} />
       </Routes>
       {/* Footer is now outside <Routes> so it appears on all pages */}

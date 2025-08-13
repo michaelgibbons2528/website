@@ -354,6 +354,81 @@
   color: #333;
 }
 
+/* Student Login Section */
+.student-login-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #5a3696 0%, #7c4db8 100%);
+  color: white;
+}
+
+.login-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.login-text h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.login-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.login-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.login-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.feature-icon {
+  font-size: 1.2rem;
+}
+
+.login-action {
+  text-align: center;
+}
+
+.login-button {
+  display: inline-block;
+  background: white;
+  color: #5a3696;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.login-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background: #f8f9fa;
+}
+
+.login-note {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
 /* Requirements Section */
 .requirements-section {
   padding: 4rem 0;
@@ -578,6 +653,15 @@
   
   .hero-subtitle {
     font-size: 1.1rem;
+  }
+  
+  .login-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .login-features {
+    grid-template-columns: 1fr;
   }
   
   .get-started-content {

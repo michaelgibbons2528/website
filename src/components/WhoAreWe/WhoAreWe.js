@@ -82,23 +82,7 @@ const WhoAreWe = () => {
             </div>
           </div>
 
-          {/* Featured Images */}
-          <div className="featured-images">
-            <div className="image-grid">
-              <div className="image-item">
-                <img src="/images/1-1_Ciaran_Car_and_Group.JPG" alt="Child with custom ride-on car" />
-                <p>Custom Ride-On Cars</p>
-              </div>
-              <div className="image-item">
-                <img src="/images/4-3_Rutgers_Fall_2024_EVERYONE.JPG" alt="A4A team members" />
-                <p>Our Dedicated Team</p>
-              </div>
-              <div className="image-item">
-                <img src="/images/1-1_Fiona_and_Family.JPG" alt="Family with A4A project" />
-                <p>Supporting Families</p>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
 

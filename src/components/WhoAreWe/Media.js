@@ -37,7 +37,7 @@ export default function Media() {
               className="news-card featured clickable"
             >
               <div className="news-image">
-                <img src="/images/4-3_Rutgers_Fall_2024_EVERYONE.JPG" alt="A4A team members at Rutgers" />
+                <img src="/images/16-9_Rutgers_Article.jpg" alt="A4A team members at Rutgers" />
                 <div className="news-badge">
                   <span>Featured</span>
                 </div>
@@ -73,7 +73,7 @@ export default function Media() {
               className="news-card clickable"
             >
               <div className="news-image">
-                <img src="/images/1-1_Engineer_Kickoff.jpg" alt="Engineering students working on projects" />
+                <img src="/images/16-9_Verona_Article.jpg" alt="Engineering students working on projects" />
                 <div className="news-badge">
                   <span>Local News</span>
                 </div>
