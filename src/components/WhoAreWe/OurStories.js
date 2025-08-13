@@ -56,8 +56,8 @@ export default function OurStories() {
                 <h3>Kavya Patel: Social Chair of Rutgers A4A</h3>
                                                    <div className="story-meta">
                     <span className="major">Major: Biochemical Engineering</span>
-                    <span className="project">Lead: <a onClick={() => handleProjectClick('ciaran')} style={{cursor: 'pointer'}}>Project Ciaran</a></span>
-                    <span className="project">Member: <a onClick={() => handleProjectClick('fiona')} style={{cursor: 'pointer'}}>Project Fiona</a></span>
+                    <span className="project">Lead: <a href="#" onClick={(e) => { e.preventDefault(); handleProjectClick('ciaran'); }} style={{cursor: 'pointer'}}>Project Ciaran</a></span>
+                    <span className="project">Member: <a href="#" onClick={(e) => { e.preventDefault(); handleProjectClick('fiona'); }} style={{cursor: 'pointer'}}>Project Fiona</a></span>
                   </div>
                 
                 <div className="story-excerpt">
@@ -118,7 +118,7 @@ export default function OurStories() {
                                                    <div className="story-meta">
                     <span className="major">Major: Mechanical Engineering</span>
                     <span className="project">Year: 2027</span>
-                    <span className="project">Lead: <a onClick={() => handleProjectClick('wilhelm')} style={{cursor: 'pointer'}}>Project Wilhelm</a> & <a onClick={() => handleProjectClick('montessori-board')} style={{cursor: 'pointer'}}>Montessori Board</a></span>
+                    <span className="project">Lead: <a href="#" onClick={(e) => { e.preventDefault(); handleProjectClick('wilhelm'); }} style={{cursor: 'pointer'}}>Project Wilhelm</a> & <a href="#" onClick={(e) => { e.preventDefault(); handleProjectClick('montessori-board'); }} style={{cursor: 'pointer'}}>Montessori Board</a></span>
                   </div>
                 
                 <div className="story-excerpt">
@@ -173,7 +173,7 @@ export default function OurStories() {
                                                    <div className="story-meta">
                     <span className="major">Major: Computer Engineering</span>
                     <span className="project">Year: 2025</span>
-                    <span className="project">Lead: <a onClick={() => handleProjectClick('elyas')} style={{cursor: 'pointer'}}>Project Elyas</a></span>
+                    <span className="project">Lead: <a href="#" onClick={(e) => { e.preventDefault(); handleProjectClick('elyas'); }} style={{cursor: 'pointer'}}>Project Elyas</a></span>
                   </div>
                 
                 <div className="story-excerpt">
@@ -223,7 +223,7 @@ export default function OurStories() {
                                                       <div className="story-meta">
                      <span className="major">Major: Biomedical Engineering</span>
                      <span className="project">Year: 2027</span>
-                     <span className="project">Lead: <a onClick={() => handleProjectClick('robert')} style={{cursor: 'pointer'}}>Project Robert</a> & <a onClick={() => handleProjectClick('bath-seat')} style={{cursor: 'pointer'}}>Bath Seat Project</a></span>
+                     <span className="project">Lead: <a href="#" onClick={(e) => { e.preventDefault(); handleProjectClick('robert'); }} style={{cursor: 'pointer'}}>Project Robert</a> & <a href="#" onClick={(e) => { e.preventDefault(); handleProjectClick('bath-seat'); }} style={{cursor: 'pointer'}}>Bath Seat Project</a></span>
                    </div>
                  
                  <div className="story-excerpt">
@@ -270,7 +270,7 @@ export default function OurStories() {
                                                       <div className="story-meta">
                      <span className="major">Major: Mechanical Engineering</span>
                      <span className="project">Year: 2027</span>
-                     <span className="project">Lead: <a onClick={() => handleProjectClick('robert')} style={{cursor: 'pointer'}}>Project Robert</a> & <a onClick={() => handleProjectClick('braylon')} style={{cursor: 'pointer'}}>Project Braylon</a></span>
+                     <span className="project">Lead: <a href="#" onClick={(e) => { e.preventDefault(); handleProjectClick('robert'); }} style={{cursor: 'pointer'}}>Project Robert</a> & <a href="#" onClick={(e) => { e.preventDefault(); handleProjectClick('braylon'); }} style={{cursor: 'pointer'}}>Project Braylon</a></span>
                    </div>
                  
                  <div className="story-excerpt">
@@ -317,7 +317,7 @@ export default function OurStories() {
                                                       <div className="story-meta">
                      <span className="major">Major: Biomedical Engineering</span>
                      <span className="project">Year: 2027</span>
-                     <span className="project">Lead: <a onClick={() => handleProjectClick('fiona')} style={{cursor: 'pointer'}}>Project Fiona</a> & <a onClick={() => handleProjectClick('isaiah')} style={{cursor: 'pointer'}}>Project Isaiah</a></span>
+                     <span className="project">Lead: <a href="#" onClick={(e) => { e.preventDefault(); handleProjectClick('fiona'); }} style={{cursor: 'pointer'}}>Project Fiona</a> & <a href="#" onClick={(e) => { e.preventDefault(); handleProjectClick('isaiah'); }} style={{cursor: 'pointer'}}>Project Isaiah</a></span>
                    </div>
                  
                  <div className="story-excerpt">
