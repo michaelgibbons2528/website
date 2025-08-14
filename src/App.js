@@ -266,12 +266,12 @@ const HomePage = () => {
       p: 'Isaiah is a 4 year-old boy who\'s now driving his AWESOME NEW CAR! With the additions of back and head supports, on top of his custom seat cushions, he\'s now the COOLEST KID ON THE BLOCK!',
     },
     {
-      childName: 'Luca',
+      childName: 'LUCA',
       img: '/images/4-3_Luca_and_Group.JPG',
       alt: 'Luca and Everyone',
-      h2: 'Luca ',
+      h2: 'LUCATRON',
       h1: 'Rutgers A4A',
-      p: 'Luca is a 3 year-old boy who loves sports and the outdoors! With the additions of a five point harness, custom accerlation button, and HIS VERY OWN BASKETBALL HOOP on the back, Luca will be the MVP of his neighborhood!',
+      p: 'Luca is a 3 year-old boy who loves playing sports and the outdoors! With the additions of a five point harness, custom accerlation button, and HIS VERY OWN BASKETBALL HOOP on the back, Luca will be the MVP of his neighborhood!',
     },
   ];
 
