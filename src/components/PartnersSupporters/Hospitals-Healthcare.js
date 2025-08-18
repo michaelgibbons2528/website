@@ -56,7 +56,7 @@ export default function Hospitals() {
         backgroundPosition: 'center'
       }}>
         <div className="hero-content">
-          <h1>Healthcare Partnerships</h1>
+          <h1>Hospitals & Healthcare Providers</h1>
         </div>
       </div>
 
