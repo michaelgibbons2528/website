@@ -75,28 +75,28 @@ export default function VolunteerOpportunities() {
 
   const currentVolunteers = [
     {
-      name: 'Alex Chen',
-      role: 'Project Engineer',
-      image: '/images/4-3_Ciaran_and_Group.JPG',
-      quote: '"Working with families to create custom solutions has been the most rewarding experience of my career."',
+      name: 'Kavya Patel',
+      role: 'Social Chair',
+      image: '/images/4-3_Kavya_Story.jpg',
+      quote: '"To me, A4A represents the connection between engineering and applying it to make a real world impact. Seeing the impact of our work firsthand during the showcases made me realize our work at A4A wasn\'t just a project but something that brings joy, opportunity and independence to real families."',
       timeWithA4A: '2 years',
-      projectsCompleted: '15+'
+      projectsCompleted: 'Project Ciaran & Fiona'
     },
     {
-      name: 'Maria Rodriguez',
-      role: 'Family Liaison',
-      image: '/images/4-3_Luca_and_Group.JPG',
-      quote: '"Building relationships with families and seeing their joy when projects are completed is incredible."',
-      timeWithA4A: '1.5 years',
-      projectsCompleted: '25+'
+      name: 'Jason Ho',
+      role: 'Vice President',
+      image: '/images/4-3_Jason_Story.jpg',
+      quote: '"I joined A4A because it allowed me to use my engineering skill for a tangible, positive impact on people\'s lives. It\'s not just about making projects - it\'s about understanding someone\'s needs and creating something that empowers them."',
+      timeWithA4A: '2 years',
+      projectsCompleted: 'Project Wilhelm & Montessori Board'
     },
     {
-      name: 'David Kim',
-      role: 'Safety Coordinator',
-      image: '/images/4-3_Rutgers_Fall_2024_EVERYONE.JPG',
-      quote: '"Ensuring safety while maintaining creativity in our designs is a perfect balance."',
+      name: 'Aaron Clarion',
+      role: 'Former Vice President',
+      image: '/images/4-3_Aaron_Story.jpg',
+      quote: '"I always liked being able to give back and to use what I know to do something beneficial. Everything involving A4A has been rewarding for me and is an experience I wouldn\'t trade for anything else."',
       timeWithA4A: '3 years',
-      projectsCompleted: '40+'
+      projectsCompleted: 'Project Elyas'
     }
   ];
 
@@ -119,15 +119,22 @@ export default function VolunteerOpportunities() {
       {/* Why Volunteer Section */}
       <section className="why-volunteer-section">
         <div className="container">
-          <h2>Why Volunteer with A4A?</h2>
-          <div className="benefits-grid">
-            {volunteerBenefits.map((benefit, index) => (
-              <div key={index} className="benefit-card">
-                <div className="benefit-icon">{benefit.icon}</div>
-                <h3>{benefit.title}</h3>
-                <p>{benefit.description}</p>
-              </div>
-            ))}
+          <div className="why-volunteer-content">
+            <div className="why-volunteer-text">
+              <h2>Why Volunteer with A4A?</h2>
+              <p>
+                Volunteering with A4A offers a unique opportunity to make a real, tangible impact in your community. 
+                You'll work directly with families to design and build custom adaptive equipment that transforms 
+                children's lives. Our volunteers gain hands-on experience in engineering, project management, and 
+                family support while developing meaningful relationships with healthcare professionals and community 
+                leaders. Whether you're an experienced engineer or someone passionate about helping others, you'll 
+                find a role that matches your skills and interests. Every project you work on directly improves 
+                a child's quality of life, making your contribution truly meaningful and rewarding.
+              </p>
+            </div>
+            <div className="why-volunteer-image">
+              <img src="/images/4-3_Dean_Cadena_and_Membs.JPG" alt="A4A volunteers working together" />
+            </div>
           </div>
         </div>
       </section>
@@ -308,12 +315,7 @@ export default function VolunteerOpportunities() {
               <a href="mailto:info@a4all.org?subject=Volunteer Interest" className="contact-button primary">
                 Get Started Today
               </a>
-              <NavLink to="/safety-guidelines" className="contact-button secondary">
-                Safety Guidelines
-              </NavLink>
-              <NavLink to="/resources-tutorials" className="contact-button secondary">
-                Training Resources
-              </NavLink>
+
             </div>
           </div>
         </div>

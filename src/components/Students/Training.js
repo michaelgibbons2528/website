@@ -156,7 +156,7 @@ const Training = () => {
       <div 
         className="training-hero"
         style={{
-          backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/4-3_Work_on_Project.jpg')",
+          backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/4-3_Work_on_Project.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center"
         }}

@@ -33,30 +33,32 @@ export default function Cars() {
       age: "3 years old",
       condition: "Project Leads: Bensu and Maya",
       carColor: "#007bff", // Blue car
-      description: "xxxxxxxxxxxxx",
+      description: "A custom ride-on car designed for Braylon with comprehensive structural support and safety features, featuring a train-themed design with birthday celebration elements.",
       modifications: [
         {
-          title: "Mobility Assistance",
+          title: "Structural Supports",
           details: [
-            "xxxxxxxxxxxxxxxx", 
-            "xxxxxxxxxxxxxxxx",
-            "xxxxxxxxxxxxxxxx"
+            "PVC structure (back, head, and sides)",
+            "Kickboard",
+            "Foam padding"
           ]
         },
         {
-          title: "Play Integration",
+          title: "Seat Modifications",
           details: [
-            "xxxxxxxxxxxxxxxx",
-            "xxxxxxxxxxxxxxxx",
-            "xxxxxxxxxxxxxxxx"
+            "5-point harness",
+            "Extended seat",
+            "Banana pillow & PVC padding"
           ]
         },
         {
-          title: "Growth Accommodation",
+          title: "Design",
           details: [
-            "xxxxxxxxxxxxxxxx",
-            "xxxxxxxxxxxxxxxx",
-            "xxxxxxxxxxxxxxxx"
+            "Customized license plate",
+            "Sound button & train plushie",
+            "Red PVC & Blue accents with vinyl",
+            "Railroad crossing sign + lights",
+            "Happy (belated) Birthday Balloons!!"
           ]
         }
       ],
@@ -67,30 +69,29 @@ export default function Cars() {
       age: "5 years old",
       condition: "Project Leads: Aito and Kavya",
       carColor: "#fd7e14", // Orange car
-      description: "xxxxxxxxxxxxx",
+      description: "A custom ride-on car designed to provide independence and mobility for Ciaran, featuring specialized structural support and safety modifications.",
       modifications: [
         {
-          title: "Mobility Assistance",
+          title: "Structural & Mechanical Support",
           details: [
-            "xxxxxxxxxxxxxxxx",
-            "xxxxxxxxxxxxxxxx",
-            "xxxxxxxxxxxxxxxx"
+            "PVC structure with padding",
+            "Alternative, jerk minimizing control"
           ]
         },
         {
-          title: "Comfort and Support",
+          title: "Seat Modification",
           details: [
-            "xxxxxxxxxxxxxxxx",
-            "xxxxxxxxxxxxxxxx",
-            "xxxxxxxxxxxxxxxx"
+            "Padded 5 point harness",
+            "Banana neck and head support",
+            "Moving PVC door"
           ]
         },
         {
-          title: "Durability and Safety",
+          title: "Design",
           details: [
-            "xxxxxxxxxxxxxxxx",
-            "xxxxxxxxxxxxxxxx",
-            "xxxxxxxxxxxxxxxx"
+            "Customized license plates",
+            "Fire flag, Dino plushie, accented wheels",
+            "Pom Pom exhaust pipes"
           ]
         }
       ],
@@ -104,24 +105,24 @@ export default function Cars() {
       description: "xxxxxxxxxxxxx",
       modifications: [
         {
-          title: "Sensory Enhancements",
+          title: "xxxxxxxxxxxxx",
           details: [
-            "Added red carpet and felt interior for texture stimulation that Elyas enjoys.",
-            "Integrated silver wrapping on seat cushions for additional sensory input."
+            "xxxxxxxxxxxxx",
+            "xxxxxxxxxxxxx"
           ]
         },
         {
-          title: "Safety Lighting",
+          title: "xxxxxxxxxxxxx",
           details: [
-            "Installed LED lights underneath and inside the car as extra safety features.",
-            "Added gentle lighting that doesn't trigger seizures."
+            "xxxxxxxxxxxxx",
+            "xxxxxxxxxxxxx"
           ]
         },
         {
-          title: "Secure Positioning",
+          title: "xxxxxxxxxxxxx",
           details: [
-            "Created custom cushions and harness system to keep Elyas steady during rides.",
-            "Designed positioning that accommodates his specific mobility needs."
+            "xxxxxxxxxxxxx",
+            "xxxxxxxxxxxxx"
           ]
         }
       ],
@@ -135,24 +136,24 @@ export default function Cars() {
       description: "xxxxxxxxxxxxx",
       modifications: [
         {
-          title: "Stabilization System",
+          title: "xxxxxxxxxxxxx",
           details: [
-            "Added a custom stabilization system to help Fiona maintain balance while driving.",
-            "Created a wider, more stable base for increased confidence."
+            "xxxxxxxxxxxxx",
+            "xxxxxxxxxxxxx"
           ]
         },
         {
-          title: "Interactive Features",
+          title: "xxxxxxxxxxxxx",
           details: [
-            "Integrated musical elements and colorful LED lights to engage Fiona's interests.",
-            "Added easy-to-press buttons for interactive play."
+            "xxxxxxxxxxxxx",
+            "xxxxxxxxxxxxx"
           ]
         },
         {
-          title: "Comfortable Seating",
+          title: "xxxxxxxxxxxxx",
           details: [
-            "Designed a supportive seat that provides proper posture and comfort.",
-            "Added soft padding and secure straps for safety."
+            "xxxxxxxxxxxxx",
+            "xxxxxxxxxxxxx"
           ]
         }
       ],
@@ -163,27 +164,31 @@ export default function Cars() {
       age: "7 years old",
       condition: "Project Leads: Gabe and Lucas",
       carColor: "#000000", // Black car
-      description: "xxxxxxxxxxxxx",
+      description: "A custom ride-on car designed for Isaiah with specialized seat modifications and structural support, featuring a duck-themed design with LED lighting and 3D-printed elements.",
       modifications: [
         {
-          title: "First-Time Mobility",
+          title: "Seat Modification",
           details: [
-            "Designed a car specifically for Isaiah's first experience of independent movement.",
-            "Created intuitive controls that he could learn quickly and confidently."
+            "Inclined foam seat back",
+            "Detachable foam cushions with fabric covers",
+            "Adjustable 5-point harness"
           ]
         },
         {
-          title: "Confidence Building",
+          title: "Structural Support",
           details: [
-            "Added features that help Isaiah build confidence in his driving abilities.",
-            "Integrated safety features that provide security while allowing independence."
+            "Painted PVC frame",
+            "Foam padding on PVC",
+            "Allows for head support and securing components"
           ]
         },
         {
-          title: "Social Integration",
+          title: "Visual Design",
           details: [
-            "Designed the car to help Isaiah participate in activities with his peers.",
-            "Added features that make it easy for him to join group play."
+            "Controllable LED light strips",
+            "Laser-cut custom license plate",
+            "3D printed Duck Hood Ornament",
+            "Duck stuffed animal"
           ]
         }
       ],
@@ -194,27 +199,29 @@ export default function Cars() {
       age: "4 years old",
       condition: "Project Leads: Anika and Giuseppe",
       carColor: "#007bff", // Blue car
-      description: "xxxxxxxxxxxxx",
+      description: "A custom ride-on car designed for Luca with specialized structural support and steering modifications, featuring a dinosaur-themed design with basketball elements.",
       modifications: [
         {
-          title: "Skill Development",
+          title: "Structural Support",
           details: [
-            "Created a car that helps Luca develop motor skills and coordination.",
-            "Added features that encourage learning and skill building."
+            "5-point harness",
+            "PVC support (left-side focus)",
+            "Banana pillows to support head/neck"
           ]
         },
         {
-          title: "Educational Integration",
+          title: "Steering",
           details: [
-            "Integrated educational elements that Luca can interact with while driving.",
-            "Added features that support his learning and development goals."
+            "Accelerating with button",
+            "3D-printed button support to improve access"
           ]
         },
         {
-          title: "Confidence Building",
+          title: "Design",
           details: [
-            "Designed features that help Luca discover and build confidence in new abilities.",
-            "Created a supportive environment for growth and development."
+            "Personalized backboard and hoop",
+            "Dinosaur themed customizations (horns, teeth, eyes)",
+            "Vinyl blue flame on side"
           ]
         }
       ],
@@ -228,23 +235,23 @@ export default function Cars() {
       description: "xxxxxxxxxxxxx",
       modifications: [
         {
-          title: "5-Point Harness",
+          title: "xxxxxxxxxxxxx",
           details: [
-            "We added a 5-point harness to keep Robert secure while allowing his arms to remain free for movement.",
-            "This design also accommodates Robert's growth, ensuring comfort and safety as he grows."
+            "xxxxxxxxxxxxx",
+            "xxxxxxxxxxxxx"
           ]
         },
         {
-          title: "Adjustable Seating",
+          title: "xxxxxxxxxxxxx",
           details: [
-            "We created additional stackable seats for the original car seat to ensure Robert's legs stay at a 90-degree angle.",
-            "The seats are more comfortable and can be easily velcro-ed on for a secure fit. The stackable design allows for future adjustments as Robert grows, maintaining proper posture and comfort."
+            "xxxxxxxxxxxxx",
+            "xxxxxxxxxxxxx"
           ]
         },
         {
-          title: "Additional Support Pipe Structure",
+          title: "xxxxxxxxxxxxx",
           details: [
-            "We added a pipe structure at the back of the car to provide extra support for the 5-point harness, enhancing stability and security."
+            "xxxxxxxxxxxxx"
           ]
         }
       ],
@@ -258,24 +265,24 @@ export default function Cars() {
       description: "xxxxxxxxxxxxx",
       modifications: [
         {
-          title: "Speed Control System",
+          title: "xxxxxxxxxxxxx",
           details: [
-            "Modified the speed controls to allow Wilhelm to drive at a pace comfortable for him.",
-            "Added gradual acceleration features for safe operation."
+            "xxxxxxxxxxxxx",
+            "xxxxxxxxxxxxx"
           ]
         },
         {
-          title: "Custom Seating",
+          title: "xxxxxxxxxxxxx",
           details: [
-            "Designed a seat that provides proper support while allowing freedom of movement.",
-            "Added adjustable features to accommodate Wilhelm's growth."
+            "xxxxxxxxxxxxx",
+            "xxxxxxxxxxxxx"
           ]
         },
         {
-          title: "Durability Enhancements",
+          title: "xxxxxxxxxxxxx",
           details: [
-            "Reinforced the car structure to handle active outdoor use.",
-            "Added weather-resistant features for year-round enjoyment."
+            "xxxxxxxxxxxxx",
+            "xxxxxxxxxxxxx"
           ]
         }
       ],
@@ -289,24 +296,24 @@ export default function Cars() {
       description: "xxxxxxxxxxxxx",
       modifications: [
         {
-          title: "Custom Controls",
+          title: "xxxxxxxxxxxxx",
           details: [
-            "Modified the steering mechanism to be more accessible for Zora's specific motor skills.",
-            "Added easy-to-grip handles and simplified control layout."
+            "xxxxxxxxxxxxx",
+            "xxxxxxxxxxxxx"
           ]
         },
         {
-          title: "Safety Features",
+          title: "xxxxxxxxxxxxx",
           details: [
-            "Installed a custom safety harness that provides security while allowing freedom of movement.",
-            "Added LED lights for visibility during outdoor adventures."
+            "xxxxxxxxxxxxx",
+            "xxxxxxxxxxxxx"
           ]
         },
         {
-          title: "Terrain Adaptations",
+          title: "xxxxxxxxxxxxx",
           details: [
-            "Enhanced the car's ability to handle different outdoor terrains for family adventures.",
-            "Added extra traction and stability features."
+            "xxxxxxxxxxxxx",
+            "xxxxxxxxxxxxx"
           ]
         }
       ],
@@ -322,38 +329,25 @@ export default function Cars() {
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>
-        <div className="hero-overlay">
-          <div className="hero-content">
-            <h1>Ride-On Cars</h1>
-          </div>
+        <div className="hero-content">
+          <h1>Ride-On Cars</h1>
         </div>
       </div>
 
-      {/* Introduction Section */}
-      <div className="cars-intro">
-        <div className="container">
-          <h2>Custom Solutions for Every Child</h2>
-          <p>
-            We start with standard battery-powered ride-on cars and customize them based on 
-            each child's specific needs. This includes adding joystick controls, custom seating, 
-            safety harnesses, and other modifications that allow children with various abilities 
-            to operate the vehicle safely and independently.
-          </p>
-          <div className="intro-features">
-            <div className="feature">
-              <h3>🎯 Personalized Design</h3>
-              <p>Each car is uniquely modified to meet the specific needs and abilities of the child.</p>
-            </div>
-            <div className="feature">
-              <h3>🛡️ Safety First</h3>
-              <p>All modifications prioritize safety while maximizing independence and fun.</p>
-            </div>
-            <div className="feature">
-              <h3>🌟 Independence & Joy</h3>
-              <p>Children gain mobility and confidence while experiencing the joy of independent movement.</p>
-            </div>
+      {/* Main Content */}
+      <div className="cars-main">
+        {/* Introduction Section */}
+        <section className="intro-section">
+          <div className="container">
+            <h2>The Best Way to Explore!</h2>
+            <p>
+              We start with standard battery-powered ride-on cars and customize them based on 
+              each child's specific needs. This includes adding joystick controls, custom seating, 
+              safety harnesses, and other modifications that allow children with various abilities 
+              to operate the vehicle safely and independently.
+            </p>
           </div>
-        </div>
+        </section>
       </div>
 
       {/* Individual Profiles Section */}
@@ -404,31 +398,7 @@ export default function Cars() {
         </div>
       </div>
 
-      {/* Impact Section */}
-      <div className="impact-section">
-        <div className="container">
-          <h2>The Impact of Custom Ride-On Cars</h2>
-          <p>
-            These custom ride-on cars provide children with a sense of independence and freedom 
-            they may not have experienced before. They can now join their siblings and friends 
-            in outdoor play, developing motor skills and confidence while having fun.
-          </p>
-          <div className="impact-stats">
-            <div className="stat">
-              <h3>9</h3>
-              <p>Children Helped</p>
-            </div>
-            <div className="stat">
-              <h3>100%</h3>
-              <p>Custom Designed</p>
-            </div>
-            <div className="stat">
-              <h3>∞</h3>
-              <p>Smiles Created</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </div>
   );
 } 

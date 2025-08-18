@@ -10,10 +10,8 @@ export default function Media() {
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>
-        <div className="hero-overlay">
-          <div className="hero-content">
-            <h1>Media & News</h1>
-          </div>
+        <div className="hero-content">
+          <h1>Media & News</h1>
         </div>
       </div>
 

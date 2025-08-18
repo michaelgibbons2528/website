@@ -11,10 +11,8 @@ export default function OurMission() {
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>
-        <div className="hero-overlay">
-          <div className="hero-content">
-            <h1>Our Mission</h1>
-          </div>
+        <div className="hero-content">
+          <h1>Our Mission</h1>
         </div>
       </div>
 

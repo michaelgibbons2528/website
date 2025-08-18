@@ -13,6 +13,26 @@ export default function Students() {
       link: '/volunteer-opportunities',
       color: '#5a3696',
       features: ['Hands-on Engineering', 'Family Interaction', 'Project Management', 'Skill Development']
+    },
+    {
+      id: 'leadership',
+      title: 'Leadership Roles',
+      subtitle: 'Take Initiative',
+      description: 'Develop leadership skills by taking on executive board positions, project management roles, or team lead responsibilities within our organization.',
+      image: '/images/4-3_Ciaran_and_Group.JPG',
+      link: '/get-involved',
+      color: '#a30000',
+      features: ['Executive Board', 'Project Management', 'Team Leadership', 'Strategic Planning']
+    },
+    {
+      id: 'training',
+      title: 'Training & Development',
+      subtitle: 'Learn & Grow',
+      description: 'Access comprehensive training programs, workshops, and mentorship opportunities to develop both technical and professional skills.',
+      image: '/images/4-3_Work_on_Project.jpg',
+      link: '/training',
+      color: '#0066cc',
+      features: ['Technical Training', 'Workshops', 'Mentorship', 'Skill Building']
     }
   ];
 
@@ -85,15 +105,44 @@ export default function Students() {
       {/* Why Join A4A Section */}
       <section className="why-join-section">
         <div className="container">
-          <h2>Why Join A4A as a Student?</h2>
-          <div className="benefits-grid">
-            {studentBenefits.map((benefit, index) => (
-              <div key={index} className="benefit-card">
-                <div className="benefit-icon">{benefit.icon}</div>
-                <h3>{benefit.title}</h3>
-                <p>{benefit.description}</p>
+          <div className="why-join-content">
+            <h2>Why Join A4A as a Student?</h2>
+            <p className="why-join-description">
+              Joining Accessible 4 All as a student offers you the unique opportunity to apply your engineering skills 
+              to real-world problems while making a meaningful impact in children's lives. Our organization bridges 
+              the gap between academic learning and practical application, providing you with hands-on experience 
+              that goes beyond the classroom.
+            </p>
+            <div className="why-join-highlights">
+              <div className="highlight-item">
+                <h3>Real-World Engineering Experience</h3>
+                <p>
+                  Work on actual projects that directly impact children and families in your community. 
+                  Design, prototype, and implement adaptive devices that solve real accessibility challenges.
+                </p>
               </div>
-            ))}
+              <div className="highlight-item">
+                <h3>Professional Skill Development</h3>
+                <p>
+                  Develop essential engineering skills through hands-on design and prototyping, while also 
+                  building leadership, communication, and project management abilities that are valuable in any career.
+                </p>
+              </div>
+              <div className="highlight-item">
+                <h3>Meaningful Community Impact</h3>
+                <p>
+                  Make a tangible difference in the lives of children with disabilities and their families. 
+                  See the direct results of your work and the joy it brings to those you help.
+                </p>
+              </div>
+              <div className="highlight-item">
+                <h3>Networking and Mentorship</h3>
+                <p>
+                  Connect with like-minded students, professionals, and families. Build relationships that 
+                  can support your academic and professional growth while contributing to a supportive community.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -163,211 +212,7 @@ export default function Students() {
         </div>
       </section>
 
-      {/* Skills Development Section */}
-      <section className="skills-section">
-        <div className="container">
-          <h2>Skills You'll Develop</h2>
-          <div className="skills-grid">
-            <div className="skill-category">
-              <h3>Technical Skills</h3>
-              <div className="skill-items">
-                <div className="skill-item">
-                  <span className="skill-icon">🔧</span>
-                  <span>Mechanical Design</span>
-                </div>
-                <div className="skill-item">
-                  <span className="skill-icon">⚡</span>
-                  <span>Electrical Systems</span>
-                </div>
-                <div className="skill-item">
-                  <span className="skill-icon">🎛️</span>
-                  <span>Control Systems</span>
-                </div>
-                <div className="skill-item">
-                  <span className="skill-icon">🛠️</span>
-                  <span>Prototyping</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="skill-category">
-              <h3>Professional Skills</h3>
-              <div className="skill-items">
-                <div className="skill-item">
-                  <span className="skill-icon">👥</span>
-                  <span>Team Collaboration</span>
-                </div>
-                <div className="skill-item">
-                  <span className="skill-icon">💬</span>
-                  <span>Client Communication</span>
-                </div>
-                <div className="skill-item">
-                  <span className="skill-icon">📋</span>
-                  <span>Project Management</span>
-                </div>
-                <div className="skill-item">
-                  <span className="skill-icon">🎯</span>
-                  <span>Problem Solving</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="skill-category">
-              <h3>Leadership Skills</h3>
-              <div className="skill-items">
-                <div className="skill-item">
-                  <span className="skill-icon">🎤</span>
-                  <span>Public Speaking</span>
-                </div>
-                <div className="skill-item">
-                  <span className="skill-icon">🤝</span>
-                  <span>Networking</span>
-                </div>
-                <div className="skill-item">
-                  <span className="skill-icon">📢</span>
-                  <span>Outreach & Marketing</span>
-                </div>
-                <div className="skill-item">
-                  <span className="skill-icon">💰</span>
-                  <span>Fundraising</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Requirements Section */}
-      <section className="requirements-section">
-        <div className="container">
-          <h2>What We're Looking For</h2>
-          <div className="requirements-grid">
-            <div className="requirement-card">
-              <div className="requirement-icon">❤️</div>
-              <h3>Passion</h3>
-              <p>A genuine desire to help children and families. No prior experience required - we'll teach you everything you need to know.</p>
-            </div>
-            <div className="requirement-card">
-              <div className="requirement-icon">⏰</div>
-              <h3>Commitment</h3>
-              <p>Dedication to our mission and willingness to learn. We value reliability and follow-through.</p>
-            </div>
-            <div className="requirement-card">
-              <div className="requirement-icon">🤝</div>
-              <h3>Teamwork</h3>
-              <p>Ability to work well with others and contribute to a collaborative environment.</p>
-            </div>
-            <div className="requirement-card">
-              <div className="requirement-icon">🎓</div>
-              <h3>Learning Mindset</h3>
-              <p>Eagerness to learn new skills and take on challenges. We provide training and mentorship.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Student Login Section */}
-      <section className="student-login-section">
-        <div className="container">
-          <div className="login-content">
-            <div className="login-text">
-              <h2>Student Portal</h2>
-              <p>
-                Already a student volunteer? Access your training materials, track your progress, 
-                and manage your projects through our secure student portal.
-              </p>
-              <div className="login-features">
-                <div className="login-feature">
-                  <span className="feature-icon">📚</span>
-                  <span>Training Materials</span>
-                </div>
-                <div className="login-feature">
-                  <span className="feature-icon">📊</span>
-                  <span>Progress Tracking</span>
-                </div>
-                <div className="login-feature">
-                  <span className="feature-icon">🔧</span>
-                  <span>Project Management</span>
-                </div>
-                <div className="login-feature">
-                  <span className="feature-icon">📋</span>
-                  <span>Resource Library</span>
-                </div>
-              </div>
-            </div>
-            <div className="login-action">
-              <Link to="/login" className="login-button">
-                Access Student Portal
-              </Link>
-              <p className="login-note">Contact your administrator for login credentials</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* How to Get Started Section */}
-      <section className="get-started-section">
-        <div className="container">
-          <div className="get-started-content">
-            <div className="get-started-text">
-              <h2>How to Get Started</h2>
-              <p>
-                Joining A4A is easy and rewarding. Whether you're an engineering student, 
-                interested in community service, or just want to make a difference, 
-                we have a place for you.
-              </p>
-              <div className="get-started-steps">
-                <div className="get-started-step">
-                  <div className="step-number">1</div>
-                  <div className="step-content">
-                    <h4>Contact Us</h4>
-                    <p>Send us an email or reach out through social media to express your interest.</p>
-                  </div>
-                </div>
-                <div className="get-started-step">
-                  <div className="step-number">2</div>
-                  <div className="step-content">
-                    <h4>Meet the Team</h4>
-                    <p>We'll schedule a meeting to discuss opportunities and find the best fit for you.</p>
-                  </div>
-                </div>
-                <div className="get-started-step">
-                  <div className="step-number">3</div>
-                  <div className="step-content">
-                    <h4>Start Contributing</h4>
-                    <p>Begin working on projects and making a real impact in children's lives.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="get-started-actions">
-              <a href="mailto:info@a4all.org?subject=Join A4A as Student" className="get-started-button primary">Get Started Today</a>
-              <a href="https://www.instagram.com/rutgersa4a/" className="get-started-button secondary">Follow Our Work</a>
-              <div className="contact-info">
-                <p>Questions? Contact us:</p>
-                <p>📧 info@a4all.org</p>
-                <p>📱 @rutgersa4a</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <section className="cta-section">
-        <div className="container">
-          <h2>Make a Difference Today</h2>
-          <p>
-            Join hundreds of students who are already making an impact. 
-            Your skills, passion, and dedication can help us reach more families 
-            and create more opportunities for children with disabilities.
-          </p>
-          <div className="cta-buttons">
-            <a href="mailto:info@a4all.org?subject=Join A4A as Student" className="cta-button primary">Join Our Team</a>
-            <NavLink to="/donate" className="cta-button secondary">Support Our Work</NavLink>
-          </div>
-        </div>
-      </section>
     </div>
   );
 } 

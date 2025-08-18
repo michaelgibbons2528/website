@@ -11,7 +11,8 @@ export default function SchoolsEducational() {
           name: "Rutgers University",
           type: "Primary Academic Partner",
           description: "Our flagship partnership providing engineering students with real-world assistive technology projects and research opportunities. Students work on semester-long projects designing and building custom adaptive devices for children with disabilities.",
-          logo: "/images/4-3_Temp_Logo.png",
+          website: "https://sites.rutgers.edu/a4a/",
+          logo: "/images/Rutgers_A4A.png",
           features: ["Student volunteer programs", "Research collaborations", "Workshop facilities", "Faculty expertise", "Capstone projects", "Hands-on engineering experience"]
         }
       ]
@@ -23,36 +24,25 @@ export default function SchoolsEducational() {
         {
           name: "River Dell High School",
           type: "High School Partner",
-          description: "Collaborating with River Dell High School to provide STEM education opportunities and connect families with our adaptive technology services. Students participate in workshops and learn about inclusive design principles.",
+          description: "Collaborating with River Dell High School, we worked with the Best Buddies Program to create a sensory DJ Board for students with disabilities.",
+          website: "https://rdhs.riverdell.org/o/rdhs",
           logo: "/images/1-1_River_Dell.png",
           features: ["STEM workshops", "Family referrals", "Student presentations", "Educational resources", "Inclusive design education", "Community outreach"]
         },
         {
           name: "Lake Hiawatha School",
           type: "Elementary School Partner",
-          description: "Partnering with Lake Hiawatha School to support inclusive education and provide families with access to adaptive technology resources. We work closely with teachers and staff to identify students who could benefit from our services.",
-          logo: "/images/4-3_Temp_Logo.png",
+          description: "We are collaborating with Lake Hiawatha Elementary School and Mrs. Corrente's class to create a giant Montessori Board for their special education classroom.",
+          logo: "/images/1-1_Lake_Hiawatha.png",
+          website: "https://lhs.pthsd.k12.nj.us/",
           features: ["Family support services", "Teacher collaboration", "Resource sharing", "Student assessments", "Inclusive education support", "Parent workshops"]
         },
         {
           name: "Bright Beginnings Learning Center (BBLC)",
           type: "Early Childhood Partner",
           description: "Working with BBLC to provide early intervention support and adaptive technology solutions for young children with disabilities. Our partnership focuses on creating inclusive learning environments from the earliest stages of development.",
-          logo: "/images/4-3_Temp_Logo.png",
+          logo: "/images/1-1_BBLC.png",
           features: ["Early intervention support", "Adaptive technology solutions", "Staff training", "Family consultations", "Inclusive learning environments", "Development assessments"]
-        }
-      ]
-    },
-    {
-      category: "Hospitals & Healthcare Providers",
-      description: "Collaborating with healthcare institutions to provide adaptive technology solutions and support for children with disabilities and their families.",
-      programs: [
-        {
-          name: "RWJ Children's Specialized Hospital",
-          type: "Healthcare Partner",
-          description: "Partnering with RWJ Children's Specialized Hospital to provide adaptive technology solutions and support for children with disabilities. We work closely with healthcare professionals to identify children who could benefit from our custom adaptive devices and provide ongoing support.",
-          logo: "/images/4-3_Temp_Logo.png",
-          features: ["Patient referrals", "Healthcare professional collaboration", "Adaptive technology solutions", "Family support services", "Clinical assessments", "Ongoing care coordination"]
         }
       ]
     }
@@ -99,10 +89,8 @@ export default function SchoolsEducational() {
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>
-        <div className="hero-overlay">
-          <div className="hero-content">
-            <h1>Schools & Educational Programs</h1>
-          </div>
+        <div className="hero-content">
+          <h1>Schools & Educational Programs</h1>
         </div>
       </div>
 
@@ -136,18 +124,9 @@ export default function SchoolsEducational() {
                     </div>
                                          <div className="program-info">
                        <h4>
-                         {program.name === "Rutgers University" ? (
+                         {program.website ? (
                            <a 
-                             href="https://sites.rutgers.edu/a4a/" 
-                             target="_blank" 
-                             rel="noopener noreferrer"
-                             style={{ color: 'inherit', textDecoration: 'none' }}
-                           >
-                             {program.name}
-                           </a>
-                         ) : program.name === "River Dell High School" ? (
-                           <a 
-                             href="https://rdhs.riverdell.org/o/rdhs" 
+                             href={program.website} 
                              target="_blank" 
                              rel="noopener noreferrer"
                              style={{ color: 'inherit', textDecoration: 'none' }}
@@ -158,16 +137,8 @@ export default function SchoolsEducational() {
                            program.name
                          )}
                        </h4>
-                      <span className="program-type">{program.type}</span>
-                      <p>{program.description}</p>
-                      <div className="program-features">
-                        <h5>Key Features:</h5>
-                        <ul>
-                          {program.features.map((feature, featureIndex) => (
-                            <li key={featureIndex}>{feature}</li>
-                          ))}
-                        </ul>
-                      </div>
+                                             <span className="program-type">{program.type}</span>
+                       <p>{program.description}</p>
                     </div>
                   </div>
                 ))}

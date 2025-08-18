@@ -8,19 +8,20 @@ import FAQ from './components/WhoAreWe/FAQ';
 import GetInvolved from './components/GetInvolved/GetInvolved';
 import Projects from './components/Projects/Projects';
 import Locations from './components/Locations/Locations';
-import Donate from './components/Donate/Donate';
+import Donate from './components/GetInvolved/Donate';
 import Cars from './components/Projects/Cars';
 import MontessoriBoard from './components/Projects/MontessoriBoard';
 import DogTreat from './components/Projects/DogTreat';
 import GoodieBag from './components/Projects/GoodieBag';
 import BathSeat from './components/Projects/BathSeat';
-import ToysDevices from './components/ToysDevices/ToysDevices';
+import ToysDevices from './components/ParentsFamilies/ToysDevices';
 import ParentsFamilies from './components/ParentsFamilies/ParentsFamilies';
 import Students from './components/Students/Students';
-import VolunteerOpportunities from './components/VolunteerOpportunities/VolunteerOpportunities';
-import PartnersSupporters from './components/PartnersSupporters/PartnersSupporters';
-import SchoolsEducational from './components/SchoolsEducational/SchoolsEducational';
-import Training from './components/Training/Training';
+import VolunteerOpportunities from './components/Students/VolunteerOpportunities';
+import PartnersSupporters from './components/PartnersSupporters/Partners-Supporters';
+import SchoolsEducational from './components/PartnersSupporters/Schools-Educational';
+import Hospitals from './components/PartnersSupporters/Hospitals-Healthcare';
+import Training from './components/Students/Training';
 import Login from './components/Login/Login';
 import StudentDashboard from './components/StudentDashboard/StudentDashboard';
 import './styles/style.css';
@@ -30,6 +31,7 @@ import './styles/4_As.css';
 import './styles/involved.css';
 import './styles/footer.css';
 import './styles/SchoolsEducational.css';
+import './styles/Hospitals.css';
 import './styles/Students.css';
 import './styles/Training.css';
 import './styles/Login.css';
@@ -58,7 +60,7 @@ const ScrollToTop = () => {
         '/bath-seat': 'Bath Seat Project - Accessible 4 All',
         '/dog-treat': 'Dog Treat Project - Accessible 4 All',
         '/goodie-bag': 'Goodie Bag Project - Accessible 4 All',
-        '/locations': 'Find Us - Accessible 4 All',
+        '/locations': 'Locations - Accessible 4 All',
         '/donate': 'Donate - Accessible 4 All',
         '/toys-devices': 'Toys & Devices - Accessible 4 All',
         '/parents-families': 'Parents & Families - Accessible 4 All',
@@ -66,6 +68,7 @@ const ScrollToTop = () => {
         '/volunteer-opportunities': 'Volunteer Opportunities - Accessible 4 All',
         '/partners-supporters': 'Partners & Supporters - Accessible 4 All',
         '/schools-educational-programs': 'Schools & Educational Programs - Accessible 4 All',
+        '/hospitals-healthcare-providers': 'Hospitals & Healthcare Providers - Accessible 4 All',
         '/training': 'Training - Accessible 4 All',
         '/login': 'Student Login - Accessible 4 All',
         '/student-dashboard': 'Student Dashboard - Accessible 4 All'
@@ -126,10 +129,10 @@ const MobileNavigation = ({ isOpen, onClose, currentSection, currentPage }) => {
           </button>
           <ul className="mobile-nav-links">
             <li><button onClick={() => handleNavClick('/cars')} className={currentPage === '/cars' ? 'active-page' : ''}>Ride-On Cars</button></li>
-            <li><button onClick={() => handleNavClick('/montessori-board')} className={currentPage === '/montessori-board' ? 'active-page' : ''}>Giant Montessori Board</button></li>
             <li><button onClick={() => handleNavClick('/bath-seat')} className={currentPage === '/bath-seat' ? 'active-page' : ''}>Bath Seat Project</button></li>
             <li><button onClick={() => handleNavClick('/dog-treat')} className={currentPage === '/dog-treat' ? 'active-page' : ''}>Dog Treat Project</button></li>
             <li><button onClick={() => handleNavClick('/goodie-bag')} className={currentPage === '/goodie-bag' ? 'active-page' : ''}>Goodie Bag Project</button></li>
+            <li><button onClick={() => handleNavClick('/montessori-board')} className={currentPage === '/montessori-board' ? 'active-page' : ''}>Giant Montessori Board</button></li>
           </ul>
         </div>
 
@@ -141,7 +144,6 @@ const MobileNavigation = ({ isOpen, onClose, currentSection, currentPage }) => {
             Parents & Families
           </button>
           <ul className="mobile-nav-links">
-            <li><button onClick={() => handleNavClick('/locations')} className={currentPage === '/locations' ? 'active-page' : ''}>Find Us</button></li>
             <li><button onClick={() => handleNavClick('/toys-devices')} className={currentPage === '/toys-devices' ? 'active-page' : ''}>Toys & Devices</button></li>
           </ul>
         </div>
@@ -157,8 +159,6 @@ const MobileNavigation = ({ isOpen, onClose, currentSection, currentPage }) => {
             <li><button onClick={() => handleNavClick('/students')} className={currentPage === '/students' ? 'active-page' : ''}>Students</button></li>
             <li><button onClick={() => handleNavClick('/volunteer-opportunities')} className={currentPage === '/volunteer-opportunities' ? 'active-page' : ''}>Volunteer Opportunities</button></li>
             <li><button onClick={() => handleNavClick('/training')} className={currentPage === '/training' ? 'active-page' : ''}>General 1 Training</button></li>
-            <li><button onClick={() => handleNavClick('/safety-guidelines')} className={currentPage === '/safety-guidelines' ? 'active-page' : ''}>Safety Guidelines</button></li>
-            <li><button onClick={() => handleNavClick('/resources-tutorials')} className={currentPage === '/resources-tutorials' ? 'active-page' : ''}>Training: Resources & Tutorials</button></li>
           </ul>
         </div>
 
@@ -422,11 +422,11 @@ const getNavigationState = (pathname) => {
     },
     'parents-families': {
       name: 'Parents & Families',
-      pages: ['/parents-families', '/locations', '/toys-devices']
+      pages: ['/parents-families', '/toys-devices']
     },
     'students': {
       name: 'Students',
-      pages: ['/students', '/volunteer-opportunities', '/training', '/safety-guidelines', '/resources-tutorials']
+      pages: ['/students', '/volunteer-opportunities', '/training']
     },
     'partners-supporters': {
       name: 'Partners & Supporters',
@@ -483,7 +483,6 @@ const Navigation = () => {
               Parents & Families
             </NavLink>
             <ul className="top-dropdown-content">
-              <li><NavLink to="/locations" className={currentPage === '/locations' ? "active-page" : ""}>Find Us</NavLink></li>
               <li><NavLink to="/toys-devices" className={currentPage === '/toys-devices' ? "active-page" : ""}>Toys & Devices</NavLink></li>
             </ul>
           </li>
@@ -494,8 +493,6 @@ const Navigation = () => {
             <ul className="top-dropdown-content">
               <li><NavLink to="/volunteer-opportunities" className={currentPage === '/volunteer-opportunities' ? "active-page" : ""}>Volunteer Opportunities</NavLink></li>
               <li><NavLink to="/training" className={currentPage === '/training' ? "active-page" : ""}>General 1 Training</NavLink></li>
-              <li><NavLink to="/safety-guidelines" className={currentPage === '/safety-guidelines' ? "active-page" : ""}>Safety Guidelines</NavLink></li>
-              <li><NavLink to="/resources-tutorials" className={currentPage === '/resources-tutorials' ? "active-page" : ""}>Training: Resources & Tutorials</NavLink></li>
             </ul>
           </li>
           <li className={`top-dropdown ${currentSection === 'partners-supporters' ? 'active-section' : ''}`}>
@@ -504,7 +501,7 @@ const Navigation = () => {
             </NavLink>
             <ul className="top-dropdown-content">
               <li><NavLink to="/schools-educational-programs" className={currentPage === '/schools-educational-programs' ? "active-page" : ""}>Schools & Educational Programs</NavLink></li>
-              <li><NavLink to="/partners-supporters" className={currentPage === '/partners-supporters' ? "active-page" : ""}>Hospitals & Healthcare Providers</NavLink></li>
+              <li><NavLink to="/hospitals-healthcare-providers" className={currentPage === '/hospitals-healthcare-providers' ? "active-page" : ""}>Hospitals & Healthcare Providers</NavLink></li>
             </ul>
           </li>
         </ul>
@@ -534,19 +531,14 @@ const Navigation = () => {
               </NavLink>
               <ul className="dropdown-content">
                 <li><NavLink to="/cars" className={currentPage === '/cars' ? "active-page" : ""}>Ride-On Cars</NavLink></li>
-                <li><NavLink to="/montessori-board" className={currentPage === '/montessori-board' ? "active-page" : ""}>Giant Montessori Board</NavLink></li>
                 <li><NavLink to="/bath-seat" className={currentPage === '/bath-seat' ? "active-page" : ""}>Bath Seat Project</NavLink></li>
                 <li><NavLink to="/dog-treat" className={currentPage === '/dog-treat' ? "active-page" : ""}>Dog Treat Project</NavLink></li>
                 <li><NavLink to="/goodie-bag" className={currentPage === '/goodie-bag' ? "active-page" : ""}>Goodie Bag Project</NavLink></li>
+                <li><NavLink to="/montessori-board" className={currentPage === '/montessori-board' ? "active-page" : ""}>Giant Montessori Board</NavLink></li>
               </ul>
             </li>
-            <li className={`dropdown ${currentSection === 'locations' ? 'active-section' : ''}`}>
-              <NavLink to="/locations" className={currentSection === 'locations' ? 'section-active' : ''}>
-                Locations
-              </NavLink>
-              <ul className="dropdown-content">
-                <li><NavLink to="/locations" className={currentPage === '/locations' ? "active-page" : ""}>Rutgers University</NavLink></li>
-              </ul>
+            <li className={currentSection === 'locations' ? 'active-section' : ''}>
+              <NavLink to="/locations" className={currentSection === 'locations' ? 'section-active' : ''}>Locations</NavLink>
             </li>
             <li className={currentSection === 'donate' ? 'active-section' : ''}>
               <NavLink to="/donate" className={currentSection === 'donate' ? 'section-active' : ''}>Donate</NavLink>
@@ -622,6 +614,7 @@ function App() {
         <Route path="/volunteer-opportunities" element={<VolunteerOpportunities />} />
         <Route path="/partners-supporters" element={<PartnersSupporters />} />
         <Route path="/schools-educational-programs" element={<SchoolsEducational />} />
+        <Route path="/hospitals-healthcare-providers" element={<Hospitals />} />
         <Route path="/training" element={<Training />} />
         <Route path="/login" element={<Login />} />
         <Route path="/student-dashboard" element={<StudentDashboard />} />
@@ -633,7 +626,6 @@ function App() {
             <div className="footer-col">
               <h4><NavLink to="/parents-families">Parents & Families</NavLink></h4>
               <ul>
-                <li><NavLink to="/locations">Find Us</NavLink></li>
                 <li><NavLink to="/toys-devices">Toys & Devices</NavLink></li>
               </ul>
             </div>
@@ -643,8 +635,6 @@ function App() {
                 <li><NavLink to="/students">Students</NavLink></li>
                 <li><NavLink to="/volunteer-opportunities">Volunteer Opportunities</NavLink></li>
                 <li><NavLink to="/training">General 1 Training</NavLink></li>
-                <li><NavLink to="/safety-guidelines">Safety Guidelines</NavLink></li>
-                <li><NavLink to="/resources-tutorials">Training: Resources & Tutorials</NavLink></li>
               </ul>
             </div>
             <div className="footer-col">

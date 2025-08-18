@@ -2,57 +2,6 @@ import React from 'react';
 import '../../styles/DogTreat.css';
 
 export default function DogTreat() {
-  const features = [
-    {
-      icon: "🐕",
-      title: "Pet Care Learning",
-      description: "Children learn about animal care and responsibility while developing essential skills."
-    },
-    {
-      icon: "✋",
-      title: "Motor Skills Development",
-      description: "Fine motor skills and hand-eye coordination through hands-on treat making."
-    },
-    {
-      icon: "🧠",
-      title: "Cognitive Benefits",
-      description: "Following instructions, measuring, and problem-solving skills."
-    },
-    {
-      icon: "🎯",
-      title: "Adaptive Tools",
-      description: "Specially designed equipment that makes the process accessible to all abilities."
-    }
-  ];
-
-  const benefits = [
-    {
-      title: "Fine Motor Skills",
-      description: "Precise movements for measuring, mixing, and shaping treats."
-    },
-    {
-      title: "Patience & Focus",
-      description: "Following step-by-step instructions builds concentration."
-    },
-    {
-      title: "Confidence Building",
-      description: "Creating something meaningful for pets boosts self-esteem."
-    },
-    {
-      title: "Responsibility",
-      description: "Learning to care for animals teaches important life skills."
-    }
-  ];
-
-  const tools = [
-    "Adaptive measuring cups",
-    "Easy-grip mixing tools", 
-    "Custom cutting implements",
-    "Non-slip work surfaces",
-    "Safety equipment",
-    "Step-by-step guides"
-  ];
-
   return (
     <div className="dog-treat-container">
       {/* Hero Section */}
@@ -74,135 +23,155 @@ export default function DogTreat() {
         {/* Introduction Section */}
         <section className="intro-section">
           <div className="container">
-            <h2>Learning Through Pet Care</h2>
+            <h2>For Service Dogs and their Owners</h2>
             <p>
-              Our Dog Treat Project combines skill development with animal care, creating a unique 
-              learning experience that helps children develop motor skills, coordination, and confidence 
-              while doing something meaningful for pets.
+              The Dog Treat dispenser is being designed to help physically handicapped individuals 
+              reward their service dogs in training.
             </p>
           </div>
         </section>
 
-        {/* Features Grid */}
-        <section className="features-section">
+        {/* Project Overview Section */}
+        <section className="overview-section">
           <div className="container">
-            <h2>Project Features</h2>
-            <div className="features-grid">
-              {features.map((feature, index) => (
-                <div key={index} className="feature-card">
-                  <div className="feature-icon">{feature.icon}</div>
-                  <h3>{feature.title}</h3>
-                  <p>{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Benefits Section */}
-        <section className="benefits-section">
-          <div className="container">
-            <h2>Learning Benefits</h2>
-            <div className="benefits-grid">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="benefit-card">
-                  <h3>{benefit.title}</h3>
-                  <p>{benefit.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Adaptive Equipment Section */}
-        <section className="equipment-section">
-          <div className="container">
-            <div className="equipment-content">
-              <div className="equipment-text">
-                <h2>Adaptive Equipment</h2>
+            <div className="overview-content">
+              <div className="overview-text">
+                <h2>Project Overview</h2>
                 <p>
-                  We provide specially designed tools and equipment that make the treat-making 
-                  process accessible to children with various physical abilities. Our adaptive 
-                  equipment ensures every child can participate and succeed.
+                  With just the click of a button, this dispenser will wirelessly transmit a signal to the device attached
+                  to the bottom of the wheelchair, dispensing a treat to the dog while they are in the heel position. 
+                  We aim to make this product as universal as possible so it can be used on any wheelchair, regardless of 
+                  the type of wheelchair.
                 </p>
-                <div className="tools-list">
-                  <h3>Available Tools:</h3>
-                  <ul>
-                    {tools.map((tool, index) => (
-                      <li key={index}>{tool}</li>
-                    ))}
-                  </ul>
+                <div className="overview-features">
+                  <div className="feature">
+                    <h3>Computer Aided Design (CAD)</h3>
+                    <p>Creating 3D models of the product</p>
+                  </div>
+                  <div className="feature">
+                    <h3>Designing and Prototyping</h3>
+                    <p>Testing and refining the product</p>
+                  </div>
+                  <div className="feature">
+                    <h3>Community Impact</h3>
+                    <p>Creating universal products that truly deliver accessibility</p>
+                  </div>
                 </div>
               </div>
-              <div className="equipment-image">
-                <img src="/images/1-1_Project_Robert_Frog_Fabric.jpg" alt="Dog Treat Making Tools" />
+              <div className="overview-image">
+                <img src="/images/1-1_Dog_Treat_Attaching.jpg" alt="Dog treat project overview" />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Therapeutic Benefits Section */}
-        <section className="therapeutic-section">
+        {/* First Prototype Section */}
+        <section className="prototype-section">
           <div className="container">
-            <h2>Therapeutic Benefits</h2>
-            <div className="therapeutic-content">
-              <div className="therapeutic-card">
-                <h3>Focus & Concentration</h3>
-                <p>Following step-by-step instructions improves attention span and concentration skills.</p>
+            <h2>First Prototype</h2>
+            <div className="prototype-content">
+              <div className="prototype-video">
+                <video controls preload="metadata" loop>
+                  <source src="/images/Dog_Treat_Prototype_1.mp4" type="video/mp4; codecs='avc1.42E01E, mp4a.40.2'" />
+                  <source src="/images/Dog_Treat_Prototype_1.mp4" type="video/mp4" />
+                  <p>Your browser does not support the video tag. <a href="/images/Dog_Treat_Prototype_1.mp4" target="_blank">Click here to download the video</a></p>
+                </video>
               </div>
-              <div className="therapeutic-card">
-                <h3>Patience & Perseverance</h3>
-                <p>Completing the treat-making process teaches patience and builds perseverance.</p>
-              </div>
-              <div className="therapeutic-card">
-                <h3>Sense of Accomplishment</h3>
-                <p>Creating something meaningful for pets provides a strong sense of achievement.</p>
-              </div>
-              <div className="therapeutic-card">
-                <h3>Social Skills</h3>
-                <p>Working with others and caring for animals develops empathy and social skills.</p>
+              <div className="prototype-description">
+                <h3>See Our Prototype in Action</h3>
+                <p>
+                  Our first prototype is a complex design that includes a funnel and two servo motors. One servo motor is used as a trapdoor to dispense into the 
+                  second section, where the second servo motor is used to spin a rod that dispenses the treats. The different sections were made to limit the amount of 
+                  treats dispensed, but failed since there were too many points where the treats could jam the motors. 
+                </p>
+                <div className="prototype-features">
+                  <div className="feature">
+                    <h4>Wireless Control</h4>
+                    <p>Remote activation for easy operation</p>
+                  </div>
+                  <div className="feature">
+                    <h4>Precise Dispensing</h4>
+                    <p>Accurately dispenses 2-3 treats at a time</p>
+                  </div>
+                  <div className="feature">
+                    <h4>Universal Design</h4>
+                    <p>Compatible with various wheelchair types</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Process Section */}
-        <section className="process-section">
+        {/* Second Prototype Section */}
+        <section className="prototype-section second-prototype">
           <div className="container">
-            <h2>How It Works</h2>
-            <div className="process-steps">
-              <div className="step">
-                <div className="step-number">1</div>
-                <h3>Assessment</h3>
-                <p>We evaluate the child's abilities and determine appropriate tools and activities.</p>
+            <h2>Second Prototype</h2>
+            <div className="prototype-content">
+              <div className="prototype-video">
+                <video controls preload="metadata" loop>
+                  <source src="/images/Dog_Treat_Prototype_2.mp4" type="video/mp4; codecs='avc1.42E01E, mp4a.40.2'" />
+                  <source src="/images/Dog_Treat_Prototype_2.mp4" type="video/mp4" />
+                  <p>Your browser does not support the video tag. <a href="/images/Dog_Treat_Prototype_2.mp4" target="_blank">Click here to download the video</a></p>
+                </video>
               </div>
-              <div className="step">
-                <div className="step-number">2</div>
-                <h3>Setup</h3>
-                <p>We provide adaptive equipment and create a safe, accessible workspace.</p>
-              </div>
-              <div className="step">
-                <div className="step-number">3</div>
-                <h3>Guidance</h3>
-                <p>Children follow step-by-step instructions with support as needed.</p>
-              </div>
-              <div className="step">
-                <div className="step-number">4</div>
-                <h3>Completion</h3>
-                <p>Children finish their treats and experience the joy of caring for pets.</p>
+              <div className="prototype-description">
+                <h3>See Our Second Prototype in Action</h3>
+                <p>
+                  Our second prototype is a more simple design that is inspired by grain augers. This design uses one servo motor to spin an auger 
+                  that is at a 30 degree angle to dispense the treats. By adjusting the size of the auger, we can roughly control the amount of treats dispensed, 
+                  while limiting the amount of locations for jamming. 
+                </p>
+                <div className="prototype-features">
+                  <div className="feature">
+                    <h4>Simple Design</h4>
+                    <p>Only one servo servo motor used</p>
+                  </div>
+                  <div className="feature">
+                    <h4>Adjustable Dispensing</h4>
+                    <p>Different sized dog treats can be used</p>
+                  </div>
+                  <div className="feature">
+                    <h4>Universal Design</h4>
+                    <p>Compatible with various wheelchair types</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Call to Action */}
-        <section className="cta-section">
+        {/* 3D Design & Assembly Section */}
+        <section className="design-section">
           <div className="container">
-            <h2>Ready to Get Started?</h2>
-            <p>Contact us to learn more about our Dog Treat Project and how it can benefit your child.</p>
-            <div className="cta-buttons">
-              <button className="cta-button primary">Contact Us</button>
-              <button className="cta-button secondary">Learn More</button>
+            <h2>3D Design & Assembly</h2>
+            <div className="design-content">
+              <div className="design-overview">
+                <h3>Modular Design Architecture</h3>
+                <p>
+                  We have used many different products to assemble the dispenser. 3-D Prints were the primary method of assembly, 
+                  but also included were rubber pipe latches to attach to the wheelchair, servo motors to electrically move the dog treats,
+                  and an Arduino to control the dispenser. 
+                </p>
+                <div className="design-features">
+                  <div className="feature">
+                    <h4>Electrical Components</h4>
+                    <p>• Arduino<br/>• Battery Pack<br/>• Servo Motors<br/>• Button<br/>• Radio Frequency (RF) Button and Receiver</p>
+                  </div>
+                  <div className="feature">
+                    <h4>3-D Printed Pieces</h4>
+                    <p>• Base<br/>• Auger<br/>• Slide for Dog Access<br/>• Funnel</p>
+                  </div>
+                  <div className="feature">
+                    <h4>Other Products Used</h4>
+                    <p>• Rubber Pipe Clamps<br/>• Hook & Loop Tape<br/>• Hot Glue to Attach all 3-D Products</p>
+                  </div>
+                </div>
+              </div>
+              <div className="design-visual">
+                <img src="/images/4-3_Dog_Treat_Project.jpg" alt="3D CAD model of dog treat dispenser" />
+                
+              </div>
             </div>
           </div>
         </section>

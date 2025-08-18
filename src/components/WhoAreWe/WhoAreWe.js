@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import '../../styles/WhoAreWe.css';
 
 const WhoAreWe = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  
+  const words = ['Abilities', 'Students', 'Kids', 'Families'];
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTransitioning(true);
+      
+      // Change the word after a brief fade out
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
+        setIsTransitioning(false);
+      }, 150);
+      
+    }, 3000);
+    
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="who-are-we-container">
       {/* Hero Section */}
@@ -10,10 +30,8 @@ const WhoAreWe = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>
-        <div className="hero-overlay">
-          <div className="hero-content">
-            <h1>Who Are We?</h1>
-          </div>
+        <div className="hero-content">
+          <h1>Who Are We?</h1>
         </div>
       </div>
 
@@ -62,49 +80,41 @@ const WhoAreWe = () => {
             <div className="pillars-container">
               <div className="pillar">
                 <div className="pillar-bar pillar-1"></div>
-                <h3>Accessible 4 All Abilities</h3>
+                <h3>
+                  Accessible 4 All{' '}
+                  <span className={`rotating-word ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
+                    {words[currentIndex]}
+                  </span>
+                </h3>
               </div>
               <div className="pillar">
                 <div className="pillar-bar pillar-2"></div>
-                <h3>Accommodating 4 All Families</h3>
-
+                <h3>
+                  Accommodating 4 All{' '}
+                  <span className={`rotating-word ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
+                    {words[(currentIndex + 1) % words.length]}
+                  </span>
+                </h3>
               </div>
               <div className="pillar">
                 <div className="pillar-bar pillar-3"></div>
-                <h3>Adaptive 4 All Kids</h3>
-
+                <h3>
+                  Adaptive 4 All{' '}
+                  <span className={`rotating-word ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
+                    {words[(currentIndex + 2) % words.length]}
+                  </span>
+                </h3>
               </div>
               <div className="pillar">
                 <div className="pillar-bar pillar-4"></div>
-                <h3>Adventurous 4 All Students</h3>
+                <h3>
+                  Adventurous 4 All{' '}
+                  <span className={`rotating-word ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
+                    {words[(currentIndex + 3) % words.length]}
+                  </span>
+                </h3>
               </div>
-              
             </div>
-          </div>
-
-
-        </div>
-      </div>
-
-      {/* Impact Section */}
-      <div className="impact-section">
-        <h2>Our Impact</h2>
-        <div className="impact-stats">
-          <div className="stat">
-            <h3>50+</h3>
-            <p>Children Helped</p>
-          </div>
-          <div className="stat">
-            <h3>25+</h3>
-            <p>Custom Projects</p>
-          </div>
-          <div className="stat">
-            <h3>100+</h3>
-            <p>Student Engineers</p>
-          </div>
-          <div className="stat">
-            <h3>15+</h3>
-            <p>Partner Organizations</p>
           </div>
         </div>
       </div>

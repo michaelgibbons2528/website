@@ -21,8 +21,11 @@
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
+  padding: 0 2rem;
+  text-align: center;
 }
 
 .hero-title {
@@ -30,6 +33,9 @@
   font-weight: bold;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  display: block;
+  color: white;
 }
 
 .hero-subtitle {
@@ -38,6 +44,9 @@
   opacity: 0.95;
   max-width: 600px;
   margin: 0 auto;
+  width: 100%;
+  display: block;
+  color: white;
 }
 
 /* Main Content */
@@ -61,40 +70,64 @@
   margin-bottom: 3rem;
 }
 
-.benefits-grid {
+.why-join-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.why-join-description {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #333;
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.why-join-highlights {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
 }
 
-.benefit-card {
+.highlight-item {
   background: white;
   padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.benefit-card:hover {
-  transform: translateY(-5px);
+.highlight-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-.benefit-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.benefit-card h3 {
+.highlight-item h3 {
   color: #a30000;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  position: relative;
 }
 
-.benefit-card p {
+.highlight-item h3::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #a30000, #dd2701);
+  border-radius: 2px;
+}
+
+.highlight-item p {
   color: #666;
   line-height: 1.6;
+  font-size: 1rem;
 }
 
 /* Opportunities Section */
@@ -113,8 +146,10 @@
 
 .opportunities-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .opportunity-card {
@@ -655,6 +690,15 @@
     font-size: 1.1rem;
   }
   
+  .why-join-highlights {
+    grid-template-columns: 1fr;
+  }
+  
+  .why-join-description {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+  
   .login-content {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -673,7 +717,8 @@
   }
   
   .opportunities-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    max-width: 900px;
   }
   
   .skills-grid {
@@ -703,6 +748,11 @@
   
   .container {
     padding: 0 1rem;
+  }
+  
+  .opportunities-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
   }
   
   .opportunity-content,

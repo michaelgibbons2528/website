@@ -24,10 +24,8 @@ export default function OurStories() {
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>
-        <div className="hero-overlay">
-          <div className="hero-content">
-            <h1>Our Stories</h1>
-          </div>
+        <div className="hero-content">
+          <h1>Our Stories</h1>
         </div>
       </div>
 
@@ -228,7 +226,7 @@ export default function OurStories() {
                  
                  <div className="story-excerpt">
                    <blockquote>
-                     ""
+                     "I joined A4A because I wanted to use engineering in a way that makes a real difference in people's lives. The idea of creating something hands on that could help kids and families directly really stood out to me. Being part of A4A has shown me how powerful it is when creativity and compassion come together to solve real problems."
                    </blockquote>
                  </div>
 
@@ -236,21 +234,21 @@ export default function OurStories() {
                    <div className="qa-item">
                      <h4>What was your favorite memory on a project you've worked on?</h4>
                      <p>
-                       "[ANSWER]"
+                       "My favorite memory was when we delivered the modified ride on car to Robert. We had spent weeks carefully designing and adding features like the harness for safety and the seat adjustments so he could sit comfortably, and seeing him actually use it for the first time was unforgettable. The second he started moving, his face completely lit up, and everyone in the room, his family and our team, felt that same rush of excitement. That moment really put into perspective the impact our projects can have beyond just the technical side of things."
                      </p>
                    </div>
 
                    <div className="qa-item">
                      <h4>How has A4A impacted your college experience?</h4>
                      <p>
-                       "[ANSWER]"
+                       "A4A has given me a strong sense of community and purpose on campus. It has helped me grow as a leader, work across disciplines, and feel more connected to both my peers and the families we support. I've met some of my closest friends through this organization, and it has shaped the way I want to approach my future career."
                      </p>
                    </div>
 
                    <div className="qa-item">
                      <h4>What skills have you developed through A4A?</h4>
                      <p>
-                       "[ANSWER]"
+                       "Through A4A, I've strengthened my technical skills in 3D printing, Makerspace tools, and hands on prototyping. As secretary and project lead, I've also developed leadership skills in project management, team communication, and problem solving, skills that will carry forward into both academics and my future career. Beyond just the skills, I've learned how to adapt to challenges and work under pressure, which truly has been valuable."
                      </p>
                    </div>
                  </div>
@@ -307,22 +305,22 @@ export default function OurStories() {
              {/* Story 6 */}
              <div className="story-card">
                <div className="story-image">
-                 <img src="/images/4-3_Gabe_Story.jpg" alt="Student working on engineering project" />
+                 <img src="/images/4-3_Gabe_Story.jpg" alt="Gabriel Endres working on engineering project" />
                  <div className="story-overlay">
                    <span className="story-number">06</span>
                  </div>
                </div>
                <div className="story-content">
-                 <h3>Gabe Endres: President of Rutgers A4A</h3>
+                 <h3>Gabriel Endres: President of Rutgers A4A</h3>
                                                       <div className="story-meta">
-                     <span className="major">Major: Biomedical Engineering</span>
+                     <span className="major">Major: Biomedical Engineering/Business Administration</span>
                      <span className="project">Year: 2027</span>
                      <span className="project">Lead: <button onClick={() => handleProjectClick('fiona')} style={{cursor: 'pointer', background: 'none', border: 'none', color: 'inherit', textDecoration: 'underline', padding: 0, font: 'inherit'}}>Project Fiona</button> & <button onClick={() => handleProjectClick('isaiah')} style={{cursor: 'pointer', background: 'none', border: 'none', color: 'inherit', textDecoration: 'underline', padding: 0, font: 'inherit'}}>Project Isaiah</button></span>
                    </div>
                  
                  <div className="story-excerpt">
                    <blockquote>
-                     ""
+                     "I came to the first ever meeting before the club even existed. I saw the flyer in my FY engineering class and knew immediately it sounded like such a great use of my engineering skills to truly have an impact on the local community and underserved children."
                    </blockquote>
                  </div>
 
@@ -330,21 +328,68 @@ export default function OurStories() {
                    <div className="qa-item">
                      <h4>What was your favorite memory on a project you've worked on?</h4>
                      <p>
-                       "[ANSWER]"
+                       "I think my favorite project thus far has to be my first car project or the dog treat project. Although very different they both have a very tangible impact and I was able to learn so many new skills from both of these projects while working alongside some amazing individuals."
                      </p>
                    </div>
 
                    <div className="qa-item">
                      <h4>How has A4A impacted your college experience?</h4>
                      <p>
-                       "[ANSWER]"
+                       "It has been nothing short of life changing. It has opened so many doors and allowed so many opportunities to grow and develop as a leader and as a team member. I am truly grateful to have the opportunity to be a part of the mission here at A4A."
                      </p>
                    </div>
 
                    <div className="qa-item">
                      <h4>What skills have you developed through A4A?</h4>
                      <p>
-                       "[ANSWER]"
+                       "I've been able to foster many different aspects of leadership and strategy through planning logistics and leading two projects. I've gained many hands-on woodworking and electronic skills during my time modifying cars as well as CAD and 3-D printing skills from the dog treat project."
+                     </p>
+                   </div>
+                 </div>
+               </div>
+             </div>
+
+             {/* Story 7 */}
+             <div className="story-card">
+               <div className="story-image">
+                 <img src="/images/4-3_Sam_Story.jpg" alt="Sam working on engineering project" />
+                 <div className="story-overlay">
+                   <span className="story-number">07</span>
+                 </div>
+               </div>
+               <div className="story-content">
+                 <h3>Samantha Domenick: Visual Media Coordinator of Rutgers A4A</h3>
+                                                      <div className="story-meta">
+                     <span className="major">Major: Packaging Engineering</span>
+                     <span className="project">Year: 2027</span>
+                     <span className="project">Member: <button onClick={() => handleProjectClick('ciaran')} style={{cursor: 'pointer', background: 'none', border: 'none', color: 'inherit', textDecoration: 'underline', padding: 0, font: 'inherit'}}>Project Ciaran</button></span>
+                   </div>
+                 
+                 <div className="story-excerpt">
+                   <blockquote>
+                     "I was looking for an inclusive club to meet people and do cool things. I got an email in a funky font that a new club was starting up for kids with disabilities, showed up to the interest meeting, really liked the vibe and the mission, and haven't left since."
+                   </blockquote>
+                 </div>
+
+                 <div className="story-qa">
+                   <div className="qa-item">
+                     <h4>What was your favorite memory on a project you've worked on?</h4>
+                     <p>
+                       "There was an insane time crunch during the final stretch of last year's projects before the big showcase (go project Ciaran!). Everyone scraped together the time they had between exams and projects and stayed late into the night. There's something so wholesome about a group of students held up in a building playing pop hits at 11pm, tired but determined, to spray paint a decorative flag just right or make sure a neck-support is perfectly aligned. It was a group of creative, innovative, kind-hearted people putting all of their energy onto something cool that would make kids smile."
+                     </p>
+                   </div>
+
+                   <div className="qa-item">
+                     <h4>How has A4A impacted your college experience?</h4>
+                     <p>
+                       "A4A is genuinely one of my favorite parts of college. It's an extracurricular that feels like anything but a chore. A4A makes me feel like I'm doing something worth doing, something to be proud of. Even at the end of a long day between work and school, I always want to go hang out with the A4A group and make awesome things. Career-wise, it's such a resume booster. In internship interviews, I've been asked specifically about my A4A work and it's always a hit. It also is an awesome addition to my LinkedIn."
+                     </p>
+                   </div>
+
+                   <div className="qa-item">
+                     <h4>What skills have you developed through A4A?</h4>
+                     <p>
+                       "I've developed skills in teamwork, innovation, and adaptability. Of course, it's a team project, and being able to both listen AND speak up when throwing around ideas is essential. Innovation is the cornerstone of this club, figuring out new ways to make things better. As far as adaptability... It's an interdisciplinary project that has you figuring out why a motor isn't working one day, adding cute sticker details another, and working out accessibility modifications the next. And there's always something not going to plan or that could be done better, so pivoting is a critical skill in both planning and hands-on applications."
                      </p>
                    </div>
                  </div>

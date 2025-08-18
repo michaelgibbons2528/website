@@ -21,8 +21,11 @@
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
+  padding: 0 2rem;
+  text-align: center;
 }
 
 .hero-title {
@@ -30,6 +33,9 @@
   font-weight: bold;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  display: block;
+  color: white;
 }
 
 .hero-subtitle {
@@ -38,16 +44,19 @@
   opacity: 0.95;
   max-width: 600px;
   margin: 0 auto;
+  width: 100%;
+  display: block;
+  color: white;
 }
 
 /* Main Content */
 .dog-treat-main {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -72,6 +81,451 @@
   color: #666;
   max-width: 800px;
   margin: 0 auto;
+}
+
+/* Overview Section */
+.overview-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.overview-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.overview-text h2 {
+  color: #a30000;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.overview-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.overview-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.overview-features .feature h3 {
+  color: #a30000;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.overview-features .feature p {
+  color: #666;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.overview-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Prototype Section */
+.prototype-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.second-prototype {
+  background: #fafafa;
+}
+
+.second-prototype .prototype-video video {
+  object-fit: contain;
+}
+
+.second-prototype .prototype-video {
+  width: 480px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.prototype-section h2 {
+  color: #a30000;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.prototype-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.prototype-video {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.prototype-video video {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  background: #f0f0f0;
+}
+
+.prototype-section .prototype-video {
+  width: 480px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.prototype-video video::-webkit-media-controls {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.prototype-description h3 {
+  color: #a30000;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.prototype-description p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.prototype-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.prototype-features .feature h4 {
+  color: #a30000;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.prototype-features .feature p {
+  color: #666;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* 3D Design & Assembly Section */
+.design-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.design-section h2 {
+  color: #a30000;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.design-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.design-overview h3 {
+  color: #a30000;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.design-overview p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.design-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.design-features .feature h4 {
+  color: #a30000;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.design-features .feature p {
+  color: #666;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.design-visual {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  height: 400px;
+}
+
+.design-visual img {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+  display: block;
+}
+
+.design-caption {
+  background: rgba(163, 0, 0, 0.9);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.design-caption p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.assembly-steps h3 {
+  color: #a30000;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.assembly-step {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.assembly-step:hover {
+  transform: translateY(-5px);
+}
+
+.assembly-step .step-number {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #a30000, #dd2701);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+}
+
+.assembly-step h4 {
+  color: #a30000;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.assembly-step p {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Process Section */
+.process-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.process-section h2 {
+  color: #a30000;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+}
+
+.process-step {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-5px);
+}
+
+.step-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.step-content {
+  padding: 2rem;
+}
+
+.step-content h3 {
+  color: #a30000;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.step-content p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Skills Section */
+.skills-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.skills-section h2 {
+  color: #a30000;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.skill-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-3px);
+}
+
+.skill-card h3 {
+  color: #a30000;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.skill-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Impact Section */
+.impact-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.impact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.impact-text h2 {
+  color: #a30000;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.impact-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.impact-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.stat {
+  text-align: center;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat h3 {
+  color: #a30000;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.stat p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.impact-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 /* Features Section */
@@ -400,18 +854,39 @@
     font-size: 1.1rem;
   }
   
-  .equipment-content {
+  .overview-content,
+  .impact-content,
+  .prototype-content,
+  .design-content {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
   
-  .equipment-image img {
+  .overview-image img,
+  .impact-image img {
     height: 300px;
+  }
+  
+  .container {
+    max-width: 1400px;
+  }
+  
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .impact-stats {
+    grid-template-columns: 1fr;
   }
   
   .features-grid,
   .benefits-grid,
-  .therapeutic-content {
+  .therapeutic-content,
+  .steps-grid {
     grid-template-columns: 1fr;
   }
   

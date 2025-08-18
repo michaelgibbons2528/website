@@ -7,7 +7,7 @@
 
 /* Hero Section */
 .volunteer-hero {
-  height: 60vh;
+  height: 65vh;
   min-height: 500px;
   color: white;
   text-align: center;
@@ -78,50 +78,44 @@
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
-.why-volunteer-section h2 {
+.why-volunteer-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.why-volunteer-text h2 {
   color: #a30000;
   font-size: 2.8rem;
   font-weight: bold;
-  text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+  text-align: left;
 }
 
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.benefit-card {
-  background: white;
-  padding: 2.5rem;
-  border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.benefit-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-}
-
-.benefit-icon {
-  font-size: 4rem;
-  margin-bottom: 1.5rem;
-}
-
-.benefit-card h3 {
-  color: #a30000;
-  font-size: 1.4rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.benefit-card p {
+.why-volunteer-text p {
   color: #666;
-  line-height: 1.6;
-  font-size: 1.1rem;
+  line-height: 1.8;
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+.why-volunteer-image {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.why-volunteer-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.why-volunteer-image:hover img {
+  transform: scale(1.05);
 }
 
 /* Roles Section */
@@ -622,6 +616,15 @@
     gap: 1.5rem;
   }
   
+  .why-volunteer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .why-volunteer-text h2 {
+    text-align: center;
+  }
+  
   .contact-content {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -666,6 +669,10 @@
   .role-content,
   .volunteer-content {
     padding: 1.5rem;
+  }
+  
+  .why-volunteer-image img {
+    height: 300px;
   }
   
   .benefit-card,

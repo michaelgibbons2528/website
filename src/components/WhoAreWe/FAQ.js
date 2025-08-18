@@ -60,10 +60,8 @@ export default function FAQ() {
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>
-        <div className="hero-overlay">
-          <div className="hero-content">
-            <h1>Frequently Asked Questions</h1>
-          </div>
+        <div className="hero-content">
+          <h1>Frequently Asked Questions</h1>
         </div>
       </div>
 
