@@ -63,7 +63,7 @@
 
 /* Introduction Section */
 .intro-section {
-  padding: 80px 0;
+  padding: 4rem 0;
   text-align: center;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
@@ -85,7 +85,7 @@
 
 /* Overview Section */
 .overview-section {
-  padding: 80px 0;
+  padding: 4rem 0;
   background: white;
 }
 
@@ -139,7 +139,7 @@
 
 /* Prototype Section */
 .prototype-section {
-  padding: 80px 0;
+  padding: 4rem 0;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
@@ -233,7 +233,7 @@
 
 /* 3D Design & Assembly Section */
 .design-section {
-  padding: 80px 0;
+  padding: 4rem 0;
   background: white;
 }
 
@@ -370,7 +370,7 @@
 
 /* Process Section */
 .process-section {
-  padding: 80px 0;
+  padding: 4rem 0;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
@@ -424,7 +424,7 @@
 
 /* Skills Section */
 .skills-section {
-  padding: 80px 0;
+  padding: 4rem 0;
   background: white;
 }
 
@@ -468,7 +468,7 @@
 
 /* Impact Section */
 .impact-section {
-  padding: 80px 0;
+  padding: 4rem 0;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
@@ -530,7 +530,7 @@
 
 /* Features Section */
 .features-section {
-  padding: 80px 0;
+  padding: 4rem 0;
   background: white;
 }
 
@@ -581,7 +581,7 @@
 
 /* Benefits Section */
 .benefits-section {
-  padding: 80px 0;
+  padding: 4rem 0;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
@@ -688,7 +688,7 @@
 
 /* Therapeutic Section */
 .therapeutic-section {
-  padding: 80px 0;
+  padding: 4rem 0;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
@@ -732,7 +732,7 @@
 
 /* Process Section */
 .process-section {
-  padding: 80px 0;
+  padding: 4rem 0;
   background: white;
 }
 
@@ -791,7 +791,7 @@
 
 /* Call to Action Section */
 .cta-section {
-  padding: 80px 0;
+  padding: 4rem 0;
   background: linear-gradient(135deg, #a30000 0%, #dd2701 100%);
   color: white;
   text-align: center;

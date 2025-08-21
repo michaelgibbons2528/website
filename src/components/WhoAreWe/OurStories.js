@@ -1,9 +1,13 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useRef } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import '../../styles/OurStories.css';
 
 export default function OurStories() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const kavyaRef = useRef(null);
+  const jasonRef = useRef(null);
+  const aaronRef = useRef(null);
 
   // Function to handle project link navigation
   const handleProjectClick = (projectName) => {
@@ -15,6 +19,40 @@ export default function OurStories() {
       navigate('/cars', { state: { scrollToChild: projectName } });
     }
   };
+
+  // Handle scroll to specific student when navigating from Students page
+  useEffect(() => {
+    if (location.state?.scrollToStudent) {
+      const studentId = location.state.scrollToStudent;
+      let targetRef = null;
+      
+      switch (studentId) {
+        case 'kavya':
+          targetRef = kavyaRef.current;
+          break;
+        case 'jason':
+          targetRef = jasonRef.current;
+          break;
+        case 'aaron':
+          targetRef = aaronRef.current;
+          break;
+        default:
+          break;
+      }
+      
+      if (targetRef) {
+        setTimeout(() => {
+          targetRef.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+          });
+        }, 100);
+      }
+      
+      // Clear the state to prevent re-scrolling on page refresh
+      window.history.replaceState({}, document.title);
+    }
+  }, [location.state]);
 
   return (
     <div className="stories-container">
@@ -43,7 +81,7 @@ export default function OurStories() {
 
           <div className="stories-grid">
             {/* Story 1 */}
-            <div className="story-card">
+            <div className="story-card" ref={kavyaRef}>
               <div className="story-image">
                 <img src="/images/4-3_Kavya_Story.jpg" alt="Kavya working on engineering project" />
                 <div className="story-overlay">
@@ -95,7 +133,7 @@ export default function OurStories() {
                     <p>
                       "Through my involvement with A4A I have developed a variety of valuable skills. As a project lead, I learned the 
                       importance of team management, communication, collaboration and leadership. While helping plan events, I developed 
-                      project planning and organization skills. Additionally, in working to help A4A expand I’ve practiced thinking out 
+                      project planning and organization skills. Additionally, in working to help A4A expand I've practiced thinking out 
                       of the box and creative problem solving."
                     </p>
                   </div>
@@ -104,7 +142,7 @@ export default function OurStories() {
             </div>
 
             {/* Story 2 */}
-            <div className="story-card">
+            <div className="story-card" ref={jasonRef}>
               <div className="story-image">
                 <img src="/images/4-3_Jason_Story.jpg" alt="Jason working on engineering project" />
                 <div className="story-overlay">
@@ -159,7 +197,7 @@ export default function OurStories() {
             </div>
 
             {/* Story 3 */}
-            <div className="story-card">
+            <div className="story-card" ref={aaronRef}>
               <div className="story-image">
                 <img src="/images/4-3_Aaron_Story.jpg" alt="Aaron working on engineering project" />
                 <div className="story-overlay">
@@ -206,9 +244,10 @@ export default function OurStories() {
                   </div>
                 </div>
               </div>
-                         </div>
+            </div>
+          
 
-             {/* Story 4 */}
+          {/* Story 4 */}
              <div className="story-card">
                <div className="story-image">
                  <img src="/images/4-3_Ananya_Story.JPG" alt="Ananya explaining project." />
@@ -395,19 +434,56 @@ export default function OurStories() {
                  </div>
                </div>
              </div>
-           </div>
 
-           {/* Call to Action */}
-          <div className="stories-cta">
-            <h3>Share Your Story</h3>
-            <p>
-              Every student engineer has a unique journey. If you'd like to share your experience 
-              with A4A and how it has impacted your learning and career goals, we'd love to hear from you.
-            </p>
-            <button className="cta-button">Contact Us to Share Your Story</button>
-          </div>
+             {/* Story 8 */}
+             <div className="story-card">
+               <div className="story-image">
+                 <img src="/images/4-3_Ilisha_Story.jpg" alt="Ilisha working on engineering project" />
+                 <div className="story-overlay">
+                   <span className="story-number">08</span>
+                 </div>
+               </div>
+               <div className="story-content">
+                 <h3>Ilisha Gomes: Treasurer of Rutgers A4A</h3>
+                                                      <div className="story-meta">
+                     <span className="major">Major: Electrical Engineering</span>
+                     <span className="project">Year: 2027</span>
+                     <span className="project">Lead: <button onClick={() => handleProjectClick('wilhelm')} style={{cursor: 'pointer', background: 'none', border: 'none', color: 'inherit', textDecoration: 'underline', padding: 0, font: 'inherit'}}>Project Wilhelm</button> & <button onClick={() => handleProjectClick('bath-seat')} style={{cursor: 'pointer', background: 'none', border: 'none', color: 'inherit', textDecoration: 'underline', padding: 0, font: 'inherit'}}>Bath Seat Project</button></span>
+                   </div>
+                 
+                 <div className="story-excerpt">
+                   <blockquote>
+                     "I joined A4A because I wanted to be part of a club that let me work on meaningful, hands-on projects right from the start. The chance to build something that could improve a child's life was such a unique opportunity, and it combined my passion for engineering with making a real impact."
+                   </blockquote>
+                 </div>
+
+                 <div className="story-qa">
+                   <div className="qa-item">
+                     <h4>What is your favorite memory or project you've worked on?</h4>
+                     <p>
+                       "Two projects stand out to me: the ride-on car for Wilhelm and the adapted bath seat. For the car, the best part was seeing Wilhelm and his parents' reaction when they tried it out. It was incredible to see how much joy it brought them and to know that our work made a real difference for their family. The bath seat was a prototype, so there was a lot of trial and error, but that process taught me so many new skills and pushed me to learn things I had never done before. Both projects were very fun because of the people I worked with. The teamwork and collaboration made every challenge feel exciting and rewarding."
+                     </p>
+                   </div>
+
+                   <div className="qa-item">
+                     <h4>How has A4A impacted your college experience?</h4>
+                     <p>
+                       "A4A has made my college experience much more meaningful by giving me the chance to apply what I learn in class to real-world challenges. Since the club is filled with students from many different engineering majors, I have been able to learn from others and gain skills beyond just electrical engineering, including mechanical design concepts and fabrication techniques. Most importantly, A4A has given me a supportive community of people who inspire me and make every project an enjoyable and collaborative experience."
+                     </p>
+                   </div>
+
+                   <div className="qa-item">
+                     <h4>What skills have you developed through A4A?</h4>
+                     <p>
+                       "Through A4A, I've developed a wide range of technical skills, from wiring circuits and troubleshooting to using CAD, prototyping, and even thinking about the aesthetics of a design. I've also learned a lot by working alongside students from other engineering majors, which has broadened my perspective. On the leadership side, serving as a project lead helped me grow in organization and planning. I learned how to structure meetings, set goals, and keep the team on track. Learning how to approach problems from multiple perspectives and guiding parts of the project has been just as valuable as the technical knowledge."
+                     </p>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
         </div>
       </div>
     </div>
-  );
-} 
+  );  
+}   

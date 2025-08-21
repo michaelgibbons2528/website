@@ -10,7 +10,7 @@ export default function BathSeat() {
       <div 
         className="bath-seat-hero"
         style={{
-          backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/4-3_Coming_Soon.JPG')",
+          backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/4-3_Bath_Seat_Prototype.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center"
         }}

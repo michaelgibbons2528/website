@@ -14,14 +14,17 @@ import MontessoriBoard from './components/Projects/MontessoriBoard';
 import DogTreat from './components/Projects/DogTreat';
 import GoodieBag from './components/Projects/GoodieBag';
 import BathSeat from './components/Projects/BathSeat';
-import ToysDevices from './components/ParentsFamilies/ToysDevices';
+
+import EnrollYourChild from './components/ParentsFamilies/EnrollYourChild';
 import ParentsFamilies from './components/ParentsFamilies/ParentsFamilies';
 import Students from './components/Students/Students';
-import VolunteerOpportunities from './components/Students/VolunteerOpportunities';
+
+import InterestForm from './components/Students/InterestForm';
 import PartnersSupporters from './components/PartnersSupporters/Partners-Supporters';
 import SchoolsEducational from './components/PartnersSupporters/Schools-Educational';
 import Hospitals from './components/PartnersSupporters/Hospitals-Healthcare';
-import Training from './components/Students/Training';
+import Contact from './components/Contact/Contact';
+
 import Login from './components/Login/Login';
 import StudentDashboard from './components/StudentDashboard/StudentDashboard';
 import './styles/style.css';
@@ -33,7 +36,8 @@ import './styles/footer.css';
 import './styles/SchoolsEducational.css';
 import './styles/Hospitals.css';
 import './styles/Students.css';
-import './styles/Training.css';
+import './styles/InterestForm.css';
+
 import './styles/Login.css';
 import './styles/StudentDashboard.css';
 
@@ -62,13 +66,16 @@ const ScrollToTop = () => {
         '/goodie-bag': 'Goodie Bag Project - Accessible 4 All',
         '/locations': 'Locations - Accessible 4 All',
         '/donate': 'Donate - Accessible 4 All',
-        '/toys-devices': 'Toys & Devices - Accessible 4 All',
+    
+        '/enroll-your-child': 'Enroll Your Child - Accessible 4 All',
         '/parents-families': 'Parents & Families - Accessible 4 All',
         '/students': 'Students - Accessible 4 All',
-        '/volunteer-opportunities': 'Volunteer Opportunities - Accessible 4 All',
+
+        '/interest-form': 'Student Interest Form - Accessible 4 All',
         '/partners-supporters': 'Partners & Supporters - Accessible 4 All',
         '/schools-educational-programs': 'Schools & Educational Programs - Accessible 4 All',
         '/hospitals-healthcare-providers': 'Hospitals & Healthcare Providers - Accessible 4 All',
+        '/contact': 'Contact Us - Accessible 4 All',
         '/training': 'Training - Accessible 4 All',
         '/login': 'Student Login - Accessible 4 All',
         '/student-dashboard': 'Student Dashboard - Accessible 4 All'
@@ -144,7 +151,7 @@ const MobileNavigation = ({ isOpen, onClose, currentSection, currentPage }) => {
             Parents & Families
           </button>
           <ul className="mobile-nav-links">
-            <li><button onClick={() => handleNavClick('/toys-devices')} className={currentPage === '/toys-devices' ? 'active-page' : ''}>Toys & Devices</button></li>
+            
           </ul>
         </div>
 
@@ -157,8 +164,9 @@ const MobileNavigation = ({ isOpen, onClose, currentSection, currentPage }) => {
           </button>
           <ul className="mobile-nav-links">
             <li><button onClick={() => handleNavClick('/students')} className={currentPage === '/students' ? 'active-page' : ''}>Students</button></li>
-            <li><button onClick={() => handleNavClick('/volunteer-opportunities')} className={currentPage === '/volunteer-opportunities' ? 'active-page' : ''}>Volunteer Opportunities</button></li>
-            <li><button onClick={() => handleNavClick('/training')} className={currentPage === '/training' ? 'active-page' : ''}>General 1 Training</button></li>
+            
+            <li><button onClick={() => handleNavClick('/interest-form')} className={currentPage === '/interest-form' ? 'active-page' : ''}>Interest Form</button></li>
+ 
           </ul>
         </div>
 
@@ -422,11 +430,11 @@ const getNavigationState = (pathname) => {
     },
     'parents-families': {
       name: 'Parents & Families',
-      pages: ['/parents-families', '/toys-devices']
+              pages: ['/parents-families']
     },
     'students': {
       name: 'Students',
-      pages: ['/students', '/volunteer-opportunities', '/training']
+      pages: ['/students', '/interest-form']
     },
     'partners-supporters': {
       name: 'Partners & Supporters',
@@ -483,7 +491,8 @@ const Navigation = () => {
               Parents & Families
             </NavLink>
             <ul className="top-dropdown-content">
-              <li><NavLink to="/toys-devices" className={currentPage === '/toys-devices' ? "active-page" : ""}>Toys & Devices</NavLink></li>
+              <li><NavLink to="/enroll-your-child" className={currentPage === '/enroll-your-child' ? "active-page" : ""}>Enroll Your Child</NavLink></li>
+              
             </ul>
           </li>
           <li className={`top-dropdown ${currentSection === 'students' ? 'active-section' : ''}`}>
@@ -491,8 +500,9 @@ const Navigation = () => {
               Students
             </NavLink>
             <ul className="top-dropdown-content">
-              <li><NavLink to="/volunteer-opportunities" className={currentPage === '/volunteer-opportunities' ? "active-page" : ""}>Volunteer Opportunities</NavLink></li>
-              <li><NavLink to="/training" className={currentPage === '/training' ? "active-page" : ""}>General 1 Training</NavLink></li>
+
+              <li><NavLink to="/interest-form" className={currentPage === '/interest-form' ? "active-page" : ""}>Interest Form</NavLink></li>
+ 
             </ul>
           </li>
           <li className={`top-dropdown ${currentSection === 'partners-supporters' ? 'active-section' : ''}`}>
@@ -537,8 +547,8 @@ const Navigation = () => {
                 <li><NavLink to="/montessori-board" className={currentPage === '/montessori-board' ? "active-page" : ""}>Giant Montessori Board</NavLink></li>
               </ul>
             </li>
-            <li className={currentSection === 'locations' ? 'active-section' : ''}>
-              <NavLink to="/locations" className={currentSection === 'locations' ? 'section-active' : ''}>Locations</NavLink>
+            <li className={currentSection === 'contact' ? 'active-section' : ''}>
+              <NavLink to="/contact" className={currentSection === 'contact' ? 'section-active' : ''}>Contact Us</NavLink>
             </li>
             <li className={currentSection === 'donate' ? 'active-section' : ''}>
               <NavLink to="/donate" className={currentSection === 'donate' ? 'section-active' : ''}>Donate</NavLink>
@@ -608,14 +618,17 @@ function App() {
         <Route path="/goodie-bag" element={<GoodieBag />} />
         <Route path="/locations" element={<Locations />} />
         <Route path="/donate" element={<Donate />} />
-        <Route path="/toys-devices" element={<ToysDevices />} />
+  
+        <Route path="/enroll-your-child" element={<EnrollYourChild />} />
         <Route path="/parents-families" element={<ParentsFamilies />} />
         <Route path="/students" element={<Students />} />
-        <Route path="/volunteer-opportunities" element={<VolunteerOpportunities />} />
+
+        <Route path="/interest-form" element={<InterestForm />} />
         <Route path="/partners-supporters" element={<PartnersSupporters />} />
         <Route path="/schools-educational-programs" element={<SchoolsEducational />} />
         <Route path="/hospitals-healthcare-providers" element={<Hospitals />} />
-        <Route path="/training" element={<Training />} />
+        <Route path="/contact" element={<Contact />} />
+
         <Route path="/login" element={<Login />} />
         <Route path="/student-dashboard" element={<StudentDashboard />} />
         <Route path="/" element={<HomePage />} />
@@ -626,15 +639,16 @@ function App() {
             <div className="footer-col">
               <h4><NavLink to="/parents-families">Parents & Families</NavLink></h4>
               <ul>
-                <li><NavLink to="/toys-devices">Toys & Devices</NavLink></li>
+                <li><NavLink to="/enroll-your-child">Enroll Your Child</NavLink></li>
+  
               </ul>
             </div>
             <div className="footer-col">
               <h4><NavLink to="/students">Students</NavLink></h4>
               <ul>
-                <li><NavLink to="/students">Students</NavLink></li>
-                <li><NavLink to="/volunteer-opportunities">Volunteer Opportunities</NavLink></li>
-                <li><NavLink to="/training">General 1 Training</NavLink></li>
+
+                <li><NavLink to="/interest-form">Interest Form</NavLink></li>
+ 
               </ul>
             </div>
             <div className="footer-col">
@@ -671,10 +685,10 @@ function App() {
               </ul>
             </div>
             <div className="footer-col">
-              <h4><NavLink to="/donate">Donate</NavLink></h4>
-              <ul>
-                <li><NavLink to="/donate">Donate</NavLink></li>
-              </ul>
+              <h4><NavLink to="/contact" style={{color: '#a30000'}}>Contact Us</NavLink></h4>
+            </div>
+            <div className="footer-col">
+              <h4><NavLink to="/donate" style={{color: '#a30000'}}>Donate</NavLink></h4>
             </div>
             <div className="footer-col social-col">
               <h4>Follow Us</h4>

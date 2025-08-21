@@ -6,7 +6,7 @@ export default function Hospitals() {
     {
       name: "RWJ Children's Specialized Hospital",
       type: "Healthcare Partner",
-      description: "Partnering with RWJ Children's Specialized Hospital to provide adaptive technology solutions and support for children with disabilities. We work closely with healthcare professionals to identify children who could benefit from our custom adaptive devices and provide ongoing support.",
+      description: "Partnering with RWJ Children's Specialized Hospital to provide Goodie Bags for hospitalized children to support and bring them joy while away from home.",
       website: "https://www.rwjbh.org/childrens-specialized-hospital/",
       logo: "/images/1-1_Childrens_Specialized.png",
       location: "New Brunswick, NJ",
@@ -172,47 +172,11 @@ export default function Hospitals() {
             </div>
           </div>
           
-          <div className="contact-section">
-            <h3>Contact Us to Get Started</h3>
-            <p>
-              Ready to bring our adaptive technology solutions to your healthcare institution? 
-              Contact us to discuss partnership opportunities and how we can customize 
-              our services to meet your patients' needs.
-            </p>
-            <a href="mailto:info@a4all.org?subject=Healthcare Partnership Inquiry" className="contact-button">
-              Contact Us About Healthcare Partnerships
-            </a>
-            <p className="contact-note">
-              We'll respond within 2-3 business days to discuss how we can work together.
-            </p>
-          </div>
+
         </div>
       </div>
 
-      {/* Impact Section */}
-      <div className="impact-section">
-        <div className="container">
-          <h2>Healthcare Impact</h2>
-          <div className="impact-stats">
-            <div className="stat">
-              <h3>100+</h3>
-              <p>Patients Served</p>
-            </div>
-            <div className="stat">
-              <h3>5+</h3>
-              <p>Healthcare Partners</p>
-            </div>
-            <div className="stat">
-              <h3>25+</h3>
-              <p>Custom Devices Created</p>
-            </div>
-            <div className="stat">
-              <h3>500+</h3>
-              <p>Healthcare Hours</p>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </div>
   );
 }

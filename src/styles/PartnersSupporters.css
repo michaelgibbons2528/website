@@ -8,31 +8,23 @@
 .partners-hero {
   height: 65vh;
   min-height: 500px;
+  color: white;
+  text-align: center;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  overflow: hidden;
 }
 
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-}
-
-.hero-content {
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 4rem;
-  text-align: center;
+.partners-hero .hero-content {
+  position: relative;
   z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 2rem;
+  text-align: center;
 }
 
 .hero-content h1 {
@@ -64,7 +56,7 @@
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
   text-align: center;
-  color: #333;
+  color: #a30000;
 }
 
 .partners-intro p {
@@ -85,7 +77,7 @@
 
 .partnership-link {
   display: inline-block;
-  background: #28a745;
+  background: #a30000;
   color: white;
   padding: 1rem 2rem;
   text-decoration: none;
@@ -96,7 +88,7 @@
 }
 
 .partnership-link:hover {
-  background: #218838;
+  background: #8a0000;
   color: white;
   text-decoration: none;
 }
@@ -114,7 +106,7 @@
 }
 
 .partners-section h2 {
-  color: #333;
+  color: #a30000;
   font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
@@ -212,7 +204,7 @@
 }
 
 .supporters-section h2 {
-  color: #333;
+  color: #a30000;
   font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
@@ -287,7 +279,7 @@
 }
 
 .partnership-types-section h2 {
-  color: #333;
+  color: #a30000;
   font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
@@ -365,7 +357,7 @@
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
   text-align: center;
-  color: #333;
+  color: #a30000;
   font-weight: bold;
 }
 

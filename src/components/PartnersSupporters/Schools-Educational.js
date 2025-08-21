@@ -212,47 +212,11 @@ export default function SchoolsEducational() {
              </div>
            </div>
            
-           <div className="contact-section">
-             <h3>Contact Us to Get Started</h3>
-             <p>
-               Ready to bring our educational programs to your institution? 
-               Contact us to discuss partnership opportunities and how we can customize 
-               our programs to meet your institution's specific needs and goals.
-             </p>
-             <a href="mailto:info@a4all.org?subject=Educational Partnership Inquiry" className="contact-button">
-               Contact Us About Partnership Opportunities
-             </a>
-             <p className="contact-note">
-               We'll respond within 2-3 business days to discuss how we can work together.
-             </p>
-           </div>
+
          </div>
        </div>
 
-      {/* Impact Section */}
-      <div className="impact-section">
-        <div className="container">
-          <h2>Educational Impact</h2>
-          <div className="impact-stats">
-            <div className="stat">
-              <h3>500+</h3>
-              <p>Students Engaged</p>
-            </div>
-            <div className="stat">
-              <h3>25+</h3>
-              <p>Educational Partners</p>
-            </div>
-            <div className="stat">
-              <h3>50+</h3>
-              <p>Projects Completed</p>
-            </div>
-            <div className="stat">
-              <h3>1000+</h3>
-              <p>Learning Hours</p>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </div>
   );
 } 

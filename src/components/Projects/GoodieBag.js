@@ -24,8 +24,7 @@ export default function GoodieBag() {
           <div className="container">
             <h2>Packed with Joy!</h2>
             <p>
-              Our Goodie Bag Project is a great way to take a break from school and have fun! We assemble the goodie bags, 
-              
+              Our Goodie Bag Project is a great way to take a break from school and have fun! We assemble the goodie bags, write special notes to each child, and deliver them to their hospitals to bring a smile to their faces!
             </p>
           </div>
         </section>

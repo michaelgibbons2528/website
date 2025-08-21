@@ -18,15 +18,7 @@
   overflow: hidden;
 }
 
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-}
+
 
 .hero-content {
   position: relative;
@@ -68,51 +60,80 @@
 
 /* Welcome Section */
 .welcome-section {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 4rem 0;
+  background: white;
 }
 
 .welcome-content {
-  text-align: center;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.welcome-content h2 {
+.welcome-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.welcome-main {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.welcome-top {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.welcome-text {
+  flex: 1;
+  text-align: left;
+}
+
+.welcome-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-image {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-title h2 {
   font-size: 2.5rem;
   color: #a30000;
-  margin-bottom: 25px;
   font-weight: bold;
 }
 
-.welcome-content > p {
+.welcome-left p {
   font-size: 1.2rem;
   line-height: 1.7;
   color: #666;
   margin-bottom: 50px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .welcome-features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 50px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
 }
 
 .feature {
   background: white;
-  padding: 40px 30px;
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-.feature:hover {
-  transform: translateY(-5px);
-}
+
 
 .feature-icon {
   font-size: 1.2rem;
@@ -139,9 +160,198 @@
   line-height: 1.6;
 }
 
+/* What We Do Section */
+.journey-section {
+  padding: 4rem 0;
+  background: white;
+}
+
+.journey-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.journey-content h2 {
+  font-size: 2.5rem;
+  color: #a30000;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: bold;
+}
+
+.journey-description {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #666;
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.what-we-do-section {
+  padding: 4rem 0;
+  background: #f8f9fa;
+}
+
+.what-we-do-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.what-we-do-content h2 {
+  font-size: 2.5rem;
+  color: #a30000;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.section-description {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #666;
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-container {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+}
+
+.cta-content {
+  flex: 1;
+}
+
+.cta-content h3 {
+  font-size: 2rem;
+  color: #a30000;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.cta-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #a30000;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #8a0000;
+  transform: translateY(-2px);
+}
+
+.cta-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta-hero-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+
+.service-card h3 {
+  font-size: 1.3rem;
+  color: #a30000;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.service-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.process-overview {
+  margin-top: 4rem;
+}
+
+.process-overview h3 {
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.step {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background: #a30000;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+}
+
+.step h4 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.step p {
+  color: #666;
+  line-height: 1.6;
+}
+
 /* Help Section */
 .help-section {
-  padding: 80px 0;
+  padding: 4rem 0;
   background: white;
 }
 
@@ -192,7 +402,7 @@
 
 /* Involvement Section */
 .involvement-section {
-  padding: 80px 0;
+  padding: 4rem 0;
   background: linear-gradient(135deg, #a30000 0%, #dd2701 100%);
   color: white;
 }
@@ -260,7 +470,7 @@
 
 /* Testimonials Section */
 .testimonials-section {
-  padding: 80px 0;
+  padding: 4rem 0;
   background: #f8f9fa;
 }
 
@@ -312,7 +522,7 @@
 
 /* Contact Section */
 .contact-section {
-  padding: 80px 0;
+  padding: 4rem 0;
   background: white;
   text-align: center;
 }
@@ -447,7 +657,7 @@
 
 /* Enroll Section */
 .enroll-section {
-  padding: 80px 0;
+  padding: 4rem 0;
   background: white;
   color: #333;
 }
@@ -565,6 +775,29 @@
   margin: 0;
 }
 
+.success-message {
+  background: #f8f9fa;
+  padding: 40px;
+  border-radius: 15px;
+  border: 1px solid #e9ecef;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.success-message h3 {
+  color: #a30000;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.success-message p {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
 /* Responsive Design for Enroll Section */
 @media (max-width: 768px) {
   .enroll-content h2 {
@@ -582,6 +815,20 @@
   
   .enroll-btn {
     width: 100%;
+    max-width: 300px;
+  }
+  
+  .cta-container {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  .cta-content h3 {
+    font-size: 1.8rem;
+  }
+  
+  .cta-hero-image {
     max-width: 300px;
   }
 }

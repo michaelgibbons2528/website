@@ -68,7 +68,7 @@
 
 /* Mission Statement Section */
 .mission-statement {
-  padding: 120px 0 80px 0;
+  padding: 7.5rem 0 4rem 0;
   background: #f8f9fa;
 }
 
@@ -112,7 +112,7 @@
 
 /* Core Values Section */
 .core-values {
-  padding: 80px 0;
+  padding: 4rem 0;
   background: white;
 }
 
@@ -163,7 +163,7 @@
 
 /* What We Do Section */
 .what-we-do {
-  padding: 80px 0;
+  padding: 4rem 0;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
@@ -237,7 +237,7 @@
 
 /* Impact Section */
 .impact-section {
-  padding: 80px 0;
+  padding: 4rem 0;
   background: white;
 }
 
@@ -309,7 +309,7 @@
 
 /* Call to Action Section */
 .cta-section {
-  padding: 80px 0;
+  padding: 4rem 0;
   background: linear-gradient(135deg, #a30000 0%, #dd2701 100%);
   color: white;
   text-align: center;

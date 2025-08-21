@@ -44,16 +44,16 @@
 }
 
 .involvement-option:nth-child(1) {
-  background-color: #f0a22e7f; 
+  background-color: rgb(211, 211, 211); 
 }
 .involvement-option:nth-child(2) {
-  background-color: #f0a22e7f;
+  background-color: rgb(211, 211, 211);
 }
 .involvement-option:nth-child(3) {
-  background-color: #f0a22e7f;
+  background-color: rgb(211, 211, 211);
 }
 .involvement-option:nth-child(4) {
-  background-color: #f0a22e7f;
+  background-color: rgb(211, 211, 211);
 }
 
 .involvement-option::before {

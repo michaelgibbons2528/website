@@ -1,69 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import '../../styles/ParentsFamilies.css';
 
-const ParentsFamilies = () => {
-  const [formData, setFormData] = useState({
-    childName: '',
-    childAge: '',
-    parentName: '',
-    email: '',
-    phone: '',
-    childNeeds: '',
-    additionalInfo: ''
-  });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    // Create email body
-    const emailBody = `
-New Child Enrollment Request
-
-Child Information:
-- Name: ${formData.childName}
-- Age: ${formData.childAge}
-
-Parent/Guardian Information:
-- Name: ${formData.parentName}
-- Email: ${formData.email}
-- Phone: ${formData.phone}
-
-Child's Needs:
-${formData.childNeeds}
-
-Additional Information:
-${formData.additionalInfo}
-    `;
-
-    // Create mailto link
-    const mailtoLink = `mailto:mgibbons@a4all.org?subject=New Child Enrollment Request - ${formData.childName}&body=${encodeURIComponent(emailBody)}`;
-    
-    // Open email client
-    window.open(mailtoLink);
-    
-    // Reset form
-    setFormData({
-      childName: '',
-      childAge: '',
-      parentName: '',
-      email: '',
-      phone: '',
-      childNeeds: '',
-      additionalInfo: ''
-    });
-    
-    alert('Thank you for your enrollment request! An email has been opened with your information. Please send the email to complete your enrollment.');
-  };
-
+export default function ParentsFamilies() {
   return (
     <div className="parents-families-page">
       {/* Hero Section */}
@@ -84,149 +23,115 @@ ${formData.additionalInfo}
       <div className="welcome-section">
         <div className="container">
           <div className="welcome-content">
-            <h2>You've Found Your Community</h2>
-            <p>
-              At Accessible 4 All, we understand that every child is unique, and every family's journey is different. 
-              We're here to create custom solutions that make your child's world more accessible, engaging, and full of possibilities.
+            <div className="welcome-title">
+              <h2>You've Found Your Community</h2>
+            </div>
+            <div className="welcome-main">
+              <div className="welcome-top">
+                <div className="welcome-text">
+                  <p>
+                    At Accessible 4 All, we understand that every child is unique, and every family's journey is different. 
+                    We're here to create custom solutions that make your child's world more accessible, engaging, and full of possibilities.
+                  </p>
+                  <p>
+                    Whether your child needs a custom ride-on car to experience the joy of independent movement, 
+                    adaptive learning tools to explore and grow, or specialized equipment to make daily activities easier, 
+                    we're here to turn possibilities into reality. Our student engineers work with love, creativity, and 
+                    dedication to ensure every child can thrive in their own unique way.
+                  </p>
+                </div>
+                <div className="welcome-image-container">
+                  <img 
+                    src="/images/1-1_Maya_Hugging_Fiona_Mom.JPG" 
+                    alt="Maya hugging" 
+                    className="welcome-image"
+                  />
+                </div>
+              </div>
+              <div className="welcome-features">
+                <div className="feature">
+                  <div className="feature-icon">Personalized</div>
+                  <p>We work directly with your family to understand your child's specific needs and preferences.</p>
+                </div>
+                <div className="feature">
+                  <div className="feature-icon">Completely Free</div>
+                  <p>All our services and equipment are provided at no cost to families and institutions.</p>
+                </div>
+                <div className="feature">
+                  <div className="feature-icon">Custom Solutions</div>
+                  <p>From ride-on cars to learning tools, we design equipment that fits your child perfectly.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* How to Get Involved Section */}
+      <div className="what-we-do-section">
+        <div className="container">
+          <div className="what-we-do-content">
+            <h2>How to Get Involved</h2>
+            <p className="section-description">
+              Ready to get started? Our enrollment process is simple and designed to understand your child's unique needs.
             </p>
-                         <div className="welcome-features">
-               <div className="feature">
-                 <div className="feature-icon">Personalized</div>
-                 <p>We work directly with your family to understand your child's specific needs and preferences.</p>
-               </div>
-               <div className="feature">
-                 <div className="feature-icon">Custom Solutions</div>
-                 <p>From ride-on cars to learning tools, we design equipment that fits your child perfectly.</p>
-               </div>
-               <div className="feature">
-                 <div className="feature-icon">Completely Free</div>
-                 <p>All our services and equipment are provided at no cost to families and institutions.</p>
-               </div>
-             </div>
-                     </div>
-         </div>
-       </div>
+            
+            <div className="cta-container">
+              <div className="cta-content">
+                <h3>Enroll Your Child Today</h3>
+                <p>Complete our comprehensive enrollment form to tell us about your child's specific needs and what type of product would help your child thrive.</p>
+                <NavLink to="/enroll-your-child" className="cta-button">
+                  Start Enrollment Process
+                </NavLink>
+              </div>
+              <div className="cta-image">
+                <img 
+                  src="/images/4-3_B_4_Express.JPG" 
+                  alt="Child and family" 
+                  className="cta-hero-image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-       {/* Enroll Your Child Section */}
-       <div className="enroll-section">
-         <div className="container">
-           <div className="enroll-content">
-             <h2>Enroll Your Child</h2>
-             <p>
-               Ready to get started? Fill out the form below to enroll your child in our program. 
-               We'll review your information and get back to you within 48 hours to discuss how we can help your family.
-             </p>
-             
-             <form className="enroll-form" onSubmit={handleSubmit}>
-               <div className="form-section">
-                 <h3>Child Information</h3>
-                 <div className="form-row">
-                   <div className="form-group">
-                     <label htmlFor="childName">Child's First Name *</label>
-                     <input
-                       type="text"
-                       id="childName"
-                       name="childName"
-                       value={formData.childName}
-                       onChange={handleInputChange}
-                       required
-                     />
-                   </div>
-                   <div className="form-group">
-                     <label htmlFor="childAge">Child's Age *</label>
-                     <input
-                       type="number"
-                       id="childAge"
-                       name="childAge"
-                       value={formData.childAge}
-                       onChange={handleInputChange}
-                       min="0"
-                       max="18"
-                       required
-                     />
-                   </div>
-                 </div>
+      {/* Your Journey With Us Section */}
+      <div className="journey-section">
+        <div className="container">
+          <div className="journey-content">
+            <h2>Your Journey With Us</h2>
+            <p className="journey-description">
+            To respect your family’s time, we’ve streamlined our process to keep things easy and efficient, so we can focus on designing the best product for your child while keeping you informed every step of the way. 
+            </p>
+            <div className="process-steps">
+                             <div className="step">
+                 <div className="step-number">1</div>
+                 <h4>Contact Us</h4>
+                 <p>Fill out our <NavLink to="/enroll-your-child">enrollment form</NavLink> to tell us about your child's needs.</p>
                </div>
-
-               <div className="form-section">
-                 <h3>Parent/Guardian Information</h3>
-                 <div className="form-row">
-                   <div className="form-group">
-                     <label htmlFor="parentName">Your Name *</label>
-                     <input
-                       type="text"
-                       id="parentName"
-                       name="parentName"
-                       value={formData.parentName}
-                       onChange={handleInputChange}
-                       required
-                     />
-                   </div>
-                   <div className="form-group">
-                     <label htmlFor="email">Email Address *</label>
-                     <input
-                       type="email"
-                       id="email"
-                       name="email"
-                       value={formData.email}
-                       onChange={handleInputChange}
-                       required
-                     />
-                   </div>
-                 </div>
-                 <div className="form-group">
-                   <label htmlFor="phone">Phone Number</label>
-                   <input
-                     type="tel"
-                     id="phone"
-                     name="phone"
-                     value={formData.phone}
-                     onChange={handleInputChange}
-                   />
-                 </div>
-               </div>
-
-               <div className="form-section">
-                 <h3>Child's Needs</h3>
-                 <div className="form-group">
-                   <label htmlFor="childNeeds">Please describe your child's needs and what type of equipment or support you're looking for *</label>
-                   <textarea
-                     id="childNeeds"
-                     name="childNeeds"
-                     value={formData.childNeeds}
-                     onChange={handleInputChange}
-                     rows="4"
-                     required
-                     placeholder="For example: My child needs a custom ride-on car with special controls due to limited mobility..."
-                   ></textarea>
-                 </div>
-                 <div className="form-group">
-                   <label htmlFor="additionalInfo">Additional Information</label>
-                   <textarea
-                     id="additionalInfo"
-                     name="additionalInfo"
-                     value={formData.additionalInfo}
-                     onChange={handleInputChange}
-                     rows="3"
-                     placeholder="Any other information you'd like us to know about your child or family situation..."
-                   ></textarea>
-                 </div>
-               </div>
-
-               <div className="form-submit">
-                 <button type="submit" className="enroll-btn">
-                   Submit Enrollment Request
-                 </button>
-                 <p className="form-note">
-                   * Required fields. All information will be sent to mgibbons@a4all.org
-                 </p>
-               </div>
-             </form>
-           </div>
-         </div>
-       </div>
-     </div>
-   );
- };
-
-export default ParentsFamilies; 
+              
+              <div className="step">
+                <div className="step-number">2</div>
+                <h4>Consultation</h4>
+                <p>We'll virtually meet with you and your child to understand your child's specific needs and discuss potential solutions.</p>
+              </div>
+              
+              <div className="step">
+                <div className="step-number">3</div>
+                <h4>Design & Build</h4>
+                <p>Throughout the semester, our student engineers will design and create custom equipment specifically for your child.</p>
+              </div>
+              
+              <div className="step">
+                <div className="step-number">4</div>
+                <h4>Showcase</h4>
+                <p>At the end of the semester, we’ll host a Showcase to celebrate our students’ work and present your child’s product. You can pick it up there or have it delivered.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+} 

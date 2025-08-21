@@ -130,48 +130,62 @@
   font-size: 1rem;
 }
 
-/* Opportunities Section */
-.opportunities-section {
+/* Volunteer Roles Section */
+.roles-section {
   padding: 4rem 0;
   background: white;
 }
 
-.opportunities-section h2 {
+.roles-section h2 {
   color: #a30000;
   font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 
-.opportunities-grid {
+.section-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+}
+
+.roles-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
+  margin-top: 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.opportunity-card {
+.role-card {
   background: white;
-  border-radius: 15px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.opportunity-card:hover {
-  transform: translateY(-5px);
+.role-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
 }
 
-.opportunity-image-container {
+.role-image-container {
   position: relative;
-  width: 100%;
-  aspect-ratio: 1;
+  height: 220px;
   overflow: hidden;
 }
 
-.opportunity-image {
+.role-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -197,8 +211,87 @@
   font-weight: bold;
 }
 
-.opportunity-content {
-  padding: 2rem;
+.role-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.role-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+}
+
+.role-description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.role-details {
+  margin-bottom: 1.5rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  padding: 0.8rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.detail-value {
+  color: #a30000;
+  font-weight: 600;
+}
+
+.role-requirements {
+  margin-bottom: 1.5rem;
+}
+
+.role-requirements h4 {
+  color: #a30000;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+}
+
+.role-requirements ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.role-requirements li {
+  padding: 0.5rem 0;
+  color: #666;
+}
+
+.role-link {
+  display: inline-block;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 100%;
+  margin-top: auto;
+}
+
+.role-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .opportunity-title {
