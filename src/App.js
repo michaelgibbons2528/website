@@ -302,11 +302,6 @@ const HomePage = ({ isMobileMenuOpen }) => {
     },
   ];
 
-  // Function to handle slide click navigation
-  const handleSlideClick = (childName) => {
-    navigate('/cars', { state: { scrollToChild: childName } });
-  };
-
   // Function to handle learn more button click
   const handleLearnMoreClick = (e, childName) => {
     e.stopPropagation(); // Prevent slide navigation
@@ -525,7 +520,7 @@ const Navigation = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
   // Close mobile menu when route changes
   useEffect(() => {
     setIsMobileMenuOpen(false);
-  }, [location.pathname]);
+  }, [location.pathname, setIsMobileMenuOpen]);
 
   // Handle scroll detection for logo switching
   useEffect(() => {
