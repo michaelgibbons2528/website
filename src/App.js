@@ -538,7 +538,9 @@ const Navigation = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
 
       {/* TOP NAVBAR (scrolls away) */}
       <div className={`top-navbar ${isScrolled ? 'scrolled' : ''}`}>
-        <img className="spanning-logo" src="/images/4-3_Temp_Logo.png" alt="A4A Logo" />
+        <Link to="/">
+          <img className="spanning-logo" src="/images/4-3_Temp_Logo.png" alt="A4A Logo" />
+        </Link>
         <ul className="top-links">
           <li className={`top-dropdown ${currentSection === 'parents-families' ? 'active-section' : ''}`}>
             <NavLink to="/parents-families" className={currentSection === 'parents-families' ? 'section-active' : ''}>
