@@ -33,6 +33,7 @@ export default function Cars() {
       age: "3 years old",
       condition: "Project Leads: Bensu and Maya",
       carColor: "#007bff", // Blue car
+      carColorDark: "#0056b3", // Darker blue
       description: "A custom ride-on car designed for Braylon with comprehensive structural support and safety features, featuring a train-themed design with birthday celebration elements.",
       modifications: [
         {
@@ -69,6 +70,7 @@ export default function Cars() {
       age: "5 years old",
       condition: "Project Leads: Aito and Kavya",
       carColor: "#fd7e14", // Orange car
+      carColorDark: "#e55a00", // Darker orange
       description: "A custom ride-on car designed to provide independence and mobility for Ciaran, featuring specialized structural support and safety modifications.",
       modifications: [
         {
@@ -102,27 +104,34 @@ export default function Cars() {
       age: "20 months",
       condition: "Project Lead: Aaron",
       carColor: "#000000", // Black car
-      description: "xxxxxxxxxxxxx",
+      carColorDark: "#000000", // Black (already dark)
+      description: "A custom ride-on car designed for Elyas with sensory stimulation features, comfortable seating, and safety modifications to provide an engaging and safe driving experience.",
       modifications: [
         {
-          title: "xxxxxxxxxxxxx",
+          title: "Additional Stimulating Textures",
           details: [
-            "xxxxxxxxxxxxx",
-            "xxxxxxxxxxxxx"
+            "We've added three different textures to the interior of the car",
+            "Black felt walls and steering wheel",
+            "Red fur carpet flooring",
+            "Silver satin wrapping over the seat cushion"
           ]
         },
         {
-          title: "xxxxxxxxxxxxx",
+          title: "Memory Foam Cushion",
           details: [
-            "xxxxxxxxxxxxx",
-            "xxxxxxxxxxxxx"
+            "We've added a thick memory foam seat cushion for comfort and so Elyas can bounce around while in the car"
           ]
         },
         {
-          title: "xxxxxxxxxxxxx",
+          title: "Lights",
           details: [
-            "xxxxxxxxxxxxx",
-            "xxxxxxxxxxxxx"
+            "LED Lights were added under the car, under the dashboard, and on the front"
+          ]
+        },
+        {
+          title: "Five-Point Harness",
+          details: [
+            "For extra safety, we've also added a five-point harness to the car's seat that is also adjustable"
           ]
         }
       ],
@@ -133,27 +142,27 @@ export default function Cars() {
       age: "4 years old",
       condition: "Project Lead: Gabe",
       carColor: "#e83e8c", // Pink car
-      description: "xxxxxxxxxxxxx",
+      carColorDark: "#d63384", // Darker pink
+      description: "A custom ride-on car designed for Fiona with specialized seating and support structures to help her maintain proper posture and stay secure while driving.",
       modifications: [
         {
-          title: "xxxxxxxxxxxxx",
+          title: "Seat",
           details: [
-            "xxxxxxxxxxxxx",
-            "xxxxxxxxxxxxx"
+            "We installed a cushioned seating with a 5-point harness to improve support. We also increased the seat length by adding a removable foam base.",
+            "The seat has been inclined backwards in order to help Fiona lean and stay upright while the car is in motion"
           ]
         },
         {
-          title: "xxxxxxxxxxxxx",
+          title: "PVC Support",
           details: [
-            "xxxxxxxxxxxxx",
-            "xxxxxxxxxxxxx"
+            "PVC structure has been built through the back part to provide support to the sides of Fiona's head.",
+            "We have also constructed supports to her sides to keep her secured and allow her arms to rest."
           ]
         },
         {
-          title: "xxxxxxxxxxxxx",
+          title: "Lights and Visuals",
           details: [
-            "xxxxxxxxxxxxx",
-            "xxxxxxxxxxxxx"
+            "Battery operated lights have been attached on the bottom of the car."
           ]
         }
       ],
@@ -164,6 +173,7 @@ export default function Cars() {
       age: "7 years old",
       condition: "Project Leads: Gabe and Lucas",
       carColor: "#000000", // Black car
+      carColorDark: "#000000", // Black (already dark)
       description: "A custom ride-on car designed for Isaiah with specialized seat modifications and structural support, featuring a duck-themed design with LED lighting and 3D-printed elements.",
       modifications: [
         {
@@ -199,6 +209,7 @@ export default function Cars() {
       age: "4 years old",
       condition: "Project Leads: Anika and Giuseppe",
       carColor: "#007bff", // Blue car
+      carColorDark: "#0056b3", // Darker blue
       description: "A custom ride-on car designed for Luca with specialized structural support and steering modifications, featuring a dinosaur-themed design with basketball elements.",
       modifications: [
         {
@@ -232,26 +243,27 @@ export default function Cars() {
       age: "2 years old",
       condition: "Project Leads: Bensu and Ananya",
       carColor: "#28a745", // Green car
-      description: "xxxxxxxxxxxxx",
+      carColorDark: "#1e7e34", // Darker green
+      description: "A custom ride-on car designed for Robert with comprehensive safety features and adjustable seating to accommodate his growth and ensure comfort and security.",
       modifications: [
         {
-          title: "xxxxxxxxxxxxx",
+          title: "5-Point Harness",
           details: [
-            "xxxxxxxxxxxxx",
-            "xxxxxxxxxxxxx"
+            "We added a 5-point harness to keep Robert secure while allowing his arms to remain free for movement.",
+            "This design also accommodates Robert's growth, ensuring comfort and safety as he grows."
           ]
         },
         {
-          title: "xxxxxxxxxxxxx",
+          title: "Adjustable Seating",
           details: [
-            "xxxxxxxxxxxxx",
-            "xxxxxxxxxxxxx"
+            "We created additional stackable seats for the original car seat to ensure Robert's legs stay at a 90-degree angle.",
+            "The seats are more comfortable and can be easily velcroed on for a secure fit. The stackable design allows for future adjustments as Robert grows, maintaining proper posture and comfort."
           ]
         },
         {
-          title: "xxxxxxxxxxxxx",
+          title: "Additional Support Pipe Structure",
           details: [
-            "xxxxxxxxxxxxx"
+            "We added a pipe structure at the back of the car to provide extra support for the 5-point harness, enhancing stability and security."
           ]
         }
       ],
@@ -262,27 +274,29 @@ export default function Cars() {
       age: "6 years old",
       condition: "Project Leads: Jason and Ilisha",
       carColor: "#dc3545", // Red car
-      description: "xxxxxxxxxxxxx",
+      carColorDark: "#c82333", // Darker red
+      description: "A custom ride-on car designed for Wilhelm with specialized support structures and interactive features to address his hypertonia and provide multisensory engagement.",
       modifications: [
         {
-          title: "xxxxxxxxxxxxx",
+          title: "Back Supports",
           details: [
-            "xxxxxxxxxxxxx",
-            "xxxxxxxxxxxxx"
+            "We added a custom pipe structure behind the cushioned seat where we also embedded a harness to provide extra back support",
+            "This helps address his hypertonia and provides the stability he needs while seated"
           ]
         },
         {
-          title: "xxxxxxxxxxxxx",
+          title: "Cushioned Seat w/ Harness",
           details: [
-            "xxxxxxxxxxxxx",
-            "xxxxxxxxxxxxx"
+            "We designed and installed a cushioned seat with a secure harness for safety and comfort",
+            "The cushion is made of foam and with a waterproof fabric casing",
+            "This modification ensures proper posture and accommodates his lower muscle strength"
           ]
         },
         {
-          title: "xxxxxxxxxxxxx",
+          title: "Buttons and Lights",
           details: [
-            "xxxxxxxxxxxxx",
-            "xxxxxxxxxxxxx"
+            "We added interactive buttons and lights to engage Wilhelm",
+            "These buttons are designed to provide multisensory feedback, while considering his visual and hearing impairments"
           ]
         }
       ],
@@ -293,27 +307,28 @@ export default function Cars() {
       age: "5 years old",
       condition: "Project Lead: Gaby",
       carColor: "#e83e8c", // Pink car
-      description: "xxxxxxxxxxxxx",
+      carColorDark: "#d63384", // Darker pink
+      description: "A custom ride-on car designed for Zora with comprehensive support structures and mechanical modifications to provide stability and independence while driving.",
       modifications: [
         {
-          title: "xxxxxxxxxxxxx",
+          title: "PVC Pipe Structure",
           details: [
-            "xxxxxxxxxxxxx",
-            "xxxxxxxxxxxxx"
+            "We've built a PVC pipe structure with pool noodle padding for supporting Zora's hips, arms, and head",
+            "Cut and installed foam kickboard to stabilize her back"
           ]
         },
         {
-          title: "xxxxxxxxxxxxx",
+          title: "Seat",
           details: [
-            "xxxxxxxxxxxxx",
-            "xxxxxxxxxxxxx"
+            "We installed a modified 5-point harness and cushioning under the seat",
+            "We attached a cradle around her head to keep her from rocking",
+            "Moved the car default seat 2 inches forward"
           ]
         },
         {
-          title: "xxxxxxxxxxxxx",
+          title: "Mechanical Wheels",
           details: [
-            "xxxxxxxxxxxxx",
-            "xxxxxxxxxxxxx"
+            "We worked to build a detachable set of mechanical wheels that could be used in place of the battery powered ones"
           ]
         }
       ],
@@ -360,7 +375,8 @@ export default function Cars() {
               className="profile-card"
               style={{
                 '--car-color': project.carColor,
-                '--car-color-light': `${project.carColor}20`
+                '--car-color-light': `${project.carColor}20`,
+                '--car-color-dark': project.carColorDark
               }}
             >
               <div className="profile-image">

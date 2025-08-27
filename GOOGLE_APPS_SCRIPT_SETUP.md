@@ -1,167 +1,84 @@
-# Google Apps Script Setup for Student Interest Form
+# Google Apps Script Setup for Contact Form
 
-This guide will help you connect your Student Interest Form to the Google Sheet at: `https://docs.google.com/spreadsheets/d/1S_1L6E04ggF5wjpXBok6cTs3tjzBLw1zgugFG89bB0w/edit?gid=0#gid=0`
+This guide will help you set up Google Sheets and Google Apps Script to handle contact form submissions from your A4A website.
 
-## Step 1: Set Up Google Apps Script
+## Step 1: Create Google Sheet
 
-1. **Go to Google Apps Script**
-   - Visit: https://script.google.com/
-   - Sign in with your Google account
+1. Go to [Google Sheets](https://sheets.google.com)
+2. Create a new spreadsheet
+3. Name it "A4A Contact Form Submissions"
+4. **Note**: Headers will be automatically added by the script (see Step 4)
 
-2. **Create a New Project**
-   - Click "New Project"
-   - Give it a name like "A4A Student Interest Form Handler"
+## Step 2: Create Google Apps Script
 
-3. **Copy the Script Code**
-   - Delete the default `Code.gs` content
-   - Copy the entire content from `student-interest-form-script.js` in your project
-   - Paste it into the Google Apps Script editor
+1. Go to [Google Apps Script](https://script.google.com)
+2. Click "New Project"
+3. Name it "A4A Contact Form Handler"
+4. Replace the default code with the contents of `contact-form-script.js`
+5. Save the project
 
-## Step 2: Deploy the Script
+## Step 3: Set Up Spreadsheet Headers
 
-1. **Save the Project**
-   - Click the save icon or press Ctrl+S
-   - Give your project a name if prompted
+1. In your Google Apps Script project, go to the "Functions" dropdown
+2. Select `setupContactFormSpreadsheet`
+3. Click the "Run" button
+4. This will automatically add the following headers to your Google Sheet:
+   - Column A: Timestamp
+   - Column B: Name
+   - Column C: Email
+   - Column D: Subject
+   - Column E: Message
+5. The headers will be formatted with A4A's red color (#a30000)
 
-2. **Deploy as Web App**
-   - Click "Deploy" → "New deployment"
-   - Choose "Web app" as the type
-   - Set the following options:
-     - **Execute as**: "Me" (your Google account)
-     - **Who has access**: "Anyone" (for now, you can restrict this later)
-   - Click "Deploy"
+## Step 4: Deploy as Web App
 
-3. **Authorize the Script**
-   - Google will ask for permissions
-   - Click "Continue" and authorize the script to:
-     - Read/write to your Google Sheets
-     - Send emails on your behalf
+1. In your Apps Script project, click "Deploy" → "New deployment"
+2. Choose "Web app" as the type
+3. Set the following options:
+   - **Execute as**: Me (your Google account)
+   - **Who has access**: Anyone
+4. Click "Deploy"
+5. Copy the Web App URL that is generated
 
-4. **Get the Script URL**
-   - After deployment, you'll get a URL like:
-     `https://script.google.com/macros/s/AKfycbz.../exec`
-   - Copy this URL - you'll need it for the next step
+## Step 5: Update Website Code
 
-## Step 3: Update Your React Component
+1. Open `src/components/Contact/Contact.js`
+2. Replace `YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL` with the actual Web App URL from Step 4
+3. Save the file
 
-1. **Open the Interest Form Component**
-   - Navigate to `src/components/Students/InterestForm.js`
+## Step 6: Test the Setup
 
-2. **Replace the Script URL**
-   - Find the line: `// const scriptUrl = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';`
-   - Replace `YOUR_SCRIPT_ID` with the actual script ID from your deployment URL
-   - Uncomment the fetch code block
+1. Deploy your website
+2. Go to the Contact page
+3. Fill out and submit the contact form
+4. Check:
+   - The Google Sheet for new entries
+   - Your email (mgibbons@a4all.org) for notification emails
 
-3. **The updated code should look like this:**
-   ```javascript
-   const scriptUrl = 'https://script.google.com/macros/s/AKfycbz.../exec';
-   
-   const response = await fetch(scriptUrl, {
-     method: 'POST',
-     mode: 'no-cors',
-     headers: {
-       'Content-Type': 'application/x-www-form-urlencoded',
-     },
-     body: submissionData.toString()
-   });
-   ```
+## Additional Functions
 
-## Step 4: Set Up the Google Sheet
+The script includes these additional functions for testing and maintenance:
 
-1. **Open Your Google Sheet**
-   - Go to: https://docs.google.com/spreadsheets/d/1S_1L6E04ggF5wjpXBok6cTs3tjzBLw1zgugFG89bB0w/edit?gid=0#gid=0
+- **`checkContactFormSpreadsheet()`**: Check if the spreadsheet is properly set up
+- **`setupContactFormSpreadsheet()`**: Set up headers (run once initially)
 
-2. **Set Up Headers (Optional)**
-   - If the sheet is empty, you can run the setup function
-   - In Google Apps Script, go to the "Functions" dropdown
-   - Select `setupStudentInterestSpreadsheet`
-   - Click the "Run" button
-   - This will create the proper headers for your form data
+## How It Works
 
-3. **Verify Permissions**
-   - Make sure your Google account has edit access to the sheet
-   - The script will need to write to this sheet
-
-## Step 5: Test the Connection
-
-1. **Test Individual Components First**
-   - In Google Apps Script, go to the "Functions" dropdown
-   - First, run `testSpreadsheetOnly` to test spreadsheet access
-   - Then, run `testEmailOnly` to test email functionality
-   - Check the execution logs for each test
-
-2. **Test the Full Form**
-   - Select `testStudentInterestForm` from the Functions dropdown
-   - Click "Run"
-   - Check the execution log to see if it works
-
-2. **Test the Form**
-   - Fill out your Student Interest Form on your website
-   - Submit the form
-   - Check your Google Sheet to see if the data appears
-   - Check your email for confirmation messages
-
-## Step 6: Security Considerations
-
-1. **Restrict Access (Optional)**
-   - In your Google Apps Script deployment settings
-   - Change "Who has access" to "Anyone with Google account" for better security
-
-2. **Add CAPTCHA (Recommended)**
-   - Consider adding reCAPTCHA to prevent spam submissions
-   - This can be done by modifying the form to include reCAPTCHA
+1. When someone submits the contact form, it sends a POST request to your Google Apps Script
+2. The script:
+   - Saves the form data to your Google Sheet
+   - Sends an email notification to mgibbons@a4all.org
+   - Returns a success/error response to the website
+3. The website shows a success message or error alert accordingly
 
 ## Troubleshooting
 
-### Common Issues:
+- **CORS Issues**: Make sure your Apps Script is deployed as a web app with "Anyone" access
+- **Email Notifications**: Check that your Google account has permission to send emails
+- **Sheet Access**: Ensure the Apps Script has access to the Google Sheet
 
-1. **"Script not found" error**
-   - Make sure you copied the correct script ID from the deployment URL
-   - Verify the script is deployed and accessible
+## Security Notes
 
-2. **"Permission denied" error**
-   - Make sure you authorized the script properly
-   - Check that your Google account has access to the sheet
-
-3. **Data not appearing in sheet**
-   - Check the execution logs in Google Apps Script
-   - Verify the spreadsheet ID is correct
-   - Make sure the sheet is not protected
-
-4. **Emails not sending**
-   - Check if your Google account has email sending permissions
-   - Verify the email addresses are correct
-
-### Debugging:
-
-1. **Check Execution Logs**
-   - In Google Apps Script, click "Executions" in the left sidebar
-   - View the logs for any error messages
-
-2. **Test Individual Functions**
-   - Use the test functions provided in the script
-   - Run them one by one to isolate issues
-
-## File Structure
-
-Your project should now have:
-- `student-interest-form-script.js` - The Google Apps Script code
-- `src/components/Students/InterestForm.js` - Updated React component
-- `GOOGLE_APPS_SCRIPT_SETUP.md` - This setup guide
-
-## Next Steps
-
-Once everything is working:
-1. Test the form thoroughly
-2. Consider adding form validation
-3. Add reCAPTCHA for spam protection
-4. Set up email notifications for your team
-5. Monitor the Google Sheet for new submissions
-
-## Support
-
-If you encounter issues:
-1. Check the Google Apps Script execution logs
-2. Verify all URLs and IDs are correct
-3. Test with the provided test functions
-4. Check Google's Apps Script documentation for more help
+- The web app URL will be public, but the script only accepts POST requests with proper JSON data
+- Consider adding additional validation in the Apps Script if needed
+- The script includes error handling and logging for debugging

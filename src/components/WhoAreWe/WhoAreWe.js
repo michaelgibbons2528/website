@@ -20,7 +20,7 @@ const WhoAreWe = () => {
     }, 3000);
     
     return () => clearInterval(interval);
-  }, []);
+  }, [words.length]);
 
   return (
     <div className="who-are-we-container">

@@ -37,7 +37,7 @@
 }
 
 .hero-content h1 {
-  font-size: 4rem;
+  font-size: 2.4rem;
   font-weight: bold;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -48,7 +48,7 @@
 }
 
 .hero-subtitle {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   line-height: 1.6;
   opacity: 0.95;
   max-width: 600px;
@@ -386,7 +386,7 @@
   }
   
   .hero-content h1 {
-    font-size: 3rem;
+    font-size: 2.2rem;
   }
 }
 
@@ -401,7 +401,7 @@
   }
   
   .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   
   .mission-statement,
@@ -440,16 +440,24 @@
   }
   
   .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   
   .service-item {
     padding: 20px;
   }
   
+  .statement-image {
+    height: 250px;
+    width: 100%;
+    overflow: hidden;
+  }
+  
   .statement-image img,
   .service-image img,
   .impact-image img {
-    height: 250px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 } 

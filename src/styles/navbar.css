@@ -1,13 +1,60 @@
-.floating-logo-container {
-  position: absolute;
-  top: 10px;
-  left: 100px; /* adjust as needed */
-  z-index: 1100;
+#nav-logo {
+  height: 60px;
+  transition: all 0.3s ease;
+  display: block;
 }
 
-.floating-logo-container img {
-  height: 100px; /* adjust size */
-  transition: opacity 0.3s ease;
+#nav-logo-scrolled {
+  height: 40px;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+/* Desktop: Show full logo initially, narrow logo when scrolled */
+@media (min-width: 769px) {
+  .navbar:not(.scrolled) #nav-logo {
+    display: none; /* Hide temp logo when not scrolled */
+  }
+  
+  .navbar:not(.scrolled) #nav-logo-scrolled {
+    display: none;
+  }
+  
+  .navbar.scrolled #nav-logo {
+    display: none;
+  }
+  
+  .navbar.scrolled #nav-logo-scrolled {
+    display: block; /* Show narrow logo when scrolled */
+  }
+}
+
+/* Top-left logo for top navbar */
+.top-navbar .spanning-logo {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60px;
+  z-index: 1002;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.top-navbar.scrolled .spanning-logo {
+  display: none;
+}
+
+/* Mobile: Always show narrow logo */
+@media (max-width: 768px) {
+  #nav-logo {
+    display: none;
+  }
+  
+  #nav-logo-scrolled {
+    display: block;
+    height: 100px;
+  }
 }
 
 .hidden {
@@ -19,7 +66,8 @@
 .top-navbar {
   background: linear-gradient(to bottom, #a30000, #ebebebc1);
   padding: 6px 150px;
-  font-weight: bold; 
+  font-weight: bold;
+  position: relative; /* For spanning logo positioning */
 }
 
 .top-links {
@@ -265,8 +313,8 @@ nav li.active-section a.section-active {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.95);
-  z-index: 1001;
+  background: rgb(255, 248, 233);
+  z-index: 10000;
   overflow-y: auto;
 }
 
@@ -274,50 +322,55 @@ nav li.active-section a.section-active {
   display: block;
 }
 
+.mobile-nav * {
+  color: #333;
+}
+
 .mobile-nav-content {
   padding: 80px 20px 20px;
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
 }
 
 .mobile-nav-header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  color: #333;
 }
 
 .mobile-nav-header img {
-  height: 60px;
+  height: 80px;
   width: auto;
   margin-bottom: 20px;
+  object-fit: contain;
+  aspect-ratio: 4/3;
 }
 
 .mobile-nav-section {
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .mobile-nav-section h3 {
-  color: #f0a22e;
-  font-size: 18px;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #f0a22e;
-  padding-bottom: 5px;
+  color: #953734;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
   transition: all 0.3s ease;
 }
 
 .mobile-nav-section h3.active-section {
-  color: #ffffff;
-  background: rgba(240, 162, 46, 0.3);
-  border-radius: 8px;
+  color: #953734;
+  background: rgba(149, 55, 52, 0.1);
+  border-radius: 6px;
   padding: 8px 12px;
-  margin: -8px -12px 15px -12px;
+  margin: -8px -12px 10px -12px;
 }
 
 .mobile-nav-section-header {
-  color: #f0a22e !important;
-  font-size: 18px;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #f0a22e;
-  padding-bottom: 5px;
+  color: #953734 !important;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
   transition: all 0.3s ease;
   background: none;
   border: none;
@@ -325,15 +378,15 @@ nav li.active-section a.section-active {
   text-align: left;
   cursor: pointer;
   font-family: inherit;
-  font-weight: bold;
+  padding: 0;
 }
 
 .mobile-nav-section-header:hover {
-  color: #ffffff !important;
-  background: rgba(240, 162, 46, 0.3);
-  border-radius: 8px;
+  color: #953734 !important;
+  background: rgba(149, 55, 52, 0.1);
+  border-radius: 6px;
   padding: 8px 12px;
-  margin: -8px -12px 15px -12px;
+  margin: -8px -12px 10px -12px;
 }
 
 .mobile-nav-links {
@@ -343,18 +396,17 @@ nav li.active-section a.section-active {
 }
 
 .mobile-nav-links li {
-  margin-bottom: 8px;
+  margin: 6px 0;
 }
 
 .mobile-nav-links a,
 .mobile-nav-links button {
-  color: white;
+  color: #333;
   text-decoration: none;
-  font-size: 16px;
-  padding: 12px 15px;
+  font-size: 14px;
+  padding: 8px 0;
   display: block;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   background: none;
   border: none;
   width: 100%;
@@ -365,7 +417,15 @@ nav li.active-section a.section-active {
 
 .mobile-nav-links a:hover,
 .mobile-nav-links button:hover {
-  background: rgba(100, 100, 100, 0.3);
+  text-decoration: underline;
+  color: #953734;
+  background: rgba(149, 55, 52, 0.1);
+}
+
+.mobile-nav-links button.active-page {
+  color: #953734;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 /* Mobile navigation active page highlighting */
@@ -377,8 +437,8 @@ nav li.active-section a.section-active {
 
 /* Mobile navigation active section highlighting */
 .mobile-nav-section-header.active-section {
-  color: #ffffff !important;
-  background: rgba(240, 162, 46, 0.3);
+  color: #333 !important;
+  background: rgba(149, 55, 52, 0.1);
   border-radius: 8px;
   padding: 8px 12px;
   margin: -8px -12px 15px -12px;
@@ -394,7 +454,7 @@ nav li.active-section a.section-active {
   right: 20px;
   background: none;
   border: none;
-  color: white;
+  color: #333;
   font-size: 24px;
   cursor: pointer;
   padding: 10px;
@@ -435,25 +495,17 @@ nav li.active-section a.section-active {
   
   nav {
     padding: 0 20px;
-    height: 90px; /* Increased height to accommodate logo */
-    align-items: flex-end; /* Align items to bottom */
-    padding-bottom: 10px; /* Add bottom padding */
-  }
-  
-  nav img {
-    height: 40px;
-  }
-  
-  .floating-logo-container {
-    left: 20px;
-    top: 10px; /* Increased top spacing */
-    z-index: 1100;
-  }
-  
-  .floating-logo-container img {
     height: 80px;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  #nav-logo-scrolled {
+    height: 1000px;
     max-width: 200px;
     width: auto;
+    display: block;
   }
   
   /* Prevent logo stretching */
@@ -465,7 +517,7 @@ nav li.active-section a.section-active {
   
   /* Add top margin to main content to prevent navbar overlap */
   .who-are-we-container {
-    margin-top: 90px; /* Match navbar height */
+    margin-top: 0px; /* Remove navbar overlap spacing */
   }
   
   /* General rule for all pages with hero sections */
@@ -486,31 +538,23 @@ nav li.active-section a.section-active {
   .donate-container,
   .get-involved-container,
   .locations-container {
-    margin-top: 90px; /* Match navbar height */
+    margin-top: 0px; /* Remove navbar overlap spacing */
   }
 }
 
 @media (max-width: 480px) {
   nav {
     padding: 0 15px;
-    height: 85px; /* Increased height to accommodate logo */
-    align-items: flex-end; /* Align items to bottom */
-    padding-bottom: 10px; /* Add bottom padding */
+    height: 75px;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
   }
   
-  nav img {
-    height: 35px;
-  }
-  
-  .floating-logo-container {
-    left: 15px;
-    top: 8px; /* Increased top spacing */
-    z-index: 1100;
-  }
-  
-  .floating-logo-container img {
-    height: 70px;
+  #nav-logo-scrolled {
+    height: 1000px;
     max-width: 180px;
+    display: block;
   }
   
   .mobile-nav-content {
@@ -524,7 +568,7 @@ nav li.active-section a.section-active {
   
   /* Add top margin to main content to prevent navbar overlap */
   .who-are-we-container {
-    margin-top: 85px; /* Match navbar height */
+    margin-top: 0px; /* Remove navbar overlap spacing */
   }
   
   /* General rule for all pages with hero sections */
@@ -545,7 +589,7 @@ nav li.active-section a.section-active {
   .donate-container,
   .get-involved-container,
   .locations-container {
-    margin-top: 85px; /* Match navbar height */
+    margin-top: 0px; /* Remove navbar overlap spacing */
   }
 }
 

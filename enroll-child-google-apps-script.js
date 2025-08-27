@@ -1,4 +1,4 @@
-// Google Apps Script for A4A Parents & Families Enrollment Form
+// Google Apps Script for A4A Student Interest Form
 // This script handles form submissions and saves data to Google Sheets
 
 function doGet(e) {
@@ -19,7 +19,7 @@ function doGet(e) {
     }
     
     // Get the active spreadsheet
-    const spreadsheetId = '1M-907dzSlPG8Q9Foz6p2FIUHQNLuB5pZwFCQn3mVxCY';
+    const spreadsheetId = '1S_1L6E04ggF5wjpXBok6cTs3tjzBLw1zgugFG89bB0w';
     console.log('Attempting to open spreadsheet with ID:', spreadsheetId);
     
     try {
@@ -72,6 +72,8 @@ function doGet(e) {
     console.log('ChildFirstName from formData:', formData.childFirstName);
     console.log('ParentFirstName from formData:', formData.parentFirstName);
     console.log('Email validation check:', formData.email && formData.email.trim() !== '');
+    console.log('All formData keys:', Object.keys(formData));
+    console.log('All formData values:', Object.values(formData));
     
     if (formData.email && formData.email.trim() !== '') {
       console.log('About to call sendConfirmationEmail with:', formData.email, formData.childFirstName, formData.parentFirstName);
@@ -91,6 +93,8 @@ function doGet(e) {
       
   } catch (error) {
     console.error('Error processing form submission:', error);
+    console.error('Error details:', error.toString());
+    console.error('Error stack:', error.stack);
     
     // Return error response
     return ContentService
@@ -149,15 +153,13 @@ function sendConfirmationEmail(email, childFirstName, parentFirstName) {
     console.log('Email configuration:', {
       to: email,
       subject: subject,
-      from: 'mgibbons@a4all.org',
       hasHtmlBody: !!htmlBody
     });
     
     const emailResult = MailApp.sendEmail({
       to: email,
       subject: subject,
-      htmlBody: htmlBody,
-      replyTo: 'mgibbons@a4all.org'
+      htmlBody: htmlBody
     });
     
     console.log('MailApp.sendEmail completed successfully!');
@@ -227,11 +229,11 @@ function sendTeamNotification(formData) {
     
     console.log('Sending team notification with subject:', subject);
     
-         MailApp.sendEmail({
-       to: teamEmail,
-       subject: subject,
-       htmlBody: htmlBody
-     });
+    MailApp.sendEmail({
+      to: teamEmail,
+      subject: subject,
+      htmlBody: htmlBody
+    });
     
     console.log('Team notification sent successfully to:', teamEmail);
     
@@ -308,4 +310,42 @@ function checkSpreadsheetSetup() {
     console.error('Error checking spreadsheet:', error);
     return false;
   }
+}
+
+// Test function to debug the enrollment form
+function testEnrollmentForm() {
+  console.log('=== TESTING ENROLLMENT FORM ===');
+  
+  const testData = {
+    parentFirstName: 'Test',
+    parentLastName: 'Parent',
+    childFirstName: 'Test',
+    childLastName: 'Child',
+    phoneNumber: '555-1234',
+    email: 'testparent@example.com',
+    permission: 'Yes',
+    childAge: '5',
+    ptGroup: 'Social Media',
+    childHeight: '3 feet',
+    childWeight: '40 lbs',
+    healthConditions: 'None',
+    childInterests: 'Cars, toys',
+    adaptiveTechnologyInterest: 'None'
+  };
+  
+  console.log('Test data being created:', JSON.stringify(testData));
+  
+  const mockEvent = {
+    parameter: testData
+  };
+  
+  console.log('=== CALLING doGet FUNCTION ===');
+  try {
+    const result = doGet(mockEvent);
+    console.log('Test result:', result.getContent());
+  } catch (error) {
+    console.error('Error in test:', error);
+    console.error('Error details:', error.toString());
+  }
+  console.log('=== ENROLLMENT FORM TEST COMPLETE ===');
 }

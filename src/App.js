@@ -108,8 +108,13 @@ const MobileNavigation = ({ isOpen, onClose, currentSection, currentPage }) => {
       </button>
       <div className="mobile-nav-content">
         <div className="mobile-nav-header">
-          <img src="/images/4-3_Temp_Logo.png" alt="A4A Logo" />
-          <h2 style={{ color: 'white', margin: 0 }}>Navigation Menu</h2>
+          <img 
+            src="/images/4-3_Temp_Logo.png" 
+            alt="A4A Logo" 
+            onClick={() => handleNavClick('/')}
+            style={{ cursor: 'pointer' }}
+          />
+          <h2 style={{ color: '#333', margin: 0 }}>Navigation Menu</h2>
         </div>
         
         <div className="mobile-nav-section">
@@ -151,7 +156,7 @@ const MobileNavigation = ({ isOpen, onClose, currentSection, currentPage }) => {
             Parents & Families
           </button>
           <ul className="mobile-nav-links">
-            
+            <li><button onClick={() => handleNavClick('/enroll-your-child')} className={currentPage === '/enroll-your-child' ? 'active-page' : ''}>Enroll My Child</button></li>
           </ul>
         </div>
 
@@ -163,10 +168,7 @@ const MobileNavigation = ({ isOpen, onClose, currentSection, currentPage }) => {
             Students
           </button>
           <ul className="mobile-nav-links">
-            <li><button onClick={() => handleNavClick('/students')} className={currentPage === '/students' ? 'active-page' : ''}>Students</button></li>
-            
             <li><button onClick={() => handleNavClick('/interest-form')} className={currentPage === '/interest-form' ? 'active-page' : ''}>Interest Form</button></li>
- 
           </ul>
         </div>
 
@@ -186,22 +188,39 @@ const MobileNavigation = ({ isOpen, onClose, currentSection, currentPage }) => {
 
         <div className="mobile-nav-section">
           <button 
+            className={`mobile-nav-section-header ${currentSection === 'locations' ? 'active-section' : ''}`}
+            onClick={() => handleNavClick('/locations')}
+          >
+            Locations
+          </button>
+          <ul className="mobile-nav-links">
+            <li><button onClick={() => handleNavClick('/locations')} className={currentPage === '/locations' ? 'active-page' : ''}>Rutgers University</button></li>
+          </ul>
+        </div>
+
+        <div className="mobile-nav-section">
+          <button 
+            className={`mobile-nav-section-header ${currentSection === 'contact' ? 'active-section' : ''}`}
+            onClick={() => handleNavClick('/contact')}
+          >
+            Contact Us
+          </button>
+        </div>
+
+        <div className="mobile-nav-section">
+          <button 
             className={`mobile-nav-section-header ${currentSection === 'donate' ? 'active-section' : ''}`}
             onClick={() => handleNavClick('/donate')}
           >
             Donate
           </button>
-          <ul className="mobile-nav-links">
-            <li><button onClick={() => handleNavClick('/donate')} className={currentPage === '/donate' ? 'active-page' : ''}>Donate</button></li>
-            <li><button onClick={() => handleNavClick('/get-involved')} className={currentPage === '/get-involved' ? 'active-page' : ''}>Get Involved</button></li>
-          </ul>
         </div>
       </div>
     </div>
   );
 };
 
-const HomePage = () => {
+const HomePage = ({ isMobileMenuOpen }) => {
   const navigate = useNavigate();
   
   // Slideshow state
@@ -288,6 +307,18 @@ const HomePage = () => {
     navigate('/cars', { state: { scrollToChild: childName } });
   };
 
+  // Function to handle learn more button click
+  const handleLearnMoreClick = (e, childName) => {
+    e.stopPropagation(); // Prevent slide navigation
+    navigate('/cars', { state: { scrollToChild: childName } });
+  };
+
+  // Function to handle slide area click (for navigation)
+  const handleSlideAreaClick = (e, direction) => {
+    e.stopPropagation(); // Prevent slide navigation
+    changeSlide(direction);
+  };
+
   return (
     <>
       {/* SLIDESHOW */}
@@ -315,8 +346,7 @@ const HomePage = () => {
             <div
               key={i}
               className={`slide fade${i === slideIndex ? ' active' : ''}`}
-              style={{ display: i === slideIndex ? 'block' : 'none', cursor: 'pointer' }}
-              onClick={() => handleSlideClick(slide.childName)}
+              style={{ display: i === slideIndex ? 'block' : 'none' }}
             >
               <div className="slide-content">
                 <div className="slide-image">
@@ -328,6 +358,28 @@ const HomePage = () => {
                   <p>{slide.p}</p>
                 </div>
               </div>
+              
+              {/* Mobile Learn More Button */}
+              <button 
+                className="mobile-learn-more"
+                onClick={(e) => handleLearnMoreClick(e, slide.childName)}
+              >
+                Learn More
+              </button>
+              
+              {/* Mobile Arrow Buttons */}
+              <button 
+                className={`mobile-arrow-left ${isMobileMenuOpen ? 'hidden' : ''}`}
+                onClick={(e) => handleSlideAreaClick(e, -1)}
+              >
+                ❮
+              </button>
+              <button 
+                className={`mobile-arrow-right ${isMobileMenuOpen ? 'hidden' : ''}`}
+                onClick={(e) => handleSlideAreaClick(e, 1)}
+              >
+                ❯
+              </button>
             </div>
           ))}
           {/* Arrows */}
@@ -399,7 +451,7 @@ const HomePage = () => {
       <section className="get-involved-section-wrapper">
         <h2 className="get-involved-title">4 Ways to Get Invovled!</h2>
         <div className="get-involved-section">
-          <Link to="/volunteer-opportunities" className="involvement-option" style={{backgroundImage: "url('/images/1-1_Engineer_Kickoff.jpg')"}}>
+                          <Link to="/students" className="involvement-option" style={{backgroundImage: "url('/images/1-1_Engineer_Kickoff.jpg')"}}>
             Start a Chapter at your School!
           </Link>
           <Link to="/parents-families" className="involvement-option" style={{backgroundImage: "url('/images/1-1_Project_Robert.jpg')"}}>
@@ -465,9 +517,9 @@ const getNavigationState = (pathname) => {
 };
 
 // Navigation component that can use useLocation
-const Navigation = () => {
+const Navigation = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
   const location = useLocation();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { currentSection, currentPage } = getNavigationState(location.pathname);
 
   // Close mobile menu when route changes
@@ -475,16 +527,23 @@ const Navigation = () => {
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
 
+  // Handle scroll detection for logo switching
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <>
-      {/* FLOATING BIG LOGO OVER BOTH NAVS */}
-      <div className="floating-logo-container">
-        <a href="/">
-          <img id="floating-logo" src="/images/4-3_Temp_Logo.png" alt="A4A Full Logo" />
-        </a>
-      </div>
+
       {/* TOP NAVBAR (scrolls away) */}
-      <div className="top-navbar">
+      <div className={`top-navbar ${isScrolled ? 'scrolled' : ''}`}>
+        <img className="spanning-logo" src="/images/4-3_Temp_Logo.png" alt="A4A Logo" />
         <ul className="top-links">
           <li className={`top-dropdown ${currentSection === 'parents-families' ? 'active-section' : ''}`}>
             <NavLink to="/parents-families" className={currentSection === 'parents-families' ? 'section-active' : ''}>
@@ -519,9 +578,10 @@ const Navigation = () => {
 
       {/* STICKY MAIN NAVBAR */}
       <div className="dropdown-container">
-        <nav className="navbar">
+        <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
           <Link to="/">
-            <img id="nav-logo" className="hidden" src="/images/Narrow_Logo.png" alt="A4A Narrow Logo" />
+            <img id="nav-logo" src="/images/4-3_Temp_Logo.png" alt="A4A Logo" />
+            <img id="nav-logo-scrolled" src="/images/Narrow_Logo.png" alt="A4A Logo" />
           </Link>
           <ul className="nav-links">
             <li className={`dropdown ${currentSection === 'who-are-we' ? 'active-section' : ''}`}>
@@ -577,6 +637,8 @@ const Navigation = () => {
 };
 
 function App() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
   // Scroll logo logic - moved from HomePage to work on all pages
   useEffect(() => {
     const handleScroll = () => {
@@ -601,7 +663,7 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <Navigation />
+      <Navigation isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen} />
       {/* ROUTES */}
       <Routes>
         <Route path="/who-are-we" element={<WhoAreWe />} />
@@ -631,7 +693,7 @@ function App() {
 
         <Route path="/login" element={<Login />} />
         <Route path="/student-dashboard" element={<StudentDashboard />} />
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage isMobileMenuOpen={isMobileMenuOpen} />} />
       </Routes>
       {/* Footer is now outside <Routes> so it appears on all pages */}
       <footer className="site-footer">

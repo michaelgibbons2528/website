@@ -32,7 +32,6 @@ export default function PartnersSupporters() {
       }}>
         <div className="hero-content">
           <h1>Partners & Supporters</h1>
-          <p>Building strong partnerships to create lasting impact</p>
         </div>
       </div>
 

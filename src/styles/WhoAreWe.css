@@ -28,7 +28,7 @@
 }
 
 .mission-hero .hero-content h1 {
-  font-size: 3.5rem;
+  font-size: 2.4rem;
   font-weight: bold;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -38,7 +38,7 @@
 }
 
 .hero-subtitle {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   line-height: 1.6;
   opacity: 0.95;
   max-width: 600px;
@@ -289,18 +289,20 @@
   }
   
   .hero-content h1 {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
   }
 }
 
 @media (max-width: 768px) {
   .mission-hero {
+    height: 65vh;
+    min-height: 500px;
     padding: 60px 20px;
     margin-top: 0; /* Remove any top margin */
   }
   
   .hero-content h1 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
   
   .hero-subtitle {
@@ -333,7 +335,7 @@
 
 @media (max-width: 480px) {
   .hero-content h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
   
   .impact-stats {

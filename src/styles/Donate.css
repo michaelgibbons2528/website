@@ -5,6 +5,53 @@
   background: #ffffff;
 }
 
+/* Global iframe isolation and navigation prevention */
+.zeffy-form-container {
+  isolation: isolate;
+  contain: layout style paint;
+  position: relative;
+  z-index: 1;
+}
+
+.zeffy-form-container iframe {
+  isolation: isolate;
+  contain: layout style paint;
+  position: relative;
+  z-index: 1;
+}
+
+/* Global mobile iframe fix */
+@media (max-width: 768px) {
+  iframe {
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    -webkit-overflow-scrolling: touch !important;
+    position: relative !important;
+    z-index: 9999 !important;
+    isolation: isolate !important;
+  }
+  
+  /* Prevent parent containers from interfering with iframe */
+  .donate-container,
+  .donation-content-section,
+  .donation-layout,
+  .donation-right,
+  .zeffy-form-container {
+    pointer-events: none;
+  }
+  
+  .zeffy-form-container iframe {
+    pointer-events: auto !important;
+    isolation: isolate !important;
+  }
+  
+  /* Prevent iframe navigation from affecting parent */
+  .zeffy-form-container {
+    isolation: isolate;
+    contain: layout style paint;
+  }
+}
+
 /* Hero Section */
 .donate-hero {
   height: 65vh;
@@ -29,7 +76,7 @@
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 2.8rem;
   font-weight: bold;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -40,7 +87,7 @@
 }
 
 .hero-subtitle {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   line-height: 1.6;
   opacity: 0.95;
   max-width: 600px;
@@ -63,20 +110,256 @@
   padding: 0 2rem;
 }
 
-/* Donation Form Section */
-.donation-form-section {
-  padding: 4rem 0;
+/* Donation Content Section */
+.donation-content-section {
+  padding: 3rem 0;
   background: white;
+  min-height: 70vh;
 }
 
-.donation-form-container {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-  background: transparent;
+.donation-layout {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  gap: 3rem;
+  align-items: stretch;
+  min-height: 60vh;
+}
+
+/* Left Side - Text and Image */
+.donation-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.donation-text-box {
+  flex: 1;
+  background: #ffffff;
+  padding: 2.5rem 3.5rem;
   border-radius: 0;
+  border: none;
   box-shadow: none;
+  position: relative;
+  overflow: visible;
+}
+
+.donation-text-box p {
+  color: #333333;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  position: relative;
+  z-index: 1;
+  text-align: left;
+}
+
+.donation-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  align-self: center;
+  border: none;
+  position: relative;
+  margin-top: 2rem;
+}
+
+.donation-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.donation-thank-you {
+  color: #a30000;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 2rem 0 0rem 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Right Side - Zeffy Form */
+.donation-right {
+  flex: 1.2;
+  min-height: 100%;
+}
+
+.zeffy-form-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  background: white;
+  position: relative;
+  z-index: 1;
+  min-height: 1400px;
+}
+
+.zeffy-form-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  display: block;
+  min-height: 1400px;
+}
+
+/* Mobile Disclaimer */
+.mobile-disclaimer {
+  display: none;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+  border: 2px solid #ffc107;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.disclaimer-content {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.disclaimer-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.mobile-disclaimer h3 {
+  color: #856404;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+}
+
+.mobile-disclaimer p {
+  color: #856404;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.zeffy-form-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  background: white;
+  position: relative;
+  z-index: 1;
+}
+
+.zeffy-form-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .donation-layout {
+    flex-direction: column;
+    min-height: auto;
+    gap: 2.5rem;
+  }
+  
+  .donation-left {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2.5rem;
+  }
+  
+  .donation-text-box {
+    flex: 1;
+    padding: 2.5rem;
+  }
+  
+  .donation-text-box h2 {
+    font-size: 2.2rem;
+  }
+  
+  .donation-image {
+    width: 220px;
+    height: 220px;
+    flex-shrink: 0;
+  }
+  
+  .donation-right {
+    min-height: 600px;
+  }
+  
+  .zeffy-form-container {
+    min-height: 600px;
+  }
+  
+  .zeffy-form-container iframe {
+    min-height: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .donation-content-section {
+    padding: 2rem 0;
+    min-height: auto;
+  }
+  
+  .donation-layout {
+    padding: 0 1rem;
+    min-height: auto;
+  }
+  
+  .donation-left {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .donation-image {
+    width: 100%;
+    height: 280px;
+  }
+  
+  .donation-text-box {
+    padding: 2.5rem;
+  }
+  
+  .donation-text-box h2 {
+    font-size: 2rem;
+  }
+  
+  .donation-text-box p,
+  .donation-text-box li {
+    font-size: 1.1rem;
+  }
+  
+  .donation-right {
+    min-height: 1700px;
+  }
+  
+  /* Show mobile disclaimer */
+  .mobile-disclaimer {
+    display: block;
+  }
 }
 
 /* Other Ways to Help Section */
@@ -626,6 +909,29 @@
   
   .container {
     padding: 0 1rem;
+  }
+  
+  .donation-right {
+    min-height: 1700px;
+  }
+  
+  .zeffy-form-container {
+    height: 1700px;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .zeffy-form-container iframe {
+    min-height: 1700px;
+    -webkit-overflow-scrolling: touch;
+    touch-action: manipulation;
+  }
+  
+  /* Ensure the donation right container doesn't interfere */
+  .donation-right {
+    min-height: 1700px;
+    position: relative;
+    z-index: 1;
   }
   
   .donation-card,

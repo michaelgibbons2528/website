@@ -8,6 +8,10 @@ function doGet(e) {
     
     // Log the received data for debugging
     console.log('Received student interest form data:', JSON.stringify(formData));
+    console.log('Form data type:', typeof formData);
+    console.log('Form data keys:', Object.keys(formData));
+    console.log('Email directly from e.parameter:', e.parameter.email);
+    console.log('Email from formData:', formData.email);
     
     // Validate that we have the required data
     if (!formData.firstName || !formData.email || !formData.university) {
@@ -73,8 +77,16 @@ function doGet(e) {
     }
     
     // Send confirmation email to the student
+    console.log('Email from formData:', formData.email);
+    console.log('FirstName from formData:', formData.firstName);
+    console.log('Email validation check:', formData.email && formData.email.trim() !== '');
+    console.log('All formData keys:', Object.keys(formData));
+    console.log('All formData values:', Object.values(formData));
+    
     if (formData.email && formData.email.trim() !== '') {
-      sendStudentConfirmationEmail(formData.email, formData.firstName);
+      console.log('About to call sendStudentConfirmationEmail with:', formData.email, formData.firstName);
+      const confirmationResult = sendStudentConfirmationEmail(formData.email, formData.firstName);
+      console.log('Student confirmation email function completed');
     } else {
       console.error('No valid email address provided in form data');
     }
@@ -99,13 +111,16 @@ function doGet(e) {
 
 function sendStudentConfirmationEmail(email, firstName) {
   try {
+    console.log('=== STARTING sendStudentConfirmationEmail FUNCTION ===');
+    console.log('Parameters received - email:', email, 'firstName:', firstName);
+    
     // Validate email parameter
     if (!email || email.trim() === '') {
       console.error('Invalid email address provided:', email);
-      return;
+      return false;
     }
     
-    console.log('Attempting to send student confirmation email to:', email);
+    console.log('Email validation passed. Attempting to send student confirmation email to:', email);
     
     const subject = 'A4A Student Interest Form Received - Thank You!';
     const htmlBody = `
@@ -138,21 +153,35 @@ function sendStudentConfirmationEmail(email, firstName) {
       </div>
     `;
     
-    console.log('Sending student confirmation email with subject:', subject);
+    console.log('Email content prepared. Sending email with subject:', subject);
     console.log('Email recipient:', email);
+    console.log('About to call MailApp.sendEmail...');
+    console.log('Email configuration:', {
+      to: email,
+      subject: subject,
+      hasHtmlBody: !!htmlBody
+    });
     
-    MailApp.sendEmail({
+    const emailResult = MailApp.sendEmail({
       to: email,
       subject: subject,
       htmlBody: htmlBody
     });
     
+    console.log('MailApp.sendEmail completed successfully!');
+    console.log('Email result:', emailResult);
+    console.log('Email result type:', typeof emailResult);
     console.log('Student confirmation email sent successfully to:', email);
+    console.log('=== sendStudentConfirmationEmail FUNCTION COMPLETED SUCCESSFULLY ===');
+    return true;
     
   } catch (error) {
+    console.error('=== ERROR IN sendStudentConfirmationEmail FUNCTION ===');
     console.error('Error sending student confirmation email:', error);
     console.error('Error details:', error.toString());
     console.error('Error stack:', error.stack);
+    console.error('=== END ERROR ===');
+    return false;
   }
 }
 
@@ -254,7 +283,7 @@ function setupStudentInterestSpreadsheet() {
   console.log('Student interest spreadsheet setup complete with headers!');
 }
 
-// Function to test the student interest form submission
+// Test function to debug the student interest form
 function testStudentInterestForm() {
   console.log('=== TESTING STUDENT INTEREST FORM ===');
   
@@ -266,7 +295,7 @@ function testStudentInterestForm() {
     university: 'Test University',
     major: 'Engineering',
     graduationYear: '2025',
-    interests: ['team-member', 'project-lead'], // Fixed: Now an array
+    interests: 'team-member,project-lead',
     experience: 'Some engineering experience',
     availability: '3-5 hours/week',
     message: 'I want to help children with disabilities'
@@ -289,74 +318,11 @@ function testStudentInterestForm() {
   console.log('=== STUDENT INTEREST FORM TEST COMPLETE ===');
 }
 
-// Function to test just the spreadsheet functionality (no emails)
-function testSpreadsheetOnly() {
-  console.log('=== TESTING SPREADSHEET FUNCTIONALITY ONLY ===');
-  
-  try {
-    const spreadsheetId = '1S_1L6E04ggF5wjpXBok6cTs3tjzBLw1zgugFG89bB0w';
-    console.log('Attempting to open spreadsheet with ID:', spreadsheetId);
-    
-    const spreadsheet = SpreadsheetApp.openById(spreadsheetId);
-    console.log('Successfully opened spreadsheet:', spreadsheet.getName());
-    
-    const sheet = spreadsheet.getActiveSheet();
-    console.log('Active sheet name:', sheet.getName());
-    
-    // Test adding a simple row
-    const testRow = [
-      new Date().toISOString(),
-      'Spreadsheet Test',
-      'User',
-      'test@example.com',
-      '555-0000',
-      'Test University',
-      'Test Major',
-      '2025',
-      'test-interest',
-      'Test experience',
-      'Test availability',
-      'Test message'
-    ];
-    
-    const lastRow = sheet.getLastRow();
-    const targetRow = lastRow + 1;
-    
-    console.log('Last row in sheet:', lastRow);
-    console.log('Adding test row to row:', targetRow);
-    
-    sheet.getRange(targetRow, 1, 1, testRow.length).setValues([testRow]);
-    console.log('Successfully added test row to spreadsheet!');
-    
-    return true;
-    
-  } catch (error) {
-    console.error('Error testing spreadsheet:', error);
-    console.error('Error details:', error.toString());
-    return false;
-  }
+// Simple test function to verify script is accessible
+function testScriptAccess() {
+  console.log('=== TESTING SCRIPT ACCESS ===');
+  console.log('Script is accessible and running!');
+  return 'Script is working!';
 }
 
-// Function to test email functionality separately
-function testEmailOnly() {
-  console.log('=== TESTING EMAIL FUNCTIONALITY ONLY ===');
-  
-  try {
-    console.log('Attempting to send test email...');
-    
-    const result = MailApp.sendEmail({
-      to: 'mgibbons@a4all.org',
-      subject: 'A4A Student Interest Form - Email Test',
-      body: 'This is a test email to verify email functionality is working for the student interest form.'
-    });
-    
-    console.log('Test email sent successfully!');
-    console.log('Email result:', result);
-    return true;
-    
-  } catch (error) {
-    console.error('Error sending test email:', error);
-    console.error('Error details:', error.toString());
-    return false;
-  }
-}
+

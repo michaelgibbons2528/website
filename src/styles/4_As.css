@@ -276,10 +276,10 @@ img {
   
   img {
     width: 100%;
-    height: auto;
-    max-height: 220px;
+    height: 200px;
     object-fit: cover;
     border-radius: 8px;
+    aspect-ratio: 1/1;
   }
   
   .learn-more {
@@ -336,10 +336,10 @@ img {
   
   img {
     width: 100%;
-    height: auto;
-    max-height: 200px;
+    height: 180px;
     object-fit: cover;
     border-radius: 8px;
+    aspect-ratio: 1/1;
   }
   
   .learn-more {
@@ -397,10 +397,10 @@ img {
   
   img {
     width: 100%;
-    height: auto;
-    max-height: 180px;
+    height: 160px;
     object-fit: cover;
     border-radius: 6px;
+    aspect-ratio: 1/1;
   }
   
   .learn-more {

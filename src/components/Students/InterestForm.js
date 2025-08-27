@@ -17,6 +17,7 @@ export default function InterestForm() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -39,14 +40,21 @@ export default function InterestForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
+    // Prevent multiple submissions
+    if (isSubmitting) {
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
     try {
-      // Google Apps Script Web App URL
+      // Google Apps Script Web App URL - Student Interest Form dedicated script
       const scriptURL = 'https://script.google.com/macros/s/AKfycbxGZCmT5LbE3qZANTuHpCpKIo-P7S88i9c7VIJ3mujICL0xJbCm9oMthcVvf0J1f6Qx/exec';
       
       // Log form data before sending
       console.log('Form data being sent:', formData);
       
-      // Create URL parameters
+      // Create URL parameters - Student Interest Form specific parameters
       const params = new URLSearchParams();
       params.append('firstName', formData.firstName);
       params.append('lastName', formData.lastName);
@@ -108,7 +116,9 @@ export default function InterestForm() {
       
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('There was an error submitting your form. Please try again or contact us directly.');
+      alert('There was an error submitting your form. Please try again or contact us directly at mgibbons@a4all.org');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -356,8 +366,12 @@ export default function InterestForm() {
             </div>
 
             <div className="form-submit">
-              <button type="submit" className="submit-btn">
-                Submit Interest Form
+              <button 
+                type="submit" 
+                className="submit-btn"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Submitting...' : 'Submit Interest Form'}
               </button>
             </div>
           </form>

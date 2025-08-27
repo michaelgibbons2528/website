@@ -10,6 +10,7 @@ const Contact = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -19,17 +20,75 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically send the data to your backend
-    console.log('Contact form submitted:', formData);
-    setIsSubmitted(true);
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
+    
+    // Prevent multiple submissions
+    if (isSubmitting) {
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    try {
+      // Google Apps Script Web App URL
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxSr__f4xD2_-mPz4OiewbAhz3MSJWs1FMzRReDq0KRoT9niX6UTMSv9pMmiOzwyNAwJg/exec';
+      
+      // Log form data before sending
+      console.log('Form data being sent:', formData);
+      
+      // Create URL parameters
+      const params = new URLSearchParams();
+      params.append('name', formData.name);
+      params.append('email', formData.email);
+      params.append('subject', formData.subject);
+      params.append('message', formData.message);
+      params.append('timestamp', new Date().toISOString());
+      
+      // Log the URL being called for debugging
+      const fullURL = `${scriptURL}?${params.toString()}`;
+      console.log('Submitting form to:', fullURL);
+      
+      // Method 1: Try fetch first
+      try {
+        const response = await fetch(fullURL, {
+          method: 'GET',
+          mode: 'no-cors'
+        });
+        console.log('Fetch response:', response);
+        
+        // Check if we got a response (even with no-cors, we can't read the content)
+        if (response.type === 'opaque') {
+          console.log('Form submitted successfully (opaque response)');
+        }
+      } catch (fetchError) {
+        console.log('Fetch failed, trying alternative method:', fetchError);
+        
+        // Method 2: Use window.open as fallback
+        const newWindow = window.open(fullURL, '_blank');
+        if (newWindow) {
+          setTimeout(() => {
+            newWindow.close();
+          }, 2000);
+        }
+      }
+      
+      // Reset form and show success message
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+      
+      setIsSubmitted(true);
+      
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('There was an error submitting your form. Please try again or contact us directly at mgibbons@a4all.org');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -38,54 +97,22 @@ const Contact = () => {
       <div 
         className="contact-hero"
         style={{
-          backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/4-3_Work_on_Project.jpg')",
+          backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/4-3_First_Meeting.jpg')",
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
       >
         <div className="hero-content">
           <h1>Contact Us</h1>
-          <p>Get in touch with our team. We're here to help!</p>
         </div>
       </div>
-
-      {/* Contact Information Section */}
-      <section className="contact-info-section">
-        <div className="container">
-          <h2>Get in Touch</h2>
-          <p>Have questions about our programs, want to volunteer, or need information about adaptive devices? We'd love to hear from you!</p>
-          
-          <div className="contact-methods">
-            <div className="contact-method">
-              <div className="contact-icon">📧</div>
-              <h3>Email</h3>
-              <p>info@a4all.org</p>
-              <p>For general inquiries and questions</p>
-            </div>
-            
-            <div className="contact-method">
-              <div className="contact-icon">📱</div>
-              <h3>Social Media</h3>
-              <p>@rutgersa4a</p>
-              <p>Follow us on Instagram for updates</p>
-            </div>
-            
-            <div className="contact-method">
-              <div className="contact-icon">📍</div>
-              <h3>Location</h3>
-              <p>Rutgers University</p>
-              <p>New Brunswick, New Jersey</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Contact Form Section */}
       <section className="contact-form-section">
         <div className="container">
           <div className="form-container">
-            <h2>Send Us a Message</h2>
-            <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+            <h2>Questions, Comments, & Concerns?</h2>
+            <p>Send us a message! Please fill out this form and we'll get back to you within 24-48 hours.</p>
             
             {isSubmitted ? (
               <div className="success-message">
@@ -151,11 +178,44 @@ const Contact = () => {
                   ></textarea>
                 </div>
                 
-                <button type="submit" className="submit-btn">
-                  Send Message
+                <button 
+                  type="submit" 
+                  className="submit-btn"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             )}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Information Section */}
+      <section className="contact-info-section">
+        <div className="container">
+          <h2>Get in Touch</h2>
+          <p>Unable to fill out the form? Find us on social media or email us directly. We'd love to hear from you!</p>
+          
+          <div className="contact-methods">          
+            <div className="contact-method">
+              <div className="contact-icon">📱</div>
+              <h3>Social Media</h3>
+              <p>@rutgersa4a</p>
+              <p>Follow us on Instagram for updates</p>
+            </div>
+          <div className="contact-method">
+            <div className="contact-icon">📧</div>
+            <h3>Email</h3>
+            <p>mgibbons@a4all.org</p>
+            <p>For general inquiries and questions</p>
+          </div>
+            <div className="contact-method">
+              <div className="contact-icon">📍</div>
+              <h3>Locations</h3>
+              <p>Rutgers University</p>
+              <p>New Brunswick, New Jersey</p>
+            </div>
           </div>
         </div>
       </section>

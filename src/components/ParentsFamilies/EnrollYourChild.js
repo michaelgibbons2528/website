@@ -20,6 +20,7 @@ const EnrollYourChild = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -31,6 +32,13 @@ const EnrollYourChild = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Prevent multiple submissions
+    if (isSubmitting) {
+      return;
+    }
+    
+    setIsSubmitting(true);
     
     try {
       // Google Apps Script Web App URL
@@ -108,6 +116,8 @@ const EnrollYourChild = () => {
     } catch (error) {
       console.error('Error submitting form:', error);
       alert('There was an error submitting your form. Please try again or contact us directly at mgibbons@a4all.org');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -394,8 +404,12 @@ const EnrollYourChild = () => {
                   </div>
                 </div>
                 
-                <button type="submit" className="submit-btn">
-                  Submit Enrollment
+                <button 
+                  type="submit" 
+                  className="submit-btn"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Submitting...' : 'Submit Enrollment'}
                 </button>
               </form>
             )}

@@ -28,7 +28,7 @@
 }
 
 .contact-hero h1 {
-  font-size: 3.5rem;
+  font-size: 2.8rem;
   font-weight: bold;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -38,7 +38,7 @@
 }
 
 .contact-hero p {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   line-height: 1.6;
   opacity: 0.95;
   max-width: 600px;
@@ -206,6 +206,17 @@
   background: #8a0000;
 }
 
+.submit-btn:disabled {
+  background: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.submit-btn:disabled:hover {
+  background: #cccccc;
+}
+
 /* Success Message */
 .success-message {
   text-align: center;
@@ -248,13 +259,24 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .contact-hero h1 {
+    font-size: 2.2rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .contact-hero {
+    height: 65vh;
+    min-height: 500px;
+  }
+  
   .contact-hero h1 {
     font-size: 2.5rem;
   }
   
   .contact-hero p {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   
   .contact-info-section h2 {
@@ -282,6 +304,10 @@
 @media (max-width: 480px) {
   .contact-hero h1 {
     font-size: 2rem;
+  }
+  
+  .contact-hero p {
+    font-size: 1rem;
   }
   
   .form-container {

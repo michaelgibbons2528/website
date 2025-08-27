@@ -22,10 +22,11 @@ export default function OurMission() {
           <div className="statement-content">
             <h2>Making Dreams Accessible</h2>
             <p>
-            Accessible 4 All is a student-led organization dedicated to creating innovative engineering solutions 
-            that empower children with disabilities. We believe every child deserves the opportunity to play, learn, 
-            and grow in an inclusive environment. Through our projects, we bridge the gap between engineering education 
-            and real-world impact, making a difference in the lives of families and communities.
+            Accessible 4 All is a 501(c)(3) non-profit organization and student-led organization dedicated to creating innovative engineering 
+            solutions that support children with disabilities. We believe every child deserves the opportunity to play, learn, and grow in an 
+            inclusive environment—at no cost to their families. Providing our services completely free is a core part of our mission, ensuring 
+            that accessibility is never limited by financial barriers. Through our projects, we bridge the gap between engineering education and 
+            real-world impact, making a lasting difference in the lives of families and communities.
             </p>
           </div>
           <div className="statement-image">

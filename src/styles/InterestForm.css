@@ -27,7 +27,7 @@
 }
 
 .interest-form-hero .hero-title {
-  font-size: 3.5rem;
+  font-size: 2.8rem;
   font-weight: bold;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -214,6 +214,21 @@
   box-shadow: 0 8px 20px rgba(163, 0, 0, 0.3);
 }
 
+.submit-btn:disabled {
+  background: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+  box-shadow: none;
+}
+
+.submit-btn:disabled:hover {
+  background: #cccccc;
+  transform: none;
+  box-shadow: none;
+}
+
 /* Success Message */
 .success-message {
   text-align: center;
@@ -256,7 +271,18 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .interest-form-hero .hero-title {
+    font-size: 2.2rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .interest-form-hero {
+    height: 65vh;
+    min-height: 500px;
+  }
+  
   .interest-form-hero .hero-title {
     font-size: 2.5rem;
   }
@@ -286,7 +312,8 @@
 
 @media (max-width: 480px) {
   .interest-form-hero {
-    height: 300px;
+    height: 65vh;
+    min-height: 500px;
   }
   
   .interest-form-hero .hero-title {
