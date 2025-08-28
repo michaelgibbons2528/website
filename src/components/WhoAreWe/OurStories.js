@@ -144,7 +144,7 @@ export default function OurStories() {
             {/* Story 2 */}
             <div className="story-card" ref={jasonRef}>
               <div className="story-image">
-                <img src="/images/4-3_Jason_Story.jpg" alt="Jason working on engineering project" />
+                <img src="/images/4-3_Jason_Story.JPG" alt="Jason working on engineering project" />
                 <div className="story-overlay">
                   <span className="story-number">02</span>
                 </div>
@@ -199,7 +199,7 @@ export default function OurStories() {
             {/* Story 3 */}
             <div className="story-card" ref={aaronRef}>
               <div className="story-image">
-                <img src="/images/4-3_Aaron_Story.jpg" alt="Aaron working on engineering project" />
+                <img src="/images/4-3_Aaron_Story.JPG" alt="Aaron working on engineering project" />
                 <div className="story-overlay">
                   <span className="story-number">03</span>
                 </div>
@@ -297,7 +297,7 @@ export default function OurStories() {
              {/* Story 5 */}
              <div className="story-card">
                <div className="story-image">
-                 <img src="/images/4-3_Bensu_Story.jpg" alt="Student working on engineering project" />
+                 <img src="/images/4-3_Bensu_Story.JPG" alt="Student working on engineering project" />
                  <div className="story-overlay">
                    <span className="story-number">05</span>
                  </div>
@@ -344,7 +344,7 @@ export default function OurStories() {
              {/* Story 6 */}
              <div className="story-card">
                <div className="story-image">
-                 <img src="/images/4-3_Gabe_Story.jpg" alt="Gabriel Endres working on engineering project" />
+                 <img src="/images/4-3_Gabe_Story.JPG" alt="Gabriel Endres working on engineering project" />
                  <div className="story-overlay">
                    <span className="story-number">06</span>
                  </div>
@@ -391,7 +391,7 @@ export default function OurStories() {
              {/* Story 7 */}
              <div className="story-card">
                <div className="story-image">
-                 <img src="/images/4-3_Sam_Story.jpg" alt="Sam working on engineering project" />
+                 <img src="/images/4-3_Sam_Story.JPG" alt="Sam working on engineering project" />
                  <div className="story-overlay">
                    <span className="story-number">07</span>
                  </div>

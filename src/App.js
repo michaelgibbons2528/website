@@ -446,7 +446,7 @@ const HomePage = ({ isMobileMenuOpen }) => {
       <section className="get-involved-section-wrapper">
         <h2 className="get-involved-title">4 Ways to Get Invovled!</h2>
         <div className="get-involved-section">
-                          <Link to="/students" className="involvement-option" style={{backgroundImage: "url('/images/1-1_Engineer_Kickoff.jpg')"}}>
+                          <Link to="/schools-educational-programs" className="involvement-option" style={{backgroundImage: "url('/images/1-1_Engineer_Kickoff.jpg')"}}>
             Start a Chapter at your School!
           </Link>
           <Link to="/parents-families" className="involvement-option" style={{backgroundImage: "url('/images/1-1_Project_Robert.jpg')"}}>
