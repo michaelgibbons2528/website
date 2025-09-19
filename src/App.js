@@ -51,7 +51,7 @@ const ScrollToTop = () => {
     // Dynamic page titles based on current route
     const getPageTitle = (path) => {
       const titles = {
-        '/': 'Accessible 4 All - Empowering Children with Disabilities',
+        '/': 'Accessible 4 All',
         '/who-are-we': 'Who Are We? - Accessible 4 All',
         '/our-mission': 'Our Mission - Accessible 4 All',
         '/our-stories': 'Our Stories - Accessible 4 All',
@@ -109,7 +109,7 @@ const MobileNavigation = ({ isOpen, onClose, currentSection, currentPage }) => {
       <div className="mobile-nav-content">
         <div className="mobile-nav-header">
           <img 
-            src="/images/4-3_Temp_Logo.png" 
+            src="/images/2-1_Large Logo.png" 
             alt="A4A Logo" 
             onClick={() => handleNavClick('/')}
             style={{ cursor: 'pointer' }}
@@ -395,7 +395,7 @@ const HomePage = ({ isMobileMenuOpen }) => {
       >
         <p className="section-subtext">
           Accessible 4 All (A4A) is dedicated to modifying toys and mobility devices to meet 
-          the needs of children with physical and devleopmental disabilities. 
+          the needs of children with physical and developmental disabilities. 
           In partnership with local families, we have developed personalized, 
           accessible ride-on vehicles that provide children with a fun and 
           engaging way to participate in play while supporting their 
@@ -539,7 +539,7 @@ const Navigation = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
       {/* TOP NAVBAR (scrolls away) */}
       <div className={`top-navbar ${isScrolled ? 'scrolled' : ''}`}>
         <Link to="/">
-          <img className="spanning-logo" src="/images/4-3_Temp_Logo.png" alt="A4A Logo" />
+          <img className="spanning-logo" src="/images/2-1_Large Logo.png" alt="A4A Logo" />
         </Link>
         <ul className="top-links">
           <li className={`top-dropdown ${currentSection === 'parents-families' ? 'active-section' : ''}`}>
@@ -577,8 +577,8 @@ const Navigation = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
       <div className="dropdown-container">
         <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
           <Link to="/">
-            <img id="nav-logo" src="/images/4-3_Temp_Logo.png" alt="A4A Logo" />
-            <img id="nav-logo-scrolled" src="/images/Narrow_Logo.png" alt="A4A Logo" />
+            <img id="nav-logo" src="/images/2-1_Large Logo.png" alt="A4A Logo" />
+            <img id="nav-logo-scrolled" src="/images/3-1_Narrow-Logo.png" alt="A4A Logo" />
           </Link>
           <ul className="nav-links">
             <li className={`dropdown ${currentSection === 'who-are-we' ? 'active-section' : ''}`}>

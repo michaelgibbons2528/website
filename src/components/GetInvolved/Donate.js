@@ -5,50 +5,42 @@ export default function Donate() {
   const iframeRef = useRef(null);
 
   useEffect(() => {
-    // Completely prevent any navigation from iframe
-    const preventNavigation = (event) => {
-      // Block all navigation attempts from iframe
-      if (event.target === iframeRef.current || 
-          event.target.closest('iframe') === iframeRef.current) {
-        event.preventDefault();
-        event.stopPropagation();
-        return false;
+    // Prevent iframe from affecting parent navigation
+    const handleMessage = (event) => {
+      // Only accept messages from Zeffy domain
+      if (event.origin !== 'https://www.zeffy.com') {
+        return;
+      }
+      
+      // Block navigation messages from iframe
+      if (event.data && typeof event.data === 'string') {
+        if (event.data.includes('navigate') || event.data.includes('redirect')) {
+          event.preventDefault();
+          return false;
+        }
       }
     };
 
-    // Block all possible navigation events
-    const events = ['beforeunload', 'unload', 'popstate', 'pushstate', 'replacestate'];
-    events.forEach(eventType => {
-      window.addEventListener(eventType, preventNavigation, true);
-    });
+    // Add message listener
+    window.addEventListener('message', handleMessage, true);
 
-    // Override history methods
-    const originalPushState = window.history.pushState;
-    const originalReplaceState = window.history.replaceState;
-    
-    window.history.pushState = function() {
-      // Only allow if not triggered by iframe
-      if (!document.activeElement || document.activeElement.tagName !== 'IFRAME') {
-        return originalPushState.apply(this, arguments);
+    // Prevent accidental navigation on mobile
+    const preventUnwantedNavigation = (event) => {
+      // Only prevent if the event originates from within the iframe
+      if (event.target && event.target.tagName === 'IFRAME') {
+        // Allow normal iframe interactions but prevent parent navigation
+        if (event.type === 'click' && event.target === iframeRef.current) {
+          // Let the click pass through to iframe
+          return;
+        }
       }
     };
-    
-    window.history.replaceState = function() {
-      // Only allow if not triggered by iframe
-      if (!document.activeElement || document.activeElement.tagName !== 'IFRAME') {
-        return originalReplaceState.apply(this, arguments);
-      }
-    };
+
+    document.addEventListener('click', preventUnwantedNavigation, true);
 
     return () => {
-      // Cleanup event listeners
-      events.forEach(eventType => {
-        window.removeEventListener(eventType, preventNavigation, true);
-      });
-      
-      // Restore original history methods
-      window.history.pushState = originalPushState;
-      window.history.replaceState = originalReplaceState;
+      window.removeEventListener('message', handleMessage, true);
+      document.removeEventListener('click', preventUnwantedNavigation, true);
     };
   }, []);
   return (
@@ -86,12 +78,18 @@ export default function Donate() {
           
           {/* Right Side - Zeffy Form */}
           <div className="donation-right">
-            {/* Mobile Disclaimer */}
+            {/* Mobile Disclaimer and Alternative Button */}
             <div className="mobile-disclaimer">
               <div className="disclaimer-content">
-                <div className="disclaimer-icon">💻</div>
                 <h3>For Best Experience</h3>
-                <p>Our donation form works best on desktop or laptop computers. If you're experiencing issues on mobile, please consider using a computer for a smoother donation process.</p>
+                <p>Our donation form works best on desktop or laptop computers, or through a separate tab. If you're experiencing issues on mobile, please click the button below for a smoother donation process.</p>
+                <button 
+                  className="alternative-donate-btn"
+                  onClick={() => window.open('https://www.zeffy.com/en-ca/donation-form/donate-to-a4a', '_blank', 'noopener,noreferrer')}
+                  aria-label="Open donation form in new tab"
+                >
+                  Open Donation Form in New Tab
+                </button>
               </div>
             </div>
             
@@ -104,43 +102,18 @@ export default function Donate() {
                 height="100%"
                 frameBorder="0"
                 allowFullScreen={false}
-                sandbox="allow-scripts allow-forms allow-same-origin"
+                sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox"
                 loading="lazy"
                 style={{
                   border: 'none',
                   borderRadius: '12px',
                   backgroundColor: 'transparent',
-                  isolation: 'isolate'
+                  isolation: 'isolate',
+                  position: 'relative',
+                  zIndex: 1
                 }}
                 onLoad={(e) => {
-                  // Completely isolate iframe navigation
-                  try {
-                    const iframe = e.target;
-                    if (iframe.contentWindow) {
-                      // Override all navigation methods
-                      iframe.contentWindow.history.pushState = function() {};
-                      iframe.contentWindow.history.replaceState = function() {};
-                      iframe.contentWindow.location.replace = function() {};
-                      iframe.contentWindow.location.assign = function() {};
-                      iframe.contentWindow.location.reload = function() {};
-                      
-                      // Block window.location changes
-                      Object.defineProperty(iframe.contentWindow, 'location', {
-                        set: function() {},
-                        get: function() { return iframe.contentWindow.location; },
-                        configurable: false
-                      });
-                      
-                      // Block window.open
-                      iframe.contentWindow.open = function() { return null; };
-                      
-                      // Block window.close
-                      iframe.contentWindow.close = function() {};
-                    }
-                  } catch (error) {
-                    // Cross-origin restrictions apply - this is expected and good
-                    console.log('Iframe security restrictions in place');
-                  }
+                  console.log('Zeffy donation form loaded successfully');
                 }}
                 onError={(e) => {
                   console.log('Iframe failed to load:', e);

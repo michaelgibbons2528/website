@@ -10,45 +10,52 @@
   isolation: isolate;
   contain: layout style paint;
   position: relative;
-  z-index: 1;
+  z-index: 10;
+  pointer-events: auto;
 }
 
 .zeffy-form-container iframe {
   isolation: isolate;
   contain: layout style paint;
   position: relative;
-  z-index: 1;
+  z-index: 10;
+  pointer-events: auto;
 }
 
 /* Global mobile iframe fix */
 @media (max-width: 768px) {
-  iframe {
-    pointer-events: auto !important;
-    touch-action: manipulation !important;
-    -webkit-overflow-scrolling: touch !important;
-    position: relative !important;
-    z-index: 9999 !important;
-    isolation: isolate !important;
-  }
-  
-  /* Prevent parent containers from interfering with iframe */
-  .donate-container,
-  .donation-content-section,
-  .donation-layout,
-  .donation-right,
   .zeffy-form-container {
-    pointer-events: none;
+    pointer-events: auto;
+    isolation: isolate;
+    contain: layout style paint;
+    position: relative;
+    z-index: 999;
   }
   
   .zeffy-form-container iframe {
     pointer-events: auto !important;
+    touch-action: manipulation !important;
+    -webkit-overflow-scrolling: touch !important;
+    position: relative !important;
+    z-index: 999 !important;
     isolation: isolate !important;
+    width: 100% !important;
+    height: 100% !important;
   }
   
-  /* Prevent iframe navigation from affecting parent */
-  .zeffy-form-container {
-    isolation: isolate;
-    contain: layout style paint;
+  /* Ensure parent containers don't interfere */
+  .donation-right {
+    pointer-events: auto;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .donation-content-section {
+    pointer-events: auto;
+  }
+  
+  .donation-layout {
+    pointer-events: auto;
   }
 }
 
@@ -518,6 +525,34 @@
 .impact-card p {
   color: #666;
   line-height: 1.6;
+}
+
+/* Alternative Donate Button */
+.alternative-donate-btn {
+  background: #a30000;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alternative-donate-btn:hover {
+  background: #8a0000;
+}
+
+.alternative-donate-btn:focus {
+  outline: 2px solid #a30000;
+  outline-offset: 2px;
 }
 
 /* Donation Options Section */

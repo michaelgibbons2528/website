@@ -56,7 +56,7 @@ const Login = () => {
     <div className="login-container">
       <div className="login-card">
         <div className="login-header">
-          <img src="/images/4-3_Temp_Logo.png" alt="A4A Logo" className="login-logo" />
+          <img src="/images/2-1_Large Logo.png" alt="A4A Logo" className="login-logo" />
           <h1>Student Login</h1>
           <p>Access your student resources and training materials</p>
         </div>

@@ -5,9 +5,13 @@
 }
 
 #nav-logo-scrolled {
-  height: 40px;
+  height: 60px;
   transition: all 0.3s ease;
   display: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  margin: 10px 0; /* Equal spacing above and below (10px each) */
 }
 
 /* Desktop: Show full logo initially, narrow logo when scrolled */
@@ -33,9 +37,9 @@
 .top-navbar .spanning-logo {
   position: absolute;
   left: 100px; /* Align with the sticky navbar logo position */
-  top: 0px; /* Positioned normally in the navbar */
-  height: 120px;
-  width: 160px; /* 4:3 aspect ratio (120px * 4/3 = 160px) */
+  top: 10px; /* Centered in navbar (120px total - 100px logo = 20px, so 10px from top) */
+  height: 100px;
+  width: 200px; /* 2:1 aspect ratio (100px * 2 = 200px) */
   z-index: 1002;
   transition: all 0.3s ease;
   display: block !important;
@@ -55,8 +59,15 @@
   }
   
   #nav-logo-scrolled {
-    display: block;
-    height: 100px;
+    display: block !important;
+    height: 70px !important;
+    max-width: 800px !important;
+    width: auto !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    margin: 0px 0px 0px 30px !important;
+    transform: scale(2.0) !important;
   }
 }
 
@@ -67,7 +78,7 @@
 
 /* TOP NAVBAR (scrolls away) */
 .top-navbar {
-  background: linear-gradient(to bottom, #a30000, #ebebebc1);
+  background: #a30000; /* Solid dark red color */
   padding: 6px 150px;
   font-weight: bold;
   position: relative; /* For spanning logo positioning */
@@ -506,10 +517,15 @@ nav li.active-section a.section-active {
   }
   
   #nav-logo-scrolled {
-    height: 1000px;
-    max-width: 200px;
-    width: auto;
-    display: block;
+    height: 70px !important;
+    max-width: 800px !important;
+    width: auto !important;
+    display: block !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    margin: 0px 0px 0px 30px !important;
+    transform: scale(2.0) !important;
   }
   
   /* Prevent logo stretching */
@@ -556,9 +572,14 @@ nav li.active-section a.section-active {
   }
   
   #nav-logo-scrolled {
-    height: 1000px;
-    max-width: 180px;
-    display: block;
+    height: 70px !important;
+    max-width: 800px !important;
+    display: block !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    margin: 0px 0px 0px 30px !important;
+    transform: scale(2.0) !important;
   }
   
   .mobile-nav-content {
