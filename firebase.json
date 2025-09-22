@@ -11,6 +11,13 @@
         "source": "**",
         "destination": "/index.html"
       }
+    ],
+    "redirects": [
+      {
+        "source": "https://www.a4all.org/**",
+        "destination": "https://a4all.org/:splat",
+        "type": 301
+      }
     ]
   }
 }
