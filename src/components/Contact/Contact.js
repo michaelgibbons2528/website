@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import '../../styles/Contact.css';
 
 const Contact = () => {
@@ -6,14 +6,26 @@ const Contact = () => {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
+    // Honeypot field - bots will fill this, humans won't see it
+    website: ''
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  // Bot prevention tracking
+  const formLoadTime = useRef(Date.now());
+  const [hasInteracted, setHasInteracted] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    
+    // Track that user has interacted with form (but not for honeypot field)
+    if (name !== 'website' && !hasInteracted) {
+      setHasInteracted(true);
+    }
+    
     setFormData(prevState => ({
       ...prevState,
       [name]: value
@@ -25,6 +37,27 @@ const Contact = () => {
     
     // Prevent multiple submissions
     if (isSubmitting) {
+      return;
+    }
+    
+    // Bot protection checks
+    // 1. Check honeypot field - if filled, it's a bot
+    if (formData.website) {
+      console.log('Bot detected: honeypot field filled');
+      return;
+    }
+    
+    // 2. Check form submission time - bots submit too quickly (< 3 seconds)
+    const timeSinceLoad = Date.now() - formLoadTime.current;
+    if (timeSinceLoad < 3000) {
+      console.log('Bot detected: form submitted too quickly');
+      alert('Please take your time filling out the form.');
+      return;
+    }
+    
+    // 3. Check if user actually interacted with the form
+    if (!hasInteracted) {
+      console.log('Bot detected: no user interaction detected');
       return;
     }
     
@@ -78,7 +111,8 @@ const Contact = () => {
         name: '',
         email: '',
         subject: '',
-        message: ''
+        message: '',
+        website: ''
       });
       
       setIsSubmitted(true);
@@ -120,13 +154,31 @@ const Contact = () => {
                 <p>Your message has been sent successfully. We'll get back to you within 24-48 hours.</p>
                 <button 
                   className="submit-another-btn"
-                  onClick={() => setIsSubmitted(false)}
+                  onClick={() => {
+                    setIsSubmitted(false);
+                    formLoadTime.current = Date.now();
+                    setHasInteracted(false);
+                  }}
                 >
                   Send Another Message
                 </button>
               </div>
             ) : (
               <form className="contact-form" onSubmit={handleSubmit}>
+                {/* Honeypot field - hidden from humans, visible to bots */}
+                <div className="honeypot-field" style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}>
+                  <label htmlFor="website">Website (leave blank)</label>
+                  <input
+                    type="text"
+                    id="website"
+                    name="website"
+                    value={formData.website}
+                    onChange={handleInputChange}
+                    tabIndex="-1"
+                    autoComplete="off"
+                  />
+                </div>
+                
                 <div className="form-row">
                   <div className="form-group">
                     <label htmlFor="name">Name *</label>

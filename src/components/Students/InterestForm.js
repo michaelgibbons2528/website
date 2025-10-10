@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import '../../styles/InterestForm.css';
 
 export default function InterestForm() {
@@ -13,14 +13,26 @@ export default function InterestForm() {
     interests: [],
     experience: '',
     availability: '',
-    message: ''
+    message: '',
+    // Honeypot field - bots will fill this, humans won't see it
+    website: ''
   });
 
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  // Bot prevention tracking
+  const formLoadTime = useRef(Date.now());
+  const [hasInteracted, setHasInteracted] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    
+    // Track that user has interacted with form (but not for honeypot field)
+    if (name !== 'website' && !hasInteracted) {
+      setHasInteracted(true);
+    }
+    
     setFormData(prev => ({
       ...prev,
       [name]: value
@@ -29,6 +41,12 @@ export default function InterestForm() {
 
   const handleCheckboxChange = (e) => {
     const { value, checked } = e.target;
+    
+    // Track that user has interacted with form
+    if (!hasInteracted) {
+      setHasInteracted(true);
+    }
+    
     setFormData(prev => ({
       ...prev,
       interests: checked 
@@ -42,6 +60,27 @@ export default function InterestForm() {
     
     // Prevent multiple submissions
     if (isSubmitting) {
+      return;
+    }
+    
+    // Bot protection checks
+    // 1. Check honeypot field - if filled, it's a bot
+    if (formData.website) {
+      console.log('Bot detected: honeypot field filled');
+      return;
+    }
+    
+    // 2. Check form submission time - bots submit too quickly (< 3 seconds)
+    const timeSinceLoad = Date.now() - formLoadTime.current;
+    if (timeSinceLoad < 3000) {
+      console.log('Bot detected: form submitted too quickly');
+      alert('Please take your time filling out the form.');
+      return;
+    }
+    
+    // 3. Check if user actually interacted with the form
+    if (!hasInteracted) {
+      console.log('Bot detected: no user interaction detected');
       return;
     }
     
@@ -109,7 +148,8 @@ export default function InterestForm() {
         interests: [],
         experience: '',
         availability: '',
-        message: ''
+        message: '',
+        website: ''
       });
       
       setSubmitted(true);
@@ -128,7 +168,14 @@ export default function InterestForm() {
         <div className="success-message">
           <h2>Thank You!</h2>
           <p>Your interest form has been submitted successfully. We'll be in touch with you soon!</p>
-          <button onClick={() => setSubmitted(false)} className="submit-another-btn">
+          <button 
+            onClick={() => {
+              setSubmitted(false);
+              formLoadTime.current = Date.now();
+              setHasInteracted(false);
+            }} 
+            className="submit-another-btn"
+          >
             Submit Another Form
           </button>
         </div>
@@ -164,6 +211,20 @@ export default function InterestForm() {
           </div>
 
           <form className="interest-form" onSubmit={handleSubmit}>
+            {/* Honeypot field - hidden from humans, visible to bots */}
+            <div className="honeypot-field" style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}>
+              <label htmlFor="website">Website (leave blank)</label>
+              <input
+                type="text"
+                id="website"
+                name="website"
+                value={formData.website}
+                onChange={handleInputChange}
+                tabIndex="-1"
+                autoComplete="off"
+              />
+            </div>
+            
             <div className="form-grid">
               {/* Personal Information */}
               <div className="form-group">
