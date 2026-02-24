@@ -129,7 +129,7 @@ export default function Students() {
                 <h3>Lifelong Connections</h3>
                 <p>
                   Whether you have a passion for engineering, healthcare, or community service, you will be able to form meaningful friendships 
-                  while expanding ?your network with peers and mentors who share your passions.
+                  while expanding your network with peers and mentors who share your passions.
                 </p>
               </div>
             </div>

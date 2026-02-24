@@ -61,11 +61,12 @@
   padding: 0 2rem;
 }
 
-/* Introduction Section */
+/* Introduction Section - full-width background edge to edge */
 .intro-section {
   padding: 4rem 0;
   text-align: center;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: #f8f9fa;
+  width: 100%;
 }
 
 .intro-section h2 {

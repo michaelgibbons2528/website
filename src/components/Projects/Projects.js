@@ -15,9 +15,9 @@ export default function Projects() {
     },
     {
       id: 'montessori',
-      title: 'Giant Montessori Board',
+      title: 'Classroom Montessori Board',
       subtitle: 'A Wall Full of Fun',
-      description: 'We are building a giant Montessori Board for our friends at Lake Hiawatha School in the Parspianny-Troy Hills School district.', 
+      description: 'We are building a Classroom Montessori Board for our friends at Lake Hiawatha School in the Parspianny-Troy Hills School district.', 
       image: '/images/4-3_Project_in_Progress.jpg',
       link: '/montessori-board',
       color: '#1565c0'
@@ -41,13 +41,22 @@ export default function Projects() {
       color: '#f44336'
     },
     {
-      id: 'goodie-bag',
-      title: 'Goodie Bag Project',
-      subtitle: 'Packed with Joy',
-      description: 'Every holiday, we\'ve started a tradition to create and donate goodie bags to local children\'s hospitals, helping us unwind after midterms while bringing joy to the children.',
-      image: '/images/1-1_Donations.jpg',
-      link: '/goodie-bag',
-      color: '#ff9800'
+      id: 'trike',
+      title: 'Trike',
+      subtitle: 'Accessible Trikes for Every Child',
+      description: 'We modify and customize trikes so that kids who need extra support can enjoy the freedom and fun of riding—with adapted seating, steering, and controls tailored to each child.',
+      image: '/images/4-3_Amarah_Group.JPG',
+      link: '/trike',
+      color: '#2e7d32'
+    },
+    {
+      id: 'high-chair',
+      title: 'High Chair Project',
+      subtitle: 'Accessible High Chairs for Every Child',
+      description: 'Our high chair project creates safe, supportive seating so children with physical and developmental needs can join family meals and activities.',
+      image: '/images/4-3_Ahmad_Group.JPG',
+      link: '/high-chair',
+      color: '#6d4c41'
     },
     {
       id: 'future-projects',
@@ -55,7 +64,7 @@ export default function Projects() {
       subtitle: 'Coming Soon...',
       description: 'We are always looking for new ideas to make accessible technology MORE ACCESSIBLE! Do you have an idea for a new project? Let us know by clicking below!',
       image: '/images/1-1_Electronics.jpg',
-      link: '/projects',
+      link: '/contact',
       color: '#9c27b0'
     }
   ];

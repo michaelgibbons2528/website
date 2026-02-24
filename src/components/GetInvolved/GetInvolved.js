@@ -84,8 +84,8 @@ export default function GetInvolved() {
             <a href="mailto:info@a4all.org" className="contact-button primary">
               Contact Us
             </a>
-            <a href="https://www.instagram.com/rutgersa4a/" target="_blank" rel="noopener noreferrer" className="contact-button secondary">
-              Follow on Instagram
+            <a href="https://linkedin.com/company/accessible-4-all" target="_blank" rel="noopener noreferrer" className="contact-button secondary">
+              Find us on LinkedIn!
             </a>
           </div>
         </div>

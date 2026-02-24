@@ -154,7 +154,7 @@ export default function OurStories() {
                                                    <div className="story-meta">
                     <span className="major">Major: Mechanical Engineering</span>
                     <span className="project">Year: 2027</span>
-                    <span className="project">Lead: <button onClick={() => handleProjectClick('wilhelm')} style={{cursor: 'pointer', background: 'none', border: 'none', color: 'inherit', textDecoration: 'underline', padding: 0, font: 'inherit'}}>Project Wilhelm</button> & <button onClick={() => handleProjectClick('montessori-board')} style={{cursor: 'pointer', background: 'none', border: 'none', color: 'inherit', textDecoration: 'underline', padding: 0, font: 'inherit'}}>Montessori Board</button></span>
+                    <span className="project">Lead: <button onClick={() => handleProjectClick('wilhelm')} style={{cursor: 'pointer', background: 'none', border: 'none', color: 'inherit', textDecoration: 'underline', padding: 0, font: 'inherit'}}>Project Wilhelm</button> & <button onClick={() => handleProjectClick('montessori-board')} style={{cursor: 'pointer', background: 'none', border: 'none', color: 'inherit', textDecoration: 'underline', padding: 0, font: 'inherit'}}>Classroom Montessori Board</button></span>
                   </div>
                 
                 <div className="story-excerpt">
@@ -292,54 +292,8 @@ export default function OurStories() {
                    </div>
                  </div>
                </div>
-             </div>
-
-             {/* Story 5 */}
-             <div className="story-card">
-               <div className="story-image">
-                 <img src="/images/4-3_Bensu_Story.JPG" alt="Student working on engineering project" />
-                 <div className="story-overlay">
-                   <span className="story-number">05</span>
-                 </div>
-               </div>
-               <div className="story-content">
-                 <h3>Bensu Urganci: University Affairs of Rutgers A4A</h3>
-                                                      <div className="story-meta">
-                     <span className="major">Major: Mechanical Engineering</span>
-                     <span className="project">Year: 2027</span>
-                     <span className="project">Lead: <button onClick={() => handleProjectClick('robert')} style={{cursor: 'pointer', background: 'none', border: 'none', color: 'inherit', textDecoration: 'underline', padding: 0, font: 'inherit'}}>Project Robert</button> & <button onClick={() => handleProjectClick('braylon')} style={{cursor: 'pointer', background: 'none', border: 'none', color: 'inherit', textDecoration: 'underline', padding: 0, font: 'inherit'}}>Project Braylon</button></span>
-                   </div>
-                 
-                 <div className="story-excerpt">
-                   <blockquote>
-                     ""
-                   </blockquote>
-                 </div>
-
-                 <div className="story-qa">
-                   <div className="qa-item">
-                     <h4>What was your favorite memory on a project you've worked on?</h4>
-                     <p>
-                       "[ANSWER]"
-                     </p>
-                   </div>
-
-                   <div className="qa-item">
-                     <h4>How has A4A impacted your college experience?</h4>
-                     <p>
-                       "[ANSWER]"
-                     </p>
-                   </div>
-
-                   <div className="qa-item">
-                     <h4>What skills have you developed through A4A?</h4>
-                     <p>
-                       "[ANSWER]"
-                     </p>
-                   </div>
-                 </div>
-               </div>
-             </div>
+             </div>             
+             
 
              {/* Story 6 */}
              <div className="story-card">

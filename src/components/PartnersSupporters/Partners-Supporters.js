@@ -80,53 +80,6 @@ export default function PartnersSupporters() {
         </div>
       </div>
 
-      {/* Become a Partner Section */}
-      <div className="become-partner-section">
-        <div className="container">
-          <h2>Become a Partner</h2>
-          <p>
-            Interested in partnering with us? We're always looking for new collaborators 
-            who share our vision of accessibility and inclusion. Whether you're a corporation, 
-            foundation, or community organization, there are many ways to get involved.
-          </p>
-          
-          <div className="partnership-options">
-            <div className="partnership-option">
-              <h3>For Corporations</h3>
-              <ul>
-                <li>Provide funding and resources</li>
-                <li>Offer employee volunteer programs</li>
-                <li>Donate equipment and materials</li>
-                <li>Support research and development</li>
-              </ul>
-            </div>
-            
-            <div className="partnership-option">
-              <h3>For Foundations</h3>
-              <ul>
-                <li>Grant funding for programs</li>
-                <li>Support capacity building</li>
-                <li>Fund research initiatives</li>
-                <li>Provide technical assistance</li>
-              </ul>
-            </div>
-            
-            <div className="partnership-option">
-              <h3>For Community Organizations</h3>
-              <ul>
-                <li>Help identify families in need</li>
-                <li>Provide volunteer support</li>
-                <li>Host awareness events</li>
-                <li>Support fundraising efforts</li>
-              </ul>
-            </div>
-          </div>
-          
-
-        </div>
-      </div>
-
-
     </div>
   );
 } 

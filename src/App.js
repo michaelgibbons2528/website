@@ -14,6 +14,8 @@ import MontessoriBoard from './components/Projects/MontessoriBoard';
 import DogTreat from './components/Projects/DogTreat';
 import GoodieBag from './components/Projects/GoodieBag';
 import BathSeat from './components/Projects/BathSeat';
+import Trike from './components/Projects/Trike';
+import HighChair from './components/Projects/HighChair';
 
 import EnrollYourChild from './components/ParentsFamilies/EnrollYourChild';
 import ParentsFamilies from './components/ParentsFamilies/ParentsFamilies';
@@ -60,10 +62,12 @@ const ScrollToTop = () => {
         '/get-involved': 'Get Involved - Accessible 4 All',
         '/projects': 'Our Projects - Accessible 4 All',
         '/cars': 'Ride-On Cars - Accessible 4 All',
-        '/montessori-board': 'Giant Montessori Board - Accessible 4 All',
+        '/montessori-board': 'Classroom Montessori Board - Accessible 4 All',
         '/bath-seat': 'Bath Seat Project - Accessible 4 All',
         '/dog-treat': 'Dog Treat Project - Accessible 4 All',
         '/goodie-bag': 'Goodie Bag Project - Accessible 4 All',
+        '/trike': 'Trike Project - Accessible 4 All',
+        '/high-chair': 'High Chair Project - Accessible 4 All',
         '/locations': 'Locations - Accessible 4 All',
         '/donate': 'Donate - Accessible 4 All',
     
@@ -143,13 +147,14 @@ const MobileNavigation = ({ isOpen, onClose, currentSection, currentPage }) => {
             <li><button onClick={() => handleNavClick('/cars')} className={currentPage === '/cars' ? 'active-page' : ''}>Ride-On Cars</button></li>
             <li><button onClick={() => handleNavClick('/bath-seat')} className={currentPage === '/bath-seat' ? 'active-page' : ''}>Bath Seat Project</button></li>
             <li><button onClick={() => handleNavClick('/dog-treat')} className={currentPage === '/dog-treat' ? 'active-page' : ''}>Dog Treat Project</button></li>
-            <li><button onClick={() => handleNavClick('/goodie-bag')} className={currentPage === '/goodie-bag' ? 'active-page' : ''}>Goodie Bag Project</button></li>
-            <li><button onClick={() => handleNavClick('/montessori-board')} className={currentPage === '/montessori-board' ? 'active-page' : ''}>Giant Montessori Board</button></li>
+            <li><button onClick={() => handleNavClick('/montessori-board')} className={currentPage === '/montessori-board' ? 'active-page' : ''}>Classroom Montessori Board</button></li>
+<li><button onClick={() => handleNavClick('/trike')} className={currentPage === '/trike' ? 'active-page' : ''}>Trike</button></li>
+            <li><button onClick={() => handleNavClick('/high-chair')} className={currentPage === '/high-chair' ? 'active-page' : ''}>High Chair Project</button></li>
           </ul>
         </div>
 
         <div className="mobile-nav-section">
-          <button 
+          <button
             className={`mobile-nav-section-header ${currentSection === 'parents-families' ? 'active-section' : ''}`}
             onClick={() => handleNavClick('/parents-families')}
           >
@@ -473,7 +478,7 @@ const getNavigationState = (pathname) => {
     },
     'projects': {
       name: 'Our Projects',
-      pages: ['/projects', '/cars', '/montessori-board', '/bath-seat', '/dog-treat', '/goodie-bag']
+      pages: ['/projects', '/cars', '/montessori-board', '/bath-seat', '/dog-treat', '/trike', '/high-chair']
     },
     'parents-families': {
       name: 'Parents & Families',
@@ -600,8 +605,9 @@ const Navigation = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
                 <li><NavLink to="/cars" className={currentPage === '/cars' ? "active-page" : ""}>Ride-On Cars</NavLink></li>
                 <li><NavLink to="/bath-seat" className={currentPage === '/bath-seat' ? "active-page" : ""}>Bath Seat Project</NavLink></li>
                 <li><NavLink to="/dog-treat" className={currentPage === '/dog-treat' ? "active-page" : ""}>Dog Treat Project</NavLink></li>
-                <li><NavLink to="/goodie-bag" className={currentPage === '/goodie-bag' ? "active-page" : ""}>Goodie Bag Project</NavLink></li>
-                <li><NavLink to="/montessori-board" className={currentPage === '/montessori-board' ? "active-page" : ""}>Giant Montessori Board</NavLink></li>
+                <li><NavLink to="/montessori-board" className={currentPage === '/montessori-board' ? "active-page" : ""}>Classroom Montessori Board</NavLink></li>
+                <li><NavLink to="/trike" className={currentPage === '/trike' ? "active-page" : ""}>Trike</NavLink></li>
+                <li><NavLink to="/high-chair" className={currentPage === '/high-chair' ? "active-page" : ""}>High Chair Project</NavLink></li>
               </ul>
             </li>
             <li className={currentSection === 'contact' ? 'active-section' : ''}>
@@ -675,6 +681,8 @@ function App() {
         <Route path="/bath-seat" element={<BathSeat />} />
         <Route path="/dog-treat" element={<DogTreat />} />
         <Route path="/goodie-bag" element={<GoodieBag />} />
+        <Route path="/trike" element={<Trike />} />
+        <Route path="/high-chair" element={<HighChair />} />
         <Route path="/locations" element={<Locations />} />
         <Route path="/donate" element={<Donate />} />
   
@@ -731,10 +739,11 @@ function App() {
               <h4><NavLink to="/projects">Our Projects</NavLink></h4>
               <ul>
                 <li><NavLink to="/cars">Ride-On Cars</NavLink></li>
-                <li><NavLink to="/montessori-board">Giant Montessori Board</NavLink></li>
+                <li><NavLink to="/montessori-board">Classroom Montessori Board</NavLink></li>
                 <li><NavLink to="/bath-seat">Bath Seat Project</NavLink></li>
                 <li><NavLink to="/dog-treat">Dog Treat Project</NavLink></li>
-                <li><NavLink to="/goodie-bag">Goodie Bag Project</NavLink></li>
+                <li><NavLink to="/trike">Trike</NavLink></li>
+                <li><NavLink to="/high-chair">High Chair Project</NavLink></li>
               </ul>
             </div>
             <div className="footer-col">
@@ -749,12 +758,6 @@ function App() {
             <div className="footer-col">
               <h4><NavLink to="/donate" style={{color: '#a30000'}}>Donate</NavLink></h4>
             </div>
-            <div className="footer-col social-col">
-              <h4>Follow Us</h4>
-              <div className="social-icons">
-                <a href="https://www.instagram.com/rutgersa4a/"><img src="/images/1-1_Instagram_icon.png" alt="Instagram" /></a>
-              </div>
-            </div>
           </div>
         </footer>
         <div className="footer-bottom-bar">
@@ -762,7 +765,7 @@ function App() {
             <button className="footer-legal-link">Privacy & Accessibility Statement</button>
           </div>
                       <div className="footer-bottom-center">
-              <p className="photo-credits">Photo Credits: <a href="https://www.instagram.com/guipotography/" target="_blank" rel="noopener noreferrer">Matthew Andrei Guipo</a></p>
+              <p className="photo-credits">Photo Credits: <a href="https://www.instagram.com/guipotography/" target="_blank" rel="noopener noreferrer">Matt Andrei Guipo</a></p>
             </div>
           <div className="footer-bottom-right">
             ©2025 Accessible 4 All — A 501(c)(3) Organization

@@ -247,14 +247,15 @@ const Contact = () => {
       <section className="contact-info-section">
         <div className="container">
           <h2>Get in Touch</h2>
-          <p>Unable to fill out the form? Find us on social media or email us directly. We'd love to hear from you!</p>
+          <p>Unable to fill out the form? Find us on LinkedIn! or email us directly. We'd love to hear from you!</p>
           
           <div className="contact-methods">          
             <div className="contact-method">
               <div className="contact-icon">📱</div>
               <h3>Social Media</h3>
-              <p>@rutgersa4a</p>
-              <p>Follow us on Instagram for updates</p>
+              <p>
+                <a href="https://linkedin.com/company/accessible-4-all" target="_blank" rel="noopener noreferrer">Find us on LinkedIn!</a>
+              </p>
             </div>
           <div className="contact-method">
             <div className="contact-icon">📧</div>

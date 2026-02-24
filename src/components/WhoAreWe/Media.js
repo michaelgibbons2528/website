@@ -104,24 +104,15 @@ export default function Media() {
 
           {/* Social Media Section */}
           <div className="social-media-section">
-            <h2>Stay Connected</h2>
+            <h2>Find us on LinkedIn!</h2>
             <p>
-              Follow us on social media for regular updates, behind-the-scenes content, 
+              Follow us on LinkedIn for regular updates, behind-the-scenes content, 
               and stories from the families we work with.
             </p>
             <div className="social-links">
-              <a href="https://www.instagram.com/rutgersa4a/" className="social-link instagram">
-                <img src="/images/1-1_Instagram_icon.png" alt="Instagram" />
-                <span>@rutgersa4a</span>
+              <a href="https://linkedin.com/company/accessible-4-all" target="_blank" rel="noopener noreferrer" className="social-link linkedin">
+                <span>Find us on LinkedIn!</span>
               </a>
-              <div className="social-link coming-soon">
-                <span>📘 Facebook</span>
-                <small>Coming Soon</small>
-              </div>
-              <div className="social-link coming-soon">
-                <span>🐦 Twitter</span>
-                <small>Coming Soon</small>
-              </div>
             </div>
           </div>
         </div>

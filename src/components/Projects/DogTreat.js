@@ -18,19 +18,19 @@ export default function DogTreat() {
         </div>
       </div>
 
+      {/* Introduction Section - full-width grey background */}
+      <section className="intro-section">
+        <div className="container">
+          <h2>For Service Dogs and their Owners</h2>
+          <p>
+            The Dog Treat dispenser is being designed to help physically handicapped individuals 
+            reward their service dogs in training.
+          </p>
+        </div>
+      </section>
+
       {/* Main Content */}
       <div className="dog-treat-main">
-        {/* Introduction Section */}
-        <section className="intro-section">
-          <div className="container">
-            <h2>For Service Dogs and their Owners</h2>
-            <p>
-              The Dog Treat dispenser is being designed to help physically handicapped individuals 
-              reward their service dogs in training.
-            </p>
-          </div>
-        </section>
-
         {/* Project Overview Section */}
         <section className="overview-section">
           <div className="container">

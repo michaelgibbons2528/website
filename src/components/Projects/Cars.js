@@ -29,6 +29,73 @@ export default function Cars() {
 
   const carProjects = [
     {
+      name: "Analia",
+      age: "Five years old",
+      condition: "Project Leads: Vama and Veena",
+      carColor: "#FF1493",
+      carColorDark: "#c81075",
+      description: "A custom ride-on car project for Analia with built-in accomodations for her medical equipment to travel safely with her.",
+      modifications: [
+        {
+          title: "Safety",
+          details: [
+            "Five-point harness", 
+            "Head and back support", 
+            "Seat cushioning"
+          ]
+        },
+        {
+          title: "Accessibility Accomodations",
+          details: [
+            "Medical equipment storage for three different types of medical equipment",
+            "Accessible entry and exit",
+          ]
+        },
+        {
+          title: "Design",
+          details: [
+            "LED Lights under the car",
+            "Sensory Fidget Board",
+            "Custom License Plate",
+          ]
+        }
+        
+      ],
+      image: "/images/3-4_Analia_Group.JPG"
+    },
+    {
+      name: "Brady",
+      age: "4 years old",
+      condition: "Project Leads: Olivia and Sam",
+      carColor: "#FF6FAE",
+      carColorDark: "#e04d8c",
+      description: "A custom ride-on car project for Brady and her twin sister to ride in together. This car was already purchased by the family previously, and we had the opportunity to modify it for them.",
+      modifications: [
+        {
+          title: "Strucutral Supports",
+          details: [
+            "5-point harness",
+            "Cushioned seating support",
+          ]
+        },
+        {
+          title: "Accessibility Accomodations",
+          details: [
+            "Modified accessible car entrance", 
+            "Reflective tape details on entrance, gas pedal, and steering wheel"
+          ]
+        },
+        {
+          title: "Design",
+          details: [
+            "Added customizable fidget boards", 
+            "LED lights along bottom of car"
+          ]
+        }
+      ],
+      image: "/images/3-4_Twin_Car_Group.JPG"
+    },
+    {
       name: "Braylon",
       age: "3 years old",
       condition: "Project Leads: Bensu and Maya",
@@ -167,6 +234,39 @@ export default function Cars() {
         }
       ],
       image: "/images/3-4_Fiona_and_Family.JPG"
+    },
+    {
+      name: "Henry",
+      age: "4 years old",
+      condition: "Project Leads: Aly, Corrine, Logan, Noa, Shreya, and Tanish",
+      carColor: "#dc3545",
+      carColorDark: "#c82333",
+      description: "A custom Lightning McQueen truck built by the TA's of the First Year Engineering course at the University of Pittsburgh.",
+      modifications: [
+        {
+          title: "Safety & Seating",
+          details: [
+            "Five-point harness",
+            "Additional back support",
+            "Detachable foam leg supports"
+          ]
+        },
+        {
+          title: "Controls",
+          details: [
+            "Customized button for accelerating", 
+            "Remote Control for others to drive"
+          ]
+        },
+        {
+          title: "Design",
+          details: [
+            "Lightning McQueen truck theme", 
+            "Custom Lightning McQueen decals around the car"
+          ]
+        }
+      ],
+      image: "/images/3-4_Henry_Pitt_Group.jpg"
     },
     {
       name: "Isaiah",
@@ -349,21 +449,18 @@ export default function Cars() {
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="cars-main">
-        {/* Introduction Section */}
-        <section className="intro-section">
-          <div className="container">
-            <h2>The Best Way to Explore!</h2>
-            <p>
-              We start with standard battery-powered ride-on cars and customize them based on 
-              each child's specific needs. This includes adding joystick controls, custom seating, 
-              safety harnesses, and other modifications that allow children with various abilities 
-              to operate the vehicle safely and independently.
-            </p>
-          </div>
-        </section>
-      </div>
+      {/* Introduction Section - full-width grey background */}
+      <section className="intro-section">
+        <div className="container">
+          <h2>The Best Way to Explore!</h2>
+          <p>
+            We start with standard battery-powered ride-on cars and customize them based on 
+            each child's specific needs. This includes adding joystick controls, custom seating, 
+            safety harnesses, and other modifications that allow children with various abilities 
+            to operate the vehicle safely and independently.
+          </p>
+        </div>
+      </section>
 
       {/* Individual Profiles Section */}
       <div className="profiles-section">
@@ -371,7 +468,7 @@ export default function Cars() {
           {carProjects.map((project, index) => (
             <div 
               key={index} 
-              id={`car-${project.name.toLowerCase()}`}
+              id={`car-${project.name.toLowerCase().replace(/\s+/g, '-')}`}
               className="profile-card"
               style={{
                 '--car-color': project.carColor,
@@ -385,10 +482,12 @@ export default function Cars() {
               <div className="profile-content">
                 <div className="profile-header">
                   <h2>Meet {project.name}</h2>
-                  <div className="profile-meta">
-                    <span className="age">{project.age}</span>
-                    <span className="condition">{project.condition}</span>
-                  </div>
+                  {(project.age || project.condition) && (
+                    <div className="profile-meta">
+                      <span className="age">{project.age}</span>
+                      <span className="condition">{project.condition}</span>
+                    </div>
+                  )}
                 </div>
                 
                 <div className="profile-description">

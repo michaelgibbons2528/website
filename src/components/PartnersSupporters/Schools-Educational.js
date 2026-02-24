@@ -9,11 +9,18 @@ export default function SchoolsEducational() {
       programs: [
         {
           name: "Rutgers University",
-          type: "Primary Academic Partner",
-          description: "Our flagship partnership providing engineering students with real-world assistive technology projects and research opportunities. Students work on semester-long projects designing and building custom adaptive devices for children with disabilities.",
+          type: "University Partner",
+          description: "Our founding chapter of Accessible 4 All. Established at Rutgers University in 2024, it's where our mission first came to life, bringing engineering students together to design and build adaptive devices for children with physical and developmental disabilities.",
           website: "https://sites.rutgers.edu/a4a/",
           logo: "/images/Rutgers_A4A.png",
-          features: ["Student volunteer programs", "Research collaborations", "Workshop facilities", "Faculty expertise", "Capstone projects", "Hands-on engineering experience"]
+          features: []
+        },
+        {
+          name: "University of Pittsburgh",
+          type: "University Partner",
+          description: "Working with the first-year engineering students at the University of Pittsburgh, students are creating adaptive ride-on cars for children with physical and developmental disabilities. On top of this, students with Accessible Prosthetics Initiative are also working with A4A to create a ride-on car for a child!",
+          website: "https://www.pitt.edu/",
+          features: []
         }
       ]
     },
@@ -32,9 +39,9 @@ export default function SchoolsEducational() {
         {
           name: "Lake Hiawatha School",
           type: "Elementary School Partner",
-          description: "We are collaborating with Lake Hiawatha Elementary School and Mrs. Corrente's class to create a giant Montessori Board for their special education classroom.",
+          description: "We are collaborating with Lake Hiawatha Elementary School and Mrs. Corrente's class to create a Classroom Montessori Board for their special education classroom.",
           logo: "/images/1-1_Lake_Hiawatha.png",
-          website: "https://lhs.pthsd.k12.nj.us/",
+          website: "https://www.a4all.org/montessori-board/",
           features: ["Family support services", "Teacher collaboration", "Resource sharing", "Student assessments", "Inclusive education support", "Parent workshops"]
         },
         {
@@ -119,10 +126,12 @@ export default function SchoolsEducational() {
               <div className="programs-grid">
                 {category.programs.map((program, programIndex) => (
                   <div key={programIndex} className="program-card">
-                    <div className="program-logo">
-                      <img src={program.logo} alt={`${program.name} logo`} />
-                    </div>
-                                         <div className="program-info">
+                    {program.logo && (
+                      <div className="program-logo">
+                        <img src={program.logo} alt={`${program.name} logo`} />
+                      </div>
+                    )}
+                    <div className="program-info">
                        <h4>
                          {program.website ? (
                            <a 

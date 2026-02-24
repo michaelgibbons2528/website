@@ -2,7 +2,7 @@
 
 .projects-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: #f8f9fa;
 }
 
 /* Hero Section */
@@ -196,7 +196,7 @@
 
 .adaptation-feature {
   padding: 2rem;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: #f8f9fa;
   border-radius: 15px;
   transition: transform 0.3s ease;
 }

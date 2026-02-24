@@ -23,7 +23,7 @@ export default function FAQ() {
     },
     {
       question: "What types of equipment do you provide?",
-      answer: "We specialize in custom ride-on cars, adaptive educational tools, mobility devices, and other assistive technology. Each project is tailored to the individual child's needs, abilities, and interests. Our most popular items include modified ride-on cars, giant Montessori boards, and interactive learning devices."
+      answer: "We specialize in custom ride-on cars, adaptive educational tools, mobility devices, and other assistive technology. Each project is tailored to the individual child's needs, abilities, and interests. Our most popular items include modified ride-on cars, Classroom Montessori boards, and interactive learning devices."
     },
     {
       question: "Who can volunteer with A4A?",
@@ -117,15 +117,15 @@ export default function FAQ() {
                 <button className="contact-button">Send Email</button>
               </div>
               <div className="contact-option">
-                <h4>📱 Social Media</h4>
-                <p>Connect with us on Instagram for quick questions and updates.</p>
+                <h4>📱 Find us on LinkedIn!</h4>
+                <p>Connect with us on LinkedIn for quick questions and updates.</p>
                 <a 
-                  href="https://www.instagram.com/rutgersa4a/" 
+                  href="https://linkedin.com/company/accessible-4-all" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="contact-button"
                 >
-                  Follow on Instagram
+                  Find us on LinkedIn!
                 </a>
               </div>
 

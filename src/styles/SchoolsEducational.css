@@ -270,9 +270,10 @@
   color: #666;
 }
 
-.partnership-options {
+/* Scoped so Schools page wins over other global .partnership-options */
+.schools-educational-container .get-involved-section .partnership-options {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-bottom: 3rem;
 }
@@ -411,7 +412,7 @@
     grid-template-columns: 1fr;
   }
   
-  .partnership-options {
+  .schools-educational-container .get-involved-section .partnership-options {
     grid-template-columns: 1fr;
   }
   
